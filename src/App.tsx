@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Section from '@components/Section';
 import data from '@data';
+import Section from '@components/Section';
+import AboutMe from '@components/AboutMe/AboutMe';
+import Introduction from '@components/Introduction/Introduction';
 
 function App() {
   return (
@@ -15,8 +17,13 @@ function App() {
           Learn React
         </a>
       </header>
-      <Section title={data.introduce.title} contents={data.introduce.contents} />
-      <Section title={data.abilities.title} contents={data.abilities.contents} />
+      <Section title="About Me">
+        <AboutMe data={data.aboutMe} />
+      </Section>
+      <Section title="Introduction">
+        <Introduction data={data.introduction} />
+      </Section>
+      <Section title={data.abilities.title} />
     </div>
   );
 }
