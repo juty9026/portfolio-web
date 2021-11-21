@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { container, subjectContainer, itemContainer } from './AboutMe.emotion';
+import * as style from './AboutMe.emotion';
 import { AboutMe as AboutMeData } from '@types';
 
 type AboutMeProps = {
@@ -11,11 +11,11 @@ const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
   return (
     <div>
       {data.map((d) => (
-        <div css={container} key={d.subject}>
-          <div css={subjectContainer}>
+        <div css={style.container} key={d.subject}>
+          <div css={style.subjectContainer}>
             <h2>{d.subject}</h2>
           </div>
-          <div css={itemContainer}>
+          <div css={style.itemContainer}>
             {d.items.length && (
               <ul>
                 {d.items.map((item) => (

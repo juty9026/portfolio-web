@@ -9,12 +9,12 @@ type SectionProps = {
 };
 
 const Section: React.FC<SectionProps> = ({ title, fullHeight = false, children }) => {
-  const container = React.useMemo(() => {
+  const containerStyle = React.useMemo(() => {
     return fullHeight ? [style.container, style.fullHeight] : style.container;
   }, [fullHeight]);
 
   return (
-    <div css={container}>
+    <div css={containerStyle}>
       <StickyHeader>
         <h1>{title}</h1>
       </StickyHeader>
