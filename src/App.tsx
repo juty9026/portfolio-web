@@ -4,6 +4,7 @@ import data from '@data';
 import Section from '@components/Section';
 import AboutMe from '@components/AboutMe/AboutMe';
 import Introduction from '@components/Introduction/Introduction';
+import Abilities from '@components/Abilities/Abilities';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
       <Section title="Introduction">
         <Introduction data={data.introduction} />
       </Section>
-      <Section title={data.abilities.title} />
+      <Section title="Abilities">
+        <Abilities data={data.abilities} />
+      </Section>
     </div>
   );
 }
