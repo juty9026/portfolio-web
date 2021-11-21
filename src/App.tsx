@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Section from '@components/Section';
+import data from '@data';
 
 function App() {
   return (
@@ -14,10 +15,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <Section title="Section A" />
-      <Section title="Section B" />
-      <Section title="Section C" />
-      <Section title="Section D" />
+      <Section title={data.introduce.title} contents={data.introduce.contents} />
+      <Section title={data.abilities.title} contents={data.abilities.contents} />
     </div>
   );
 }
