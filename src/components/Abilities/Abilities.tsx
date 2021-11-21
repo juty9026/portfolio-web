@@ -9,8 +9,8 @@ const Abilities: React.FC<AbilitiesProps> = ({ data }) => {
     <div>
       {data.map((ability) => (
         <div key={ability.subject}>
-          <h1>{ability.subject}</h1>
-          <p>{ability.content}</p>
+          <h2>{ability.subject}</h2>
+          <pre>{ability.content}</pre>
         </div>
       ))}
     </div>

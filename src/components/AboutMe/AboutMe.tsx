@@ -13,7 +13,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
       {data.map((d) => (
         <div css={container} key={d.subject}>
           <div css={subjectContainer}>
-            <p>{d.subject}</p>
+            <h2>{d.subject}</h2>
           </div>
           <div css={itemContainer}>
             {d.items.length && (
