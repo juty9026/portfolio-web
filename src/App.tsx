@@ -5,6 +5,7 @@ import Section from '@components/Section';
 import AboutMe from '@components/AboutMe/AboutMe';
 import Introduction from '@components/Introduction/Introduction';
 import Abilities from '@components/Abilities/Abilities';
+import SkillsOverview from '@components/SkilsOverview';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
       </Section>
       <Section title="Abilities">
         <Abilities data={data.abilities} />
+      </Section>
+      <Section title="Skills Overview" fullHeight>
+        <SkillsOverview />
       </Section>
     </div>
   );
