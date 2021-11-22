@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './Section.emotion';
+import * as style from './Article.emotion';
 import StickyHeader from '@components/StickyHeader';
 
 type SectionProps = {
@@ -8,19 +8,23 @@ type SectionProps = {
   fullHeight?: boolean;
 };
 
-const Section: React.FC<SectionProps> = ({ title, fullHeight = false, children }) => {
+const Article: React.FC<SectionProps> = ({ title, fullHeight = false, children }) => {
+  const id = React.useMemo(() => {
+    return title.toLowerCase().replace(/ /g, '-');
+  }, [title]);
+
   const containerStyle = React.useMemo(() => {
     return fullHeight ? [style.container, style.fullHeight] : style.container;
   }, [fullHeight]);
 
   return (
-    <div css={containerStyle}>
+    <article id={id} css={containerStyle}>
       <StickyHeader>
         <h1>{title}</h1>
       </StickyHeader>
       {children}
-    </div>
+    </article>
   );
 };
 
-export default Section;
+export default Article;

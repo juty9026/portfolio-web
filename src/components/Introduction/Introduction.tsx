@@ -6,9 +6,9 @@ type IntroductionProps = {
 
 const Introduction: React.FC<IntroductionProps> = ({ data }) => {
   return (
-    <div>
+    <section>
       <pre>{data.content}</pre>
-    </div>
+    </section>
   );
 };
 

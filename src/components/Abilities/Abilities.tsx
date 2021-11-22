@@ -6,14 +6,14 @@ type AbilitiesProps = {
 
 const Abilities: React.FC<AbilitiesProps> = ({ data }) => {
   return (
-    <div>
+    <>
       {data.map((ability) => (
-        <div key={ability.subject}>
+        <section key={ability.subject}>
           <h2>{ability.subject}</h2>
           <pre>{ability.content}</pre>
-        </div>
+        </section>
       ))}
-    </div>
+    </>
   );
 };
 

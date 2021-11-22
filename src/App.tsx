@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import data from '@data';
-import Section from '@components/Section';
+import Article from '@components/Article';
 import AboutMe from '@components/AboutMe/AboutMe';
 import Introduction from '@components/Introduction/Introduction';
 import Abilities from '@components/Abilities/Abilities';
@@ -20,17 +20,20 @@ function App() {
         </a>
       </header>
       <Section title="About Me">
-        <AboutMe data={data.aboutMe} />
-      </Section>
-      <Section title="Introduction">
-        <Introduction data={data.introduction} />
-      </Section>
-      <Section title="Abilities">
-        <Abilities data={data.abilities} />
-      </Section>
-      <Section title="Skills Overview" fullHeight>
-        <Skills />
-      </Section>
+      <main>
+        <Article title="About Me">
+          <AboutMe data={data.aboutMe} />
+        </Article>
+        <Article title="Introduction">
+          <Introduction data={data.introduction} />
+        </Article>
+        <Article title="Abilities">
+          <Abilities data={data.abilities} />
+        </Article>
+        <Article title="Skills Overview" fullHeight>
+          <Skills />
+        </Article>
+      </main>
     </div>
   );
 }

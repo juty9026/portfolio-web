@@ -9,9 +9,9 @@ type AboutMeProps = {
 
 const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
   return (
-    <div>
+    <>
       {data.map((d) => (
-        <div css={style.container} key={d.subject}>
+        <section css={style.container} key={d.subject}>
           <div css={style.subjectContainer}>
             <h2>{d.subject}</h2>
           </div>
@@ -24,9 +24,9 @@ const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
               </ul>
             )}
           </div>
-        </div>
+        </section>
       ))}
-    </div>
+    </>
   );
 };
 
