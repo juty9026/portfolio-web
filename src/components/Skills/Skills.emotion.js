@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
 
 const container = css`
-  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 `;
 
 export { container };
