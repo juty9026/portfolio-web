@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './Article.emotion';
+import * as style from './Article.e';
 import StickyHeader from '@components/StickyHeader';
 
 type SectionProps = {

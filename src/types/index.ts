@@ -1,13 +1,13 @@
-export interface AboutMe {
+export interface AboutMeData {
   subject: string;
   items: string[];
 }
 
-export interface Introduction {
+export interface IntroductionData {
   content: string;
 }
 
-export interface Ability {
+export interface AbilityData {
   subject: string;
   content: string;
 }

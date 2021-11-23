@@ -1,6 +1,6 @@
-import { AboutMe } from '@types';
+import { AboutMeData } from '@types';
 
-const data: AboutMe[] = [
+const data: AboutMeData[] = [
   {
     subject: 'Subject 1',
     items: [

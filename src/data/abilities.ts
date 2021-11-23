@@ -1,6 +1,6 @@
-import { Ability } from '@types';
+import { AbilityData } from '@types';
 
-const data: Ability[] = [
+const data: AbilityData[] = [
   {
     subject: 'Subject 1',
     content: `Lorem ipsum dolor sit amet,

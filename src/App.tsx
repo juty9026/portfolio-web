@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import data from '@data';
-import Article from '@section/Article';
+import Article from '@components/Article';
 import AboutMe from '@section/AboutMe';
 import Introduction from '@section/Introduction';
 import Abilities from '@section/Abilities';

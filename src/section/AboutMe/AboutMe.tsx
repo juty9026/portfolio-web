@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './AboutMe.emotion';
-import { AboutMe as AboutMeData } from '@types';
+import * as style from './AboutMe.e';
+import { AboutMeData } from '@types';
 
 type AboutMeProps = {
   data: AboutMeData[];

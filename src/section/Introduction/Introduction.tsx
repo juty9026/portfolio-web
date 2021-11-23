@@ -1,7 +1,7 @@
-import { Introduction as IntroductionType } from '@types';
+import { IntroductionData } from '@types';
 
 type IntroductionProps = {
-  data: IntroductionType;
+  data: IntroductionData;
 };
 
 const Introduction: React.FC<IntroductionProps> = ({ data }) => {

@@ -1,7 +1,7 @@
-import { Ability as AbilityType } from '@types';
+import { AbilityData } from '@types';
 
 type AbilitiesProps = {
-  data: AbilityType[];
+  data: AbilityData[];
 };
 
 const Abilities: React.FC<AbilitiesProps> = ({ data }) => {
