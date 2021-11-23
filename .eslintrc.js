@@ -42,6 +42,7 @@ module.exports = {
           ['@types', './src/types'],
           ['@hooks', './src/hooks'],
           ['@section', './src/section'],
+          ['@constants', './src/constants'],
         ],
         extensions: ['.ts', '.tsx'],
       },
