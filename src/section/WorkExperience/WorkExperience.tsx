@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-// import * as style from './WorkExperience.e';
-// import { AboutMe as AboutMeData } from '@types';
+import * as style from './WorkExperience.e';
 import { WorkExperienceData } from '@types';
 
 interface WorkExperienceProps {
@@ -14,9 +13,40 @@ const WorkExperience = ({ data }: WorkExperienceProps) => {
   }, [data]);
   return (
     <>
-      {/* {data.map((d) => (
-        <section css={style.container} key={d.subject}></section>
-      ))} */}
+      {data.projects.map((p) => (
+        <section css={style.container} key={p.name}>
+          <header>
+            <p css={style.projectName}>{p.name}</p>
+          </header>
+          <p css={style.partner}>{p.partner}</p>
+          <p css={style.period}>{`${p.period.start} ~ ${p.period.end}`}</p>
+          <div css={style.techStackContainer}>
+            {Object.keys(p.techStack).map((position: string) => (
+              <div>
+                <p>{position.toUpperCase()}</p>
+                {p.techStack[position]?.map((tech) => (
+                  <p>{tech}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+          {!!p.roles.length && (
+            <div css={style.roleContainer}>
+              {p.roles.map((role) => (
+                <p>{role}</p>
+              ))}
+            </div>
+          )}
+          {!!p.achievements.length && (
+            <div css={style.roleContainer}>
+              {p.achievements.map((achievement) => (
+                <p>{achievement}</p>
+              ))}
+            </div>
+          )}
+          {p.comment && <p>{p.comment}</p>}
+        </section>
+      ))}
     </>
   );
 };
