@@ -40,6 +40,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@data', './src/data'],
           ['@types', './src/types'],
+          ['@hooks', './src/hooks'],
         ],
         extensions: ['.ts', '.tsx'],
       },

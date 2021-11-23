@@ -2,37 +2,27 @@
 import React from 'react';
 import * as style from './Skills.emotion';
 import SkillsOverview from './SkilsOverview';
+import useIntersectionObserver from '@hooks/useIntersectionObserver';
 
 const Skills: React.FC = () => {
   const ref = React.useRef(null);
 
-  const [footerVisible, setFooterVisible] = React.useState(false);
-
-  const callback = React.useCallback(([entry]) => {
-    setFooterVisible(entry.isIntersecting);
-  }, []);
+  const [footerVisible, setFooterVisible] = React.useState<boolean>(false);
 
   const options = React.useMemo(
     () => ({
-      root: null,
+      root: undefined,
       rootMargin: '0px',
       threshold: 0.9,
     }),
     []
   );
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(callback, options);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+  const containerEntry = useIntersectionObserver({ ref, options });
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref, callback, options]);
+  React.useEffect(() => {
+    setFooterVisible(!!containerEntry?.isIntersecting);
+  }, [containerEntry]);
 
   return (
     <div css={style.container} ref={ref}>
