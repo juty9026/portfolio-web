@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import data from '@data';
-import Article from '@components/Article';
-import AboutMe from '@components/AboutMe/AboutMe';
-import Introduction from '@components/Introduction/Introduction';
-import Abilities from '@components/Abilities/Abilities';
-import Skills from '@components/Skills/Skills';
+import Article from '@section/Article';
+import AboutMe from '@section/AboutMe';
+import Introduction from '@section/Introduction';
+import Abilities from '@section/Abilities';
+import Skills from '@section/Skills';
 
 function App() {
   return (
