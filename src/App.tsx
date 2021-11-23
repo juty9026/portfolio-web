@@ -19,7 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <Section title="About Me">
       <main>
         <Article title="About Me">
           <AboutMe data={data.aboutMe} />
