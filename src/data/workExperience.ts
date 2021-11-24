@@ -3,6 +3,7 @@ import { WorkExperienceData } from '@types';
 const data: WorkExperienceData = {
   projects: [
     {
+      seq: 1,
       name: 'TANGO-D',
       partner: 'SK C&C',
       period: {
@@ -17,6 +18,7 @@ const data: WorkExperienceData = {
       comment: 'Comment A',
     },
     {
+      seq: 2,
       name: 'LCAP',
       partner: 'SK Telecom',
       period: {
@@ -31,6 +33,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 3,
       name: 'SHP',
       partner: '호텔신라',
       period: {
@@ -45,6 +48,7 @@ const data: WorkExperienceData = {
       comment: 'Comment C',
     },
     {
+      seq: 4,
       name: 'IDCube',
       partner: 'SK C&C',
       period: {
@@ -63,6 +67,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 5,
       name: 'WDP',
       partner: 'SK C&C',
       period: {
@@ -77,6 +82,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 6,
       name: 'HAPP',
       partner: 'SK C&C',
       period: {
@@ -96,6 +102,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 7,
       name: '5GX Cloud',
       partner: 'SK C&C',
       period: {
@@ -111,6 +118,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 8,
       name: '오픈몰',
       partner: '오픈잇',
       period: {
@@ -126,6 +134,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 9,
       name: 'SK C&C',
       partner: 'WDP',
       period: {
@@ -140,6 +149,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 10,
       name: '5GX Cloud',
       partner: 'SK C&C',
       period: {
@@ -155,6 +165,7 @@ const data: WorkExperienceData = {
       comment: 'Comment B',
     },
     {
+      seq: 11,
       name: '오픈몰',
       partner: '오픈잇',
       period: {
@@ -170,6 +181,7 @@ const data: WorkExperienceData = {
       comment: '페이지 접근 시 사용자가 기다리지 않아도 되는 작업을 Async 로 전환하여 사용자 경험 개선',
     },
     {
+      seq: 12,
       name: '통합 시스템',
       partner: '쥬비스',
       period: {

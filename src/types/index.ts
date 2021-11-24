@@ -12,24 +12,26 @@ export interface AbilityData {
   content: string;
 }
 
+export interface ProjectData {
+  seq: number;
+  name: string;
+  partner: string;
+  period: {
+    start: string;
+    end: string;
+  };
+  techStack: {
+    [key: string]: Backend[] | Frontend[] | DevOps[] | undefined;
+    backend?: Backend[];
+    frontend?: Frontend[];
+    devops?: DevOps[];
+  };
+  roles: string[];
+  achievements: string[];
+  comment?: string;
+}
 export interface WorkExperienceData {
-  projects: {
-    name: string;
-    partner: string;
-    period: {
-      start: string;
-      end: string;
-    };
-    techStack: {
-      [key: string]: Backend[] | Frontend[] | DevOps[] | undefined;
-      backend?: Backend[];
-      frontend?: Frontend[];
-      devops?: DevOps[];
-    };
-    roles: string[];
-    achievements: string[];
-    comment?: string;
-  }[];
+  projects: ProjectData[];
 }
 
 export type Backend =
