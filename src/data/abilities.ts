@@ -2,48 +2,29 @@ import { AbilityData } from '@types';
 
 const data: AbilityData[] = [
   {
-    subject: 'Subject 1',
-    content: `Lorem ipsum dolor sit amet,
-    consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    subject: '문제 해결사',
+    content: `'라이브러리를 바꿀 수는 없는데... 방법이 없을까?'
+    '여기에 기능이 하나만 있었어도...'
+    내부 로직을 이해하고 필요한 기능을 구현할 수 있는 사람`,
   },
   {
-    subject: 'Subject 2',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    subject: '누구와도 원활한 소통',
+    content: `기술적인 이야기, 그리고 기획적으로 소통하는 것에 불편함이 없습니다.
+    요즘에는 쓸데없는 잡담을 잘 하기 위한 노력도 하고 있어요.
+    저랑 커피 한 잔 어때요? ☕️`,
   },
   {
-    subject: 'Subject 3',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    subject: '취미는 무언가를 배우는 것',
+    content: `새로운 지식이 쌓인다는 건 언제나 즐거워요.`,
   },
   {
-    subject: 'Subject 4',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    subject: '엄청난 적응력',
+    content: `겪어보지 못한 기술, 업무 환경, 개발 환경, 툴, ...
+    가리지 않고 빠르게 익숙해집니다.`,
   },
   {
-    subject: 'Subject 5',
-    content: `Lorem ipsum dolor sit amet,
-    consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-  },
-  {
-    subject: 'Subject 6',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-  },
-  {
-    subject: 'Subject 7',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-  },
-  {
-    subject: 'Subject 8',
-    content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    subject: '성장을 향한 열망',
+    content: `이 일이 너무 재미있고, 더 많은 것을 해낼 수 있는 사람이 되기 위해 다방면으로 노력하고 있어요.`,
   },
 ];
 
