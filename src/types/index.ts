@@ -32,6 +32,19 @@ export interface WorkExperienceData {
   }[];
 }
 
-export type Backend = 'Hadoop' | 'Hive' | 'Kafka' | 'Redis' | 'Java' | 'Spring' | 'Spring Boot';
-export type Frontend = 'Javascript' | 'ES6+' | 'React' | 'Vue';
+export type Backend =
+  | 'Hadoop'
+  | 'Hive'
+  | 'Kafka'
+  | 'Redis'
+  | 'Oracle'
+  | 'MySQL'
+  | 'MariaDB'
+  | 'MyBatis'
+  | 'Java'
+  | 'JPA'
+  | 'JSP'
+  | 'Spring'
+  | 'Spring Boot';
+export type Frontend = 'Javascript' | 'ES6+' | 'React' | 'Vue' | 'AngularJS' | 'Angular2' | 'React Native' | 'jQuery';
 export type DevOps = 'Jenkins' | 'Grafana' | 'AWS';
