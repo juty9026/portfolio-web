@@ -3,9 +3,9 @@ import { ProjectData } from '@types';
 import React from 'react';
 import * as style from './ProjectSummary.e';
 
-type Props = {
+interface Props {
   data: ProjectData;
-};
+}
 
 const ProjectSummary: React.FC<Props> = ({ data }) => {
   return (

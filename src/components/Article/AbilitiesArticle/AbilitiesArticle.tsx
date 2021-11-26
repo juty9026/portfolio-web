@@ -1,9 +1,9 @@
 import { AbilityData } from '@types';
 import Article from '../Article';
 
-type Props = {
+interface Props {
   data: AbilityData[];
-};
+}
 
 const AbilitiesArticle: React.FC<Props> = ({ data }) => {
   return (

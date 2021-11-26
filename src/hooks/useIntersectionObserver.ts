@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface UseIntersectionObserverProps {
+interface Props {
   ref: React.RefObject<null>;
   options?: IntersectionObserverInit;
 }
@@ -8,7 +8,7 @@ interface UseIntersectionObserverProps {
 const useIntersectionObserver = ({
   ref,
   options = { root: undefined, rootMargin: '0px', threshold: 0 },
-}: UseIntersectionObserverProps): IntersectionObserverEntry | null => {
+}: Props): IntersectionObserverEntry | null => {
   const [onIntersectEntry, setOnIntersectEntry] = React.useState<IntersectionObserverEntry | null>(null);
 
   const onIntersect: IntersectionObserverCallback = React.useCallback(

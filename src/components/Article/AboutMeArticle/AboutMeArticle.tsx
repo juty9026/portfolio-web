@@ -4,9 +4,9 @@ import * as style from './AboutMeArticle.e';
 import { AboutMeData } from '@types';
 import Article from '../Article';
 
-type Props = {
+interface Props {
   data: AboutMeData[];
-};
+}
 
 const AboutMeArticle: React.FC<Props> = ({ data }) => {
   return (

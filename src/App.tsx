@@ -1,10 +1,12 @@
 import './App.css';
 import data from '@data';
-import AboutMeArticle from '@components/Article/AboutMeArticle';
-import AbilitiesArticle from '@components/Article/AbilitiesArticle';
-import IntroductionArticle from '@components/Article/IntroductionArticle';
-import WorkExperienceArticle from '@components/Article/WorkExperienceArticle';
-import SkillsArticle from '@components/Article/SkillsArticle';
+import {
+  AboutMeArticle,
+  AbilitiesArticle,
+  IntroductionArticle,
+  WorkExperienceArticle,
+  SkillsArticle,
+} from '@components/Article';
 
 function App() {
   return (
