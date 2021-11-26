@@ -1,20 +1,21 @@
 import { AbilityData } from '@types';
+import Article from '../Article';
 
-type AbilitiesProps = {
+type Props = {
   data: AbilityData[];
 };
 
-const Abilities: React.FC<AbilitiesProps> = ({ data }) => {
+const AbilitiesArticle: React.FC<Props> = ({ data }) => {
   return (
-    <>
+    <Article title="Abilities">
       {data.map((ability) => (
         <section key={ability.subject}>
           <h2>{ability.subject}</h2>
           <pre>{ability.content}</pre>
         </section>
       ))}
-    </>
+    </Article>
   );
 };
 
-export default Abilities;
+export default AbilitiesArticle;

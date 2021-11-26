@@ -3,12 +3,12 @@ import React from 'react';
 import * as style from './Article.e';
 import StickyHeader from '@components/StickyHeader';
 
-type SectionProps = {
+interface Props {
   title: string;
   fullHeight?: boolean;
-};
+}
 
-const Article: React.FC<SectionProps> = ({ title, fullHeight = false, children }) => {
+const Article: React.FC<Props> = ({ title, fullHeight = false, children }) => {
   const id = React.useMemo(() => {
     return title.toLowerCase().replace(/ /g, '-');
   }, [title]);

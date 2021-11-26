@@ -1,31 +1,20 @@
 import './App.css';
 import data from '@data';
-import Article from '@components/Article';
-import AboutMe from '@section/AboutMe';
-import Introduction from '@section/Introduction';
-import Abilities from '@section/Abilities';
-import Skills from '@section/Skills';
-import WorkExperience from '@section/WorkExperience';
+import AboutMeArticle from '@components/Article/AboutMeArticle';
+import AbilitiesArticle from '@components/Article/AbilitiesArticle';
+import IntroductionArticle from '@components/Article/IntroductionArticle';
+import WorkExperienceArticle from '@components/Article/WorkExperienceArticle';
+import SkillsArticle from '@components/Article/SkillsArticle';
 
 function App() {
   return (
     <div className="App">
       <main>
-        <Article title="About Me">
-          <AboutMe data={data.aboutMe} />
-        </Article>
-        <Article title="Introduction">
-          <Introduction data={data.introduction} />
-        </Article>
-        <Article title="Abilities">
-          <Abilities data={data.abilities} />
-        </Article>
-        <Article title="Work Experience">
-          <WorkExperience data={data.workExperience} />
-        </Article>
-        <Article title="Skills Overview" fullHeight>
-          <Skills />
-        </Article>
+        <AboutMeArticle data={data.aboutMe} />
+        <AbilitiesArticle data={data.abilities} />
+        <IntroductionArticle data={data.introduction} />
+        <WorkExperienceArticle data={data.workExperience} />
+        <SkillsArticle />
       </main>
     </div>
   );

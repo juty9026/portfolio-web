@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './AboutMe.e';
+import * as style from './AboutMeArticle.e';
 import { AboutMeData } from '@types';
+import Article from '../Article';
 
-type AboutMeProps = {
+type Props = {
   data: AboutMeData[];
 };
 
-const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
+const AboutMeArticle: React.FC<Props> = ({ data }) => {
   return (
-    <>
+    <Article title="About Me">
       {data.map((d) => (
         <section css={style.container} key={d.subject}>
           <div css={style.subjectContainer}>
@@ -26,8 +27,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ data }) => {
           </div>
         </section>
       ))}
-    </>
+    </Article>
   );
 };
 
-export default AboutMe;
+export default AboutMeArticle;
