@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import styles from './Article.e';
-import StickyHeader from '@components/StickyHeader';
+// import StickyHeader from '@components/StickyHeader';
 
 interface Props {
   title: string;
@@ -19,9 +19,9 @@ const Article: React.FC<Props> = ({ title, fullHeight = false, children }) => {
 
   return (
     <article id={id} css={containerStyle}>
-      <StickyHeader>
-        <h1>{title}</h1>
-      </StickyHeader>
+      <header css={styles.titleContainer}>
+        <h2 css={styles.title}>{title}</h2>
+      </header>
       {children}
     </article>
   );

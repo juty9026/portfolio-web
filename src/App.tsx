@@ -14,11 +14,11 @@ function App() {
     <div className="App">
       <main>
         <Hero />
+        <SkillsArticle />
         <AboutMeArticle data={data.aboutMe} />
         <AbilitiesArticle data={data.abilities} />
         <IntroductionArticle data={data.introduction} />
         <WorkExperienceArticle data={data.workExperience} />
-        <SkillsArticle />
       </main>
     </div>
   );
