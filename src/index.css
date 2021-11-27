@@ -1,14 +1,26 @@
+* {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  position: relative;
+}
+
 html,
 body {
   overscroll-behavior: none;
 }
 
 body {
+  background-color: white;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Bebas Neue', 'Jua', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+article {
+  background-color: white;
 }
 
 section {

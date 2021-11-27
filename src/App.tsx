@@ -7,11 +7,13 @@ import {
   WorkExperienceArticle,
   SkillsArticle,
 } from '@components/Article';
+import Hero from '@components/Hero';
 
 function App() {
   return (
     <div className="App">
       <main>
+        <Hero />
         <AboutMeArticle data={data.aboutMe} />
         <AbilitiesArticle data={data.abilities} />
         <IntroductionArticle data={data.introduction} />

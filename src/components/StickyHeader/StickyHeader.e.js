@@ -6,6 +6,7 @@ const sticky = css`
   background-color: white;
   padding: 10px;
   box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  z-index: 1;
 `;
 
 export { sticky };
