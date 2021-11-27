@@ -26,12 +26,12 @@ const helloContainer = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transform: rotateZ(-10deg) translate(-20%, -20%);
+  transform: rotateZ(-10deg) translate(-20%, -22%);
 `;
 
 const hello = css`
   font-size: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.2rem;
 `;
 
 const nameContainer = css`
@@ -42,7 +42,8 @@ const nameContainer = css`
 `;
 
 const name = css`
-  font-size: 6rem; ;
+  font-size: 6rem;
+  letter-spacing: 1rem;
 `;
 
 const positionContainer = css`
@@ -54,7 +55,7 @@ const positionContainer = css`
 
 const position = css`
   font-size: 2rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.3rem;
 `;
 
 export default { wrapper, container, helloContainer, hello, nameContainer, name, positionContainer, position };
