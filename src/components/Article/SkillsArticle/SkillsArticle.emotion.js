@@ -7,6 +7,7 @@ const wrapper = css`
 const flexContainer = css`
   width: 50%;
   justify-content: center;
+  padding: 0 5rem 0 5rem;
 `;
 
 const contentContainer = css`

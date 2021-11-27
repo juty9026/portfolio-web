@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import Article from '../Article';
-import SkillsOverview from './SkilsOverview';
+import TechExpBar from '@components/TechExpBar';
 import styles from './SkillsArticle.emotion';
 
 const SkillsArticle: React.FC = () => {
@@ -21,7 +21,9 @@ const SkillsArticle: React.FC = () => {
             </div>
           </section>
           <section css={styles.flexContainer}>
-            <SkillsOverview />
+            <TechExpBar title="Fron-end" exp={70} color="#41ead4" />
+            <TechExpBar title="Back-end" exp={60} color="#ff0022" />
+            <TechExpBar title="DevOps" exp={40} color="#ebcfb2" />
           </section>
         </div>
       </div>
