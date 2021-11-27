@@ -26,6 +26,7 @@ const helloContainer = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transform: rotateZ(-10deg) translate(-20%, -20%);
 `;
 
 const hello = css`
