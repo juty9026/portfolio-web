@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './Article.e';
+import styles from './Article.e';
 import StickyHeader from '@components/StickyHeader';
 
 interface Props {
@@ -14,7 +14,7 @@ const Article: React.FC<Props> = ({ title, fullHeight = false, children }) => {
   }, [title]);
 
   const containerStyle = React.useMemo(() => {
-    return fullHeight ? [style.container, style.fullHeight] : style.container;
+    return fullHeight ? [styles.container, styles.fullHeight] : styles.container;
   }, [fullHeight]);
 
   return (

@@ -60,7 +60,7 @@ const roleContainer = css``;
 
 const commentContainer = css``;
 
-export {
+export default {
   container,
   headline,
   headlineLeft,

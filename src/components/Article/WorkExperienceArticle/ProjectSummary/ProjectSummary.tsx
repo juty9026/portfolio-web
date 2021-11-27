@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { ProjectData } from '@types';
 import React from 'react';
-import * as style from './ProjectSummary.e';
+import styles from './ProjectSummary.e';
 
 interface Props {
   data: ProjectData;
@@ -9,21 +9,21 @@ interface Props {
 
 const ProjectSummary: React.FC<Props> = ({ data }) => {
   return (
-    <section css={style.container} key={`${data.seq}_${data.partner}_${data.name}`}>
-      <div css={style.headline}>
-        <div css={style.headlineLeft}>
-          <p css={style.projectName}>{data.name}</p>
-          <p css={style.partner}>{data.partner}</p>
+    <section css={styles.container} key={`${data.seq}_${data.partner}_${data.name}`}>
+      <div css={styles.headline}>
+        <div css={styles.headlineLeft}>
+          <p css={styles.projectName}>{data.name}</p>
+          <p css={styles.partner}>{data.partner}</p>
         </div>
-        <div css={style.headlineRight}>
-          <p css={style.period}>{`${data.period.start} ~ ${data.period.end}`}</p>
+        <div css={styles.headlineRight}>
+          <p css={styles.period}>{`${data.period.start} ~ ${data.period.end}`}</p>
         </div>
       </div>
-      <div css={style.techStackContainer}>
+      <div css={styles.techStackContainer}>
         {Object.keys(data.techStack).map((position: string) => (
           <>
             {data.techStack[position]?.map((tech) => (
-              <p key={tech} css={style.techStackItem}>
+              <p key={tech} css={styles.techStackItem}>
                 {tech}
               </p>
             ))}
@@ -31,7 +31,7 @@ const ProjectSummary: React.FC<Props> = ({ data }) => {
         ))}
       </div>
       {!!data.roles.length && (
-        <div css={style.roleContainer}>
+        <div css={styles.roleContainer}>
           <p>역할</p>
           <ul>
             {data.roles.map((role) => (
@@ -41,7 +41,7 @@ const ProjectSummary: React.FC<Props> = ({ data }) => {
         </div>
       )}
       {!!data.achievements.length && (
-        <div css={style.roleContainer}>
+        <div css={styles.roleContainer}>
           <p>성과</p>
           <ul>
             {data.achievements.map((achievement) => (

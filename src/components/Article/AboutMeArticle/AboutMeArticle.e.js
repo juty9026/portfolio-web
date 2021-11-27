@@ -14,4 +14,4 @@ const itemContainer = css`
   text-align: left;
 `;
 
-export { container, subjectContainer, itemContainer };
+export default { container, subjectContainer, itemContainer };

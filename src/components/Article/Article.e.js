@@ -10,4 +10,4 @@ const fullHeight = css`
   height: 100vh;
 `;
 
-export { container, fullHeight };
+export default { container, fullHeight };

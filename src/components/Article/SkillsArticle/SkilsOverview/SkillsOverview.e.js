@@ -5,4 +5,4 @@ const container = css`
   background-color: antiquewhite;
 `;
 
-export { container };
+export default { container };

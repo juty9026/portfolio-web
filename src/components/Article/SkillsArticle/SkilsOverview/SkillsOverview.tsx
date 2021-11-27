@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import * as style from './SkillsOverview.e';
+import styles from './SkillsOverview.e';
 
 const SkillsOverview: React.FC = () => {
-  return <div css={style.container}>Overview</div>;
+  return <div css={styles.container}>Overview</div>;
 };
 
 export default SkillsOverview;
