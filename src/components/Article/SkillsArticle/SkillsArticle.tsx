@@ -6,7 +6,7 @@ import styles from './SkillsArticle.e';
 import SphericalWordCloud from '@components/SphericalWordCloud';
 
 const SkillsArticle: React.FC = () => {
-  const parallaxRef = React.useRef<HTMLDivElement>(null);
+  const [active, setActive] = React.useState(null);
 
   const data = React.useMemo(
     () => [
@@ -47,6 +47,11 @@ const SkillsArticle: React.FC = () => {
     []
   );
 
+  const subItems = React.useMemo(() => {
+    const activeItem = active || data[0].position;
+    return data.find((item) => item.position === activeItem)?.relatedSkills || [];
+  }, [active, data]);
+
   const colorPool = React.useMemo(
     () => [
       '#41ead4',
@@ -69,51 +74,55 @@ const SkillsArticle: React.FC = () => {
 
   return (
     <Article title="Skills & Expereince">
-      <div style={{ backgroundColor: 'transparent' }} ref={parallaxRef}>
+      <div style={{ backgroundColor: 'transparent' }}>
         <div css={styles.wrapper}>
-          <section css={styles.flexContainer}>
-            {data.map((d) => (
-              <TechExpBar
-                title={d.position}
-                exp={d.exp}
-                color={colorPool[Math.floor(Math.random() * colorPool.length)]}
-              />
-            ))}
-          </section>
-          <section css={styles.flexContainer}>
-            {data
-              .find((d) => d.position === 'Front-end')
-              ?.relatedSkills.map((d) => (
+          <div css={styles.flexContainer}>
+            <section>
+              {data.map((d) => (
+                <TechExpBar
+                  key={d.position}
+                  style={{ cursor: 'pointer' }}
+                  title={d.position}
+                  exp={d.exp}
+                  color={colorPool[Math.floor(Math.random() * colorPool.length)]}
+                  onClick={setActive}
+                />
+              ))}
+            </section>
+            <div style={{ margin: '2rem 0 2rem 0' }} />
+            <section>
+              {subItems.map((d) => (
                 <TechExpBar
                   title={d.name}
                   exp={d.exp}
                   color={colorPool[Math.floor(Math.random() * colorPool.length)]}
                 />
               ))}
-          </section>
-        </div>
-        <div style={{ height: '50vh' }}>
-          <SphericalWordCloud
-            data={[
-              'HTML5',
-              'CSS3',
-              'SASS',
-              'ES6',
-              'React',
-              'Vue',
-              'Node',
-              'Java',
-              'Spring',
-              'JPA',
-              'MyBatis',
-              'MariaDB',
-              'Figma',
-              'Jenkins',
-              'Zeplin',
-              'Git',
-              'Slack',
-            ]}
-          />
+            </section>
+          </div>
+          <div css={styles.flexContainer}>
+            <SphericalWordCloud
+              data={[
+                'HTML5',
+                'CSS3',
+                'SASS',
+                'ES6',
+                'React',
+                'Vue',
+                'Node',
+                'Java',
+                'Spring',
+                'JPA',
+                'MyBatis',
+                'MariaDB',
+                'Figma',
+                'Jenkins',
+                'Zeplin',
+                'Git',
+                'Slack',
+              ]}
+            />
+          </div>
         </div>
         <div
           style={{

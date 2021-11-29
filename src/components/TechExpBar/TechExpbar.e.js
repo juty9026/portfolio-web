@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const wrapper = css`
   width: 100%;
   text-align: left;
-  padding: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0 1rem 0;
 `;
 
 const title = css`
