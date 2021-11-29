@@ -26,6 +26,10 @@ const data: AbilityData[] = [
     subject: '성장을 향한 열망',
     content: `이 일이 너무 재미있고, 더 많은 것을 해낼 수 있는 사람이 되기 위해 다방면으로 노력하고 있어요.`,
   },
+  {
+    subject: '성장을 향한 열망',
+    content: `이 일이 너무 재미있고, 더 많은 것을 해낼 수 있는 사람이 되기 위해 다방면으로 노력하고 있어요.`,
+  },
 ];
 
 export default data;
