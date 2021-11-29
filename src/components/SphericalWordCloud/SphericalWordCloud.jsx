@@ -2700,14 +2700,11 @@ const SphericalWordCloud = ({ data, width = 600, height = 300 }) => {
       return;
     }
     const { devicePixelRatio: ratio } = window;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
     canvas.width = width * ratio;
     canvas.height = height * ratio;
   }, [canvasRef]);
 
   React.useEffect(() => {
-    console.log(containerRef, canvasRef);
     const { current: container } = containerRef;
     const { current: canvas } = canvasRef;
     if (!(container && canvas)) {
@@ -2738,7 +2735,7 @@ const SphericalWordCloud = ({ data, width = 600, height = 300 }) => {
 
   return (
     <div ref={containerRef} style={{ width: '100%', height: '100%', padding: '10vh 10vw 10vh 10vw' }}>
-      <canvas id="myCanvas" ref={canvasRef} onMouseLeave={handleMouseLeave} style={{ width: '100%', height: '100%' }}>
+      <canvas id="myCanvas" ref={canvasRef} onMouseLeave={handleMouseLeave} style={{ width, height }}>
         <ul>
           {data.map((item) => (
             <li>
