@@ -12,7 +12,7 @@ const WorkExperience: React.FC<Props> = ({ data }) => {
   return (
     <Article title="Work Expereicne">
       {data.projects.map((project) => (
-        <ProjectSummary data={project} />
+        <ProjectSummary key={`${project.seq}_${project.name}`} data={project} />
       ))}
     </Article>
   );

@@ -20,14 +20,14 @@ const ProjectSummary: React.FC<Props> = ({ data }) => {
         </div>
       </div>
       <div css={styles.techStackContainer}>
-        {Object.keys(data.techStack).map((position: string) => (
-          <>
+        {Object.keys(data.techStack).map((position) => (
+          <React.Fragment key={position}>
             {data.techStack[position]?.map((tech) => (
               <p key={tech} css={styles.techStackItem}>
                 {tech}
               </p>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
       {!!data.roles.length && (
@@ -44,8 +44,8 @@ const ProjectSummary: React.FC<Props> = ({ data }) => {
         <div css={styles.roleContainer}>
           <p>성과</p>
           <ul>
-            {data.achievements.map((achievement) => (
-              <li>{achievement}</li>
+            {data.achievements.map((achievement, i) => (
+              <li key={i}>{achievement}</li>
             ))}
           </ul>
         </div>
