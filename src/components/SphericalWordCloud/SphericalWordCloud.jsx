@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React from 'react';
 
-const SphericalWordCloud = ({ data, width = 600, height = 300 }) => {
+const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
   (function () {
     var M,
       K,
@@ -2687,26 +2687,23 @@ const SphericalWordCloud = ({ data, width = 600, height = 300 }) => {
     );
   })();
 
-  const containerRef = React.useRef(null);
-  const canvasRef = React.useRef(null);
+  const [container, setContainer] = React.useState(null);
+  const setContainerRef = React.useCallback((el) => setContainer(el), []);
 
-  const handleMouseLeave = React.useCallback(() => {
-    TagCanvas.SetSpeed('myCanvas', [0.2, 0.2]);
-  }, []);
+  const [canvas, setCanvas] = React.useState(null);
+  const setCanvasRef = React.useCallback((el) => setCanvas(el), []);
 
   React.useEffect(() => {
-    const { current: canvas } = canvasRef;
     if (!canvas) {
       return;
     }
     const { devicePixelRatio: ratio } = window;
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
-  }, [canvasRef]);
+    const { width: canvasWidth, height: canvasHeight } = canvas.getBoundingClientRect();
+    canvas.width = canvasWidth * ratio;
+    canvas.height = canvasHeight * ratio;
+  }, [canvas]);
 
   React.useEffect(() => {
-    const { current: container } = containerRef;
-    const { current: canvas } = canvasRef;
     if (!(container && canvas)) {
       return;
     }
@@ -2731,14 +2728,23 @@ const SphericalWordCloud = ({ data, width = 600, height = 300 }) => {
       canvas.style.display = 'none';
       container.style.display = 'none';
     }
-  }, [containerRef, canvasRef]);
+  }, [container, canvas]);
+
+  const handleMouseLeave = React.useCallback(() => {
+    TagCanvas.SetSpeed('myCanvas', [0.2, 0.2]);
+  }, []);
 
   return (
-    <div ref={containerRef} style={{ width: '100%', height: '100%', padding: '10vh 10vw 10vh 10vw' }}>
-      <canvas id="myCanvas" ref={canvasRef} onMouseLeave={handleMouseLeave} style={{ width, height }}>
+    <div ref={setContainerRef} style={{ width: '100%', height: '100%' }}>
+      <canvas
+        id="myCanvas"
+        ref={setCanvasRef}
+        style={{ width: width || '100%', height: height || '100%' }}
+        onMouseLeave={handleMouseLeave}
+      >
         <ul>
           {data.map((item) => (
-            <li>
+            <li key={item}>
               <a>{item}</a>
             </li>
           ))}
