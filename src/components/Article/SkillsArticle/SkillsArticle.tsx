@@ -3,6 +3,7 @@ import React from 'react';
 import Article from '../Article';
 import TechExpBar from '@components/TechExpBar';
 import styles from './SkillsArticle.e';
+import SphericalWordCloud from '@components/SphericalWordCloud';
 
 const SkillsArticle: React.FC = () => {
   const parallaxRef = React.useRef<HTMLDivElement>(null);
@@ -90,6 +91,29 @@ const SkillsArticle: React.FC = () => {
                 />
               ))}
           </section>
+        </div>
+        <div style={{ height: '50vh' }}>
+          <SphericalWordCloud
+            data={[
+              'HTML5',
+              'CSS3',
+              'SASS',
+              'ES6',
+              'React',
+              'Vue',
+              'Node',
+              'Java',
+              'Spring',
+              'JPA',
+              'MyBatis',
+              'MariaDB',
+              'Figma',
+              'Jenkins',
+              'Zeplin',
+              'Git',
+              'Slack',
+            ]}
+          />
         </div>
         <div
           style={{
