@@ -8,7 +8,6 @@ const wrapper = css`
 const flexContainer = css`
   width: 50%;
   justify-content: center;
-  padding: 0 3rem 0 3rem;
 `;
 
 const contentContainer = css`
@@ -18,4 +17,8 @@ const contentContainer = css`
   text-align: left;
 `;
 
-export default { wrapper, flexContainer, contentContainer };
+const spacer = css`
+  margin: 2rem 0 2rem 0;
+`;
+
+export default { wrapper, flexContainer, contentContainer, spacer };

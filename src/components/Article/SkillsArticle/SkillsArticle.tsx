@@ -89,7 +89,7 @@ const SkillsArticle: React.FC = () => {
                 />
               ))}
             </section>
-            <div style={{ margin: '2rem 0 2rem 0' }} />
+            <div css={styles.spacer} />
             <section>
               {subItems.map(({ name, exp }) => (
                 <TechExpBar
