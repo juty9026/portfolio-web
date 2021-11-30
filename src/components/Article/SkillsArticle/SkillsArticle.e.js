@@ -6,8 +6,15 @@ const wrapper = css`
 `;
 
 const flexContainer = css`
-  width: 50%;
   justify-content: center;
+`;
+
+const leftContainer = css`
+  width: 40%;
+`;
+
+const rightContainer = css`
+  width: 60%;
 `;
 
 const contentContainer = css`
@@ -21,4 +28,4 @@ const spacer = css`
   margin: 2rem 0 2rem 0;
 `;
 
-export default { wrapper, flexContainer, contentContainer, spacer };
+export default { wrapper, flexContainer, leftContainer, rightContainer, contentContainer, spacer };
