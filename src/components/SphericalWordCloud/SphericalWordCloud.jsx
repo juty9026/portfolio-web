@@ -2730,7 +2730,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     }
   }, [container, canvas]);
 
-  const handleMouseLeave = React.useCallback(() => {
+  const handleMouseOut = React.useCallback(() => {
     TagCanvas.SetSpeed('myCanvas', [0.2, 0.2]);
   }, []);
 
@@ -2740,7 +2740,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         id="myCanvas"
         ref={setCanvasRef}
         style={{ width: width || '100%', height: height || '100%' }}
-        onMouseLeave={handleMouseLeave}
+        onMouseOut={handleMouseOut}
       >
         <ul>
           {data.map((item) => (
