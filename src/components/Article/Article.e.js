@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const container = css`
   display: flex;
   flex-direction: column;
-  padding: 0;
+  padding: 0 10vw 0 10vw;
 `;
 
 const fullHeight = css`
@@ -11,7 +11,7 @@ const fullHeight = css`
 `;
 
 const titleContainer = css`
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 0 1rem 0;
   width: 100%;
 `;
 
