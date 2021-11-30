@@ -36,11 +36,20 @@ const SkillsArticle: React.FC = () => {
         position: 'DevOps',
         exp: 30,
         relatedSkills: [
-          { name: 'Git', exp: 70 },
           { name: 'Networking', exp: 60 },
           { name: 'Cloud', exp: 20 },
           { name: 'CI / CD', exp: 30 },
           { name: 'Container', exp: 40 },
+        ],
+      },
+      {
+        position: 'Basics',
+        exp: 50,
+        relatedSkills: [
+          { name: 'Communication', exp: 80 },
+          { name: 'Git', exp: 70 },
+          { name: 'Computer Science', exp: 40 },
+          { name: 'Mathematics', exp: 40 },
         ],
       },
     ],
@@ -76,7 +85,7 @@ const SkillsArticle: React.FC = () => {
     <Article title="Skills & Expereince">
       <div style={{ backgroundColor: 'transparent' }}>
         <div css={styles.wrapper}>
-          <div css={styles.flexContainer}>
+          <div css={[styles.flexContainer, styles.leftContainer]}>
             <section>
               {data.map(({ position, exp }) => (
                 <TechExpBar
@@ -101,7 +110,7 @@ const SkillsArticle: React.FC = () => {
               ))}
             </section>
           </div>
-          <div css={styles.flexContainer}>
+          <div css={[styles.flexContainer, styles.rightContainer]}>
             <SphericalWordCloud
               data={[
                 'HTML5',
