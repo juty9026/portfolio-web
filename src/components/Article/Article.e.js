@@ -11,8 +11,12 @@ const fullHeight = css`
 `;
 
 const titleContainer = css`
-  padding: 1rem 0 1rem 0;
+  margin: 2rem 0 2rem 0;
   width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
 `;
 
 const title = css`
