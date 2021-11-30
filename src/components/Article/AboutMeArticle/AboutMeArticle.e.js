@@ -7,6 +7,7 @@ const container = css`
 
 const section = css`
   flex: 1;
+  font-size: 1.5rem;
 `;
 
 export default { container, section };

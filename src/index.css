@@ -35,7 +35,7 @@ pre,
 p,
 span {
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: inherit;
   letter-spacing: 0.1rem;
   text-align: left;
 }
