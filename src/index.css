@@ -28,6 +28,14 @@ code {
 }
 
 pre {
-  font-family: inherit;
   white-space: pre-wrap;
+}
+
+pre,
+p,
+span {
+  font-family: inherit;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: left;
 }
