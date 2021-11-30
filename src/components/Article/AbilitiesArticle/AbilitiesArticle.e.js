@@ -27,7 +27,7 @@ const spacer = css`
 `;
 
 const parallaxContainer = css`
-  width: 100vw;
+  width: 100%;
   height: calc(100% - 4vh);
   display: flex;
   flex-direction: column;
