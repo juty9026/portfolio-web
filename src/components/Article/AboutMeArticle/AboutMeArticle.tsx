@@ -24,6 +24,14 @@ const AboutMeArticle: React.FC<Props> = ({}) => {
             웹 페이지 제작과 관련된 기술 대부분에 흥미가 있으며 계속해서 배우고, 도전하는 것을 좋아하여 빠르게 변화하는
             트렌드에 금방 적응합니다.
           </p>
+          <br />
+          <pre>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </pre>
         </section>
       </div>
     </Article>
