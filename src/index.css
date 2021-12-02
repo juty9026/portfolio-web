@@ -5,6 +5,13 @@
   position: relative;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
 html,
 body {
   overscroll-behavior: none;
