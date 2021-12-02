@@ -39,18 +39,18 @@ const WorkExperience: React.FC = () => {
         </PopupOverlay>
       )}
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <WorkExperienceCard onClick={() => openOverlay(P01_TANGO_D)} title="통합 시스템" />
-        <WorkExperienceCard onClick={() => openOverlay(P02_LCAP)} title="오픈몰" />
-        <WorkExperienceCard onClick={() => openOverlay(P03_SHP)} title="5GX Cloud" />
-        <WorkExperienceCard onClick={() => openOverlay(P04_IDCUBE)} title="WDP" />
-        <WorkExperienceCard onClick={() => openOverlay(P05_WDP)} title="오픈몰" />
-        <WorkExperienceCard onClick={() => openOverlay(P06_HAPP)} title="5GX Cloud" />
-        <WorkExperienceCard onClick={() => openOverlay(P07_5GX_CLOUD)} title="HAPP" />
-        <WorkExperienceCard onClick={() => openOverlay(P08_OPENMALL)} title="WDP" />
-        <WorkExperienceCard onClick={() => openOverlay(P09_WDP)} title="IDCube" />
-        <WorkExperienceCard onClick={() => openOverlay(P10_5GX_CLOUD)} title="SHP" />
-        <WorkExperienceCard onClick={() => openOverlay(P11_OPENMALL)} title="LCAP" />
-        <WorkExperienceCard onClick={() => openOverlay(P12_JUVIS)} title="TANGO-D" />
+        <WorkExperienceCard onClick={() => openOverlay(P12_JUVIS)} title="통합 시스템" />
+        <WorkExperienceCard onClick={() => openOverlay(P11_OPENMALL)} title="오픈몰" />
+        <WorkExperienceCard onClick={() => openOverlay(P10_5GX_CLOUD)} title="5GX Cloud" />
+        <WorkExperienceCard onClick={() => openOverlay(P09_WDP)} title="WDP" />
+        <WorkExperienceCard onClick={() => openOverlay(P08_OPENMALL)} title="오픈몰" />
+        <WorkExperienceCard onClick={() => openOverlay(P07_5GX_CLOUD)} title="5GX Cloud" />
+        <WorkExperienceCard onClick={() => openOverlay(P06_HAPP)} title="HAPP" />
+        <WorkExperienceCard onClick={() => openOverlay(P05_WDP)} title="WDP" />
+        <WorkExperienceCard onClick={() => openOverlay(P04_IDCUBE)} title="IDCube" />
+        <WorkExperienceCard onClick={() => openOverlay(P03_SHP)} title="SHP" />
+        <WorkExperienceCard onClick={() => openOverlay(P02_LCAP)} title="LCAP" />
+        <WorkExperienceCard onClick={() => openOverlay(P01_TANGO_D)} title="TANGO-D" />
       </div>
     </Article>
   );
