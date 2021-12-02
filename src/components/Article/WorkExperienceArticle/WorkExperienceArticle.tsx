@@ -1,21 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import Article from '../Article';
-import Card from '@components/Card';
+import WorkExperienceCard from './WorkExperienceCard';
 import PopupOverlay from '@components/PopupOverlay';
 
 const Component: React.FC = () => {
   return <p>hi</p>;
-};
-
-const WorkExperienceCard = ({ title, onClick }: any) => {
-  return (
-    <Card style={{ margin: '0.5vh 0.2vw 0.5vh 0.2vw', height: '10vh', cursor: 'pointer' }} onClick={onClick}>
-      <div style={{ width: '100%', height: '100%', textAlign: 'center' }}>
-        <h3>{title}</h3>
-      </div>
-    </Card>
-  );
 };
 
 const WorkExperience: React.FC = () => {
