@@ -32,7 +32,7 @@ function App() {
             <AboutMeArticle data={data.aboutMe} />
             <SkillsArticle />
             <AbilitiesArticle data={data.abilities} />
-            <IntroductionArticle data={data.introduction} />
+            {/* <IntroductionArticle data={data.introduction} /> */}
             <WorkExperienceArticle data={data.workExperience} />
           </main>
         ) : null // TODO: Loading Component
