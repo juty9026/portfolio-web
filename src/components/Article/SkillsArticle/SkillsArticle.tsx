@@ -115,7 +115,7 @@ const SkillsArticle: React.FC = () => {
               data={[
                 'HTML5',
                 'CSS3',
-                'SASS',
+                'SCSS',
                 'ES6',
                 'React',
                 'Vue',
@@ -130,6 +130,7 @@ const SkillsArticle: React.FC = () => {
                 'Zeplin',
                 'Git',
                 'Slack',
+                'Networking',
               ]}
             />
           </div>
