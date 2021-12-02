@@ -1,17 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { WorkExperienceData } from '@types';
 import Article from '../Article';
-// import ProjectSummary from './ProjectSummary';
 import Card from '@components/Card';
 import PopupOverlay from '@components/PopupOverlay';
 
 const Component: React.FC = () => {
   return <p>hi</p>;
 };
-interface Props {
-  data: WorkExperienceData;
-}
 
 const WorkExperienceCard = ({ title, onClick }: any) => {
   return (
@@ -23,7 +18,7 @@ const WorkExperienceCard = ({ title, onClick }: any) => {
   );
 };
 
-const WorkExperience: React.FC<Props> = ({ data }) => {
+const WorkExperience: React.FC = () => {
   const [overlayVisible, setOverlayVisible] = React.useState(false);
   const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
 
@@ -59,13 +54,6 @@ const WorkExperience: React.FC<Props> = ({ data }) => {
         <WorkExperienceCard onClick={() => openOverlay(Component)} title="LCAP" />
         <WorkExperienceCard onClick={() => openOverlay(Component)} title="TANGO-D" />
       </div>
-      {/* {data.projects.reverse().map((project) => (
-        <Card key={`${project.seq}_${project.name}`} onClick={() => openOverlay(Component)}>
-          {project.name}
-        </Card>
-        <Card key={`${project.seq}_${project.name}`}>{project.name}</Card>
-        <ProjectSummary key={`${project.seq}_${project.name}`} data={project} />
-      ))} */}
     </Article>
   );
 };
