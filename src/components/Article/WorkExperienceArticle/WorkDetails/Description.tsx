@@ -1,0 +1,15 @@
+/** @jsxImportSource @emotion/react */
+import React from 'react';
+import { css } from '@emotion/react';
+
+const styles = {
+  description: css`
+    font-size: 2rem;
+  `,
+};
+
+const Description: React.FC = ({ children }) => {
+  return <pre css={styles.description}>{children}</pre>;
+};
+
+export default Description;
