@@ -5,7 +5,8 @@ import { css } from '@emotion/react';
 const styles = {
   wrap: css`
     display: flex;
-    padding: 2vh 5vw 2vh 5vw;
+    margin: 5vh 0 5vh 0;
+    padding: 5vh 5vw 5vh 5vw;
   `,
   itemContainer: css`
     flex: 1;
@@ -15,10 +16,18 @@ const styles = {
   title: css`
     text-align: center;
     font-size: 1.8rem;
+    color: white;
   `,
-  plain: css`
+  textContainer: css`
+    padding: 4vh 0 0 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  `,
+  text: css`
     text-align: center;
     font-size: 1.2rem;
+    color: white;
   `,
 };
 
@@ -35,11 +44,13 @@ const TableView: React.FC<Props> = ({ data }) => {
       {data.map((item) => (
         <div key={item.title} css={styles.itemContainer}>
           <span css={styles.title}>{item.title}</span>
-          {item.list.map((listItem) => (
-            <span key={listItem} css={styles.plain}>
-              {listItem}
-            </span>
-          ))}
+          <div css={styles.textContainer}>
+            {item.list.map((listItem) => (
+              <span key={listItem} css={styles.text}>
+                {listItem}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
     </div>

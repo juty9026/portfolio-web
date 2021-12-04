@@ -5,7 +5,8 @@ import { css } from '@emotion/react';
 const styles = {
   wrap: css`
     display: flex;
-    padding: 2vh 5vw 2vh 5vw;
+    margin: 5vh 0 5vh 0;
+    padding: 5vh 5vw 5vh 5vw;
   `,
   titleContainer: css`
     flex: 1;
@@ -13,6 +14,7 @@ const styles = {
   title: css`
     text-align: center;
     font-size: 1.8rem;
+    color: white;
   `,
   contentContainer: css`
     flex: 1;
@@ -23,6 +25,7 @@ const styles = {
     flex: 1;
     text-align: left;
     font-size: 1.2rem;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;

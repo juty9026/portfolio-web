@@ -16,11 +16,8 @@ const Wrap = styled.div`
 
 const Container = styled.div`
   margin: 5vh 10vw 5vh 10vw;
-  padding: 5vh 10vw 5vh 10vw;
-  background-color: white;
-  font-size: 50px;
-  min-height: 200vh;
-  color: black;
+  background-color: #0a192f;
+  min-height: 150vh;
   cursor: auto;
   z-index: 30;
 `;
