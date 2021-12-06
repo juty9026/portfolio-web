@@ -15,7 +15,7 @@ const styles = {
   `,
   title: css`
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
   `,
   textContainer: css`
@@ -26,7 +26,7 @@ const styles = {
   `,
   text: css`
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
   `,
 };

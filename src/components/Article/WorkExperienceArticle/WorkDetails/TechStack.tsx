@@ -13,7 +13,7 @@ const styles = {
   `,
   title: css`
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
   `,
   contentContainer: css`
@@ -24,7 +24,7 @@ const styles = {
   content: css`
     flex: 1;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
     display: flex;
     justify-content: center;
