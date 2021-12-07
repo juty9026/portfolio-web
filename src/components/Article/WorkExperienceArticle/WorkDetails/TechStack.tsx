@@ -46,8 +46,8 @@ const TechStack: React.FC<Props> = ({ backend = [], frontend = [], devops = [] }
       </div>
       <div css={styles.contentContainer}>
         {!!backend.length && <span css={styles.content}>{backend.join(', ')}</span>}
-        {!!frontend.length && <span css={styles.content}>{backend.join(', ')}</span>}
-        {!!devops.length && <span css={styles.content}>{backend.join(', ')}</span>}
+        {!!frontend.length && <span css={styles.content}>{frontend.join(', ')}</span>}
+        {!!devops.length && <span css={styles.content}>{devops.join(', ')}</span>}
       </div>
     </div>
   );
