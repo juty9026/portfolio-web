@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import TableView from './WorkDetails/TableView';
 import TechStack from './WorkDetails/TechStack';
