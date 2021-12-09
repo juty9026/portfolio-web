@@ -10,8 +10,13 @@ const styles = {
   `,
   titleContainer: css`
     flex: 1;
+    display: flex;
   `,
   title: css`
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 2rem;
     color: white;
