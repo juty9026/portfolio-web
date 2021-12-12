@@ -1,29 +1,28 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
-import { WorkExperienceData } from '@types';
+import styled from '@emotion/styled';
 import Article from '../Article';
-// import ProjectSummary from './ProjectSummary';
-import Card from '@components/Card';
+import WorkExperienceCard from './WorkExperienceCard';
+import P01_TANGO_D from './P01_TANGO_D';
+import P02_LCAP from './P02_LCAP';
+import P03_SHP from './P03_SHP';
+import P04_IDCUBE from './P04_IDCUBE';
+import P05_WDP from './P05_WDP';
+import P06_HAPP from './P06_HAPP';
+import P07_5GX_CLOUD from './P07_5GX_CLOUD';
+import P08_OPENMALL from './P08_OPENMALL';
+import P09_WDP from './P09_WDP';
+import P10_5GX_CLOUD from './P10_5GX_CLOUD';
+import P11_OPENMALL from './P11_OPENMALL';
+import P12_JUVIS from './P12_JUVIS';
 import PopupOverlay from '@components/PopupOverlay';
 
-const Component: React.FC = () => {
-  return <p>hi</p>;
-};
-interface Props {
-  data: WorkExperienceData;
-}
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
-const WorkExperienceCard = ({ title, onClick }: any) => {
-  return (
-    <Card style={{ margin: '0.5vh 0.2vw 0.5vh 0.2vw', height: '10vh', cursor: 'pointer' }} onClick={onClick}>
-      <div style={{ width: '100%', height: '100%', textAlign: 'center' }}>
-        <h3>{title}</h3>
-      </div>
-    </Card>
-  );
-};
-
-const WorkExperience: React.FC<Props> = ({ data }) => {
+const WorkExperience: React.FC = () => {
   const [overlayVisible, setOverlayVisible] = React.useState(false);
   const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
 
@@ -39,33 +38,86 @@ const WorkExperience: React.FC<Props> = ({ data }) => {
   }, []);
 
   return (
-    <Article title="Work Expereicne">
+    <Article title="Work Experience">
       {overlayVisible && (
         <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
           {overlayContent}
         </PopupOverlay>
       )}
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="통합 시스템" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="오픈몰" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="5GX Cloud" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="WDP" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="오픈몰" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="5GX Cloud" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="HAPP" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="WDP" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="IDCube" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="SHP" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="LCAP" />
-        <WorkExperienceCard onClick={() => openOverlay(Component)} title="TANGO-D" />
-      </div>
-      {/* {data.projects.reverse().map((project) => (
-        <Card key={`${project.seq}_${project.name}`} onClick={() => openOverlay(Component)}>
-          {project.name}
-        </Card>
-        <Card key={`${project.seq}_${project.name}`}>{project.name}</Card>
-        <ProjectSummary key={`${project.seq}_${project.name}`} data={project} />
-      ))} */}
+      <Container>
+        <WorkExperienceCard
+          onClick={() => openOverlay(P12_JUVIS)}
+          partner="JUVIS"
+          title="CRM"
+          period={{ start: '2021-11-01' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P11_OPENMALL)}
+          partner="오픈잇"
+          title="오픈몰"
+          period={{ start: '2021-10-13', end: '2021-10-29' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P10_5GX_CLOUD)}
+          partner="SK C&C"
+          title="5GX Cloud"
+          period={{ start: '2021-05-03', end: '2021-11-05' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P09_WDP)}
+          partner="SK C&C"
+          title="WDP"
+          period={{ start: '2021-04-03', end: '2021-04-30' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P08_OPENMALL)}
+          partner="오픈잇"
+          title="오픈몰"
+          period={{ start: '2021-02-01', end: '2021-04-02' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P07_5GX_CLOUD)}
+          partner="SK C&C"
+          title="5GX Cloud"
+          period={{ start: '2020-12-01', end: '2021-01-29' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P06_HAPP)}
+          partner="SK C&C"
+          title="HAPP"
+          period={{ start: '2020-06-08', end: '2020-11-30' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P05_WDP)}
+          partner="SK C&C"
+          title="WDP"
+          period={{ start: '2020-04-20', end: '2020-05-29' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P04_IDCUBE)}
+          partner="SK C&C"
+          title="IDCube"
+          period={{ start: '2019-07-22', end: '2020-04-17' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P03_SHP)}
+          partner="호텔신라"
+          title="SHP"
+          period={{ start: '2019-02-08', end: '2019-05-31' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P02_LCAP)}
+          partner="SK C&C"
+          title="LCAP"
+          period={{ start: '2018-08-01', end: '2019-01-31' }}
+        />
+        <WorkExperienceCard
+          onClick={() => openOverlay(P01_TANGO_D)}
+          partner="SK C&C"
+          title="TANGO-D"
+          period={{ start: '2018-02-01', end: '2018-05-31' }}
+        />
+      </Container>
     </Article>
   );
 };
