@@ -2,13 +2,7 @@ import React from 'react';
 import WebFont from 'webfontloader';
 import './App.css';
 import data from '@data';
-import {
-  AboutMeArticle,
-  AbilitiesArticle,
-  IntroductionArticle,
-  WorkExperienceArticle,
-  SkillsArticle,
-} from '@components/Article';
+import { AboutMeArticle, AbilitiesArticle, WorkExperienceArticle, SkillsArticle } from '@components/Article';
 import Hero from '@components/Hero';
 
 function App() {
@@ -32,7 +26,6 @@ function App() {
             <AboutMeArticle data={data.aboutMe} />
             <SkillsArticle />
             <AbilitiesArticle data={data.abilities} />
-            {/* <IntroductionArticle data={data.introduction} /> */}
             <WorkExperienceArticle />
           </main>
         ) : null // TODO: Loading Component
