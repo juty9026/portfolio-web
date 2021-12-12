@@ -14,8 +14,8 @@ const SkillsArticle: React.FC = () => {
         position: 'Front-end',
         exp: 60,
         relatedSkills: [
-          { name: 'Pure Javascript / ES6+', exp: 80 },
-          { name: 'Typescript', exp: 30 },
+          { name: 'Javascript', exp: 80 },
+          { name: 'Typescript', exp: 40 },
           { name: 'React', exp: 80 },
           { name: 'Vue', exp: 60 },
           { name: 'Angular', exp: 30 },
@@ -26,9 +26,9 @@ const SkillsArticle: React.FC = () => {
         exp: 50,
         relatedSkills: [
           { name: 'JAVA', exp: 80 },
-          { name: 'Spring Framework', exp: 60 },
-          { name: 'Spring Data JPA', exp: 40 },
-          { name: 'Node', exp: 20 },
+          { name: 'Node.js', exp: 30 },
+          { name: 'Spring', exp: 60 },
+          { name: 'JPA', exp: 40 },
           { name: 'MySQL / MariaDB', exp: 50 },
         ],
       },
