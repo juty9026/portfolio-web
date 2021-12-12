@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import Article from '../Article';
 import WorkExperienceCard from './WorkExperienceCard';
@@ -32,7 +31,7 @@ const WorkExperience: React.FC = () => {
   }, []);
 
   return (
-    <Article title="Work Expereicne">
+    <Article title="Work Experience">
       {overlayVisible && (
         <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
           {overlayContent}
