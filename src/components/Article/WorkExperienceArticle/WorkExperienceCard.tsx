@@ -1,6 +1,8 @@
-import Card from '@components/Card';
-import { css } from '@emotion/react';
+import { useMemo } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import moment from 'moment';
+import Card from '@components/Card';
 
 const styles = {
   wrapper: css`
@@ -10,22 +12,56 @@ const styles = {
   `,
 };
 
+const Header = styled.header`
+  flex: 1 0 25%;
+`;
+
+const Partner = styled.h4`
+  flex: 1;
+`;
+
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1 0 50%;
+`;
+
+const Title = styled.h3`
+  font-size: 2rem;
+  text-align: center;
+`;
+
+const Footer = styled.div`
+  flex: 1 0 25%;
+`;
+
+const Period = styled.h5`
+  flex: 1;
 `;
 
 interface Props {
+  partner?: string;
   title: string;
+  period: { start: string; end?: string };
   onClick: React.MouseEventHandler;
 }
 
-const WorkExperienceCard = ({ title, onClick }: Props) => {
+const WorkExperienceCard: React.FC<Props> = ({ partner, title, period, onClick }) => {
+  const periodText = useMemo(() => {
+    const { start, end } = period;
+    const duration = moment.duration(moment(end).diff(moment(start))).humanize();
+    return `${start} ~ ${end || '현재'} (${duration})`;
+  }, [period]);
+
   return (
     <Card css={styles.wrapper} onClick={onClick}>
+      <Header>
+        <Partner>{partner}</Partner>
+      </Header>
       <Container>
-        <h3>{title}</h3>
+        <Title>{title}</Title>
       </Container>
+      <Footer>
+        <Period>{periodText}</Period>
+      </Footer>
     </Card>
   );
 };
