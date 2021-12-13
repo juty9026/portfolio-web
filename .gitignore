@@ -106,5 +106,8 @@ dist
 # build output
 build
 
-#MacOS
+# Jetbrains
+.idea
+
+# MacOS
 .DS_Store
