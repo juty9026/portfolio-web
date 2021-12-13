@@ -1,115 +1,129 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
+import styled from '@emotion/styled';
 import Article from '../Article';
 import TechExpBar from '@components/TechExpBar';
-import styles from './SkillsArticle.e';
 import SphericalWordCloud from '@components/SphericalWordCloud';
 
-const SkillsArticle: React.FC = () => {
-  const [active, setActive] = React.useState(null);
+const Wrap = styled.div`
+  display: flex;
+  background-color: transparent;
+`;
 
+const LeftContainer = styled.div`
+  justify-content: center;
+  width: 40%;
+`;
+
+const RightContainer = styled.div`
+  justify-content: center;
+  width: 60%;
+`;
+
+const Spacer = styled.div`
+  margin: 2rem 0 2rem 0;
+`;
+
+const SkillsArticle: React.FC = () => {
   const data = React.useMemo(
     () => [
       {
         position: 'Front-end',
         exp: 60,
         relatedSkills: [
-          { name: 'Javascript', exp: 80 },
-          { name: 'Typescript', exp: 40 },
-          { name: 'React', exp: 80 },
-          { name: 'Vue', exp: 60 },
-          { name: 'Angular', exp: 30 },
+          { tag: 'Javascript', exp: 80 },
+          { tag: 'Typescript', exp: 40 },
+          { tag: 'React', exp: 80 },
+          { tag: 'Vue', exp: 60 },
+          { tag: 'Angular', exp: 30 },
         ],
       },
       {
         position: 'Back-end',
         exp: 50,
         relatedSkills: [
-          { name: 'JAVA', exp: 80 },
-          { name: 'Node.js', exp: 30 },
-          { name: 'Spring', exp: 60 },
-          { name: 'JPA', exp: 40 },
-          { name: 'MySQL / MariaDB', exp: 50 },
+          { tag: 'JAVA', exp: 80 },
+          { tag: 'Node.js', exp: 30 },
+          { tag: 'Spring', exp: 60 },
+          { tag: 'JPA', exp: 40 },
+          { tag: 'MySQL / MariaDB', exp: 50 },
         ],
       },
       {
         position: 'DevOps',
         exp: 30,
         relatedSkills: [
-          { name: 'Networking', exp: 60 },
-          { name: 'Cloud', exp: 20 },
-          { name: 'CI / CD', exp: 30 },
-          { name: 'Container', exp: 40 },
+          { tag: 'Networking', exp: 60 },
+          { tag: 'Cloud', exp: 20 },
+          { tag: 'CI / CD', exp: 30 },
+          { tag: 'Container', exp: 40 },
         ],
       },
       {
         position: 'Basics',
         exp: 50,
         relatedSkills: [
-          { name: 'Communication', exp: 80 },
-          { name: 'Git', exp: 70 },
-          { name: 'Computer Science', exp: 40 },
-          { name: 'Mathematics', exp: 40 },
+          { tag: 'Communication', exp: 80 },
+          { tag: 'Git', exp: 70 },
+          { tag: 'Computer Science', exp: 40 },
+          { tag: 'Mathematics', exp: 40 },
         ],
       },
     ],
     []
   );
 
-  const subItems = React.useMemo(() => {
+  const wordCloudData = React.useMemo(
+    () => [
+      'HTML5',
+      'CSS3',
+      'SCSS',
+      'ES6',
+      'React',
+      'Vue',
+      'Node',
+      'Java',
+      'Spring',
+      'JPA',
+      'MyBatis',
+      'MariaDB',
+      'Figma',
+      'Jenkins',
+      'Zeplin',
+      'Git',
+      'Slack',
+      'Networking',
+    ],
+    []
+  );
+
+  const [active, setActive] = React.useState(data[0].position);
+
+  const relatedSkills = React.useMemo(() => {
     const activeItem = active || data[0].position;
     return data.find((item) => item.position === activeItem)?.relatedSkills || [];
   }, [active, data]);
 
   return (
-    <Article title="Skills & Expereince">
-      <div style={{ backgroundColor: 'transparent' }}>
-        <div css={styles.wrapper}>
-          <div css={[styles.flexContainer, styles.leftContainer]}>
-            <section>
-              {data.map(({ position, exp }) => (
-                <TechExpBar
-                  key={position}
-                  style={{ cursor: 'pointer' }}
-                  title={position}
-                  exp={exp}
-                  onClick={setActive}
-                />
-              ))}
-            </section>
-            <div css={styles.spacer} />
-            <section>
-              {subItems.map(({ name, exp }) => (
-                <TechExpBar key={name} title={name} exp={exp} />
-              ))}
-            </section>
-          </div>
-          <div css={[styles.flexContainer, styles.rightContainer]}>
-            <SphericalWordCloud
-              data={[
-                'HTML5',
-                'CSS3',
-                'SCSS',
-                'ES6',
-                'React',
-                'Vue',
-                'Node',
-                'Java',
-                'Spring',
-                'JPA',
-                'MyBatis',
-                'MariaDB',
-                'Figma',
-                'Jenkins',
-                'Zeplin',
-                'Git',
-                'Slack',
-                'Networking',
-              ]}
-            />
-          </div>
-        </div>
-      </div>
+    <Article title="Skills & Experience">
+      <Wrap>
+        <LeftContainer>
+          <section>
+            {data.map(({ position, exp }) => (
+              <TechExpBar key={position} active={active === position} title={position} exp={exp} onClick={setActive} />
+            ))}
+          </section>
+          <Spacer />
+          <section>
+            {relatedSkills.map(({ tag, exp }) => (
+              <TechExpBar key={tag} title={tag} exp={exp} />
+            ))}
+          </section>
+        </LeftContainer>
+        <RightContainer>
+          <SphericalWordCloud data={wordCloudData} />
+        </RightContainer>
+      </Wrap>
     </Article>
   );
 };

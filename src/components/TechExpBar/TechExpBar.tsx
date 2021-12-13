@@ -1,8 +1,29 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-const Wrap = styled.div`
-  margin: 1rem 0 1rem 0;
+interface WrapProps {
+  active?: boolean;
+  clickable?: boolean;
+}
+
+const Wrap = styled.div<WrapProps>`
+  margin: 0.4rem 0 0.4rem 0;
+  padding: 0.4rem;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  ${({ active, clickable }) => {
+    if (active) {
+      return css`
+        border-color: #04c2c9;
+      `;
+    }
+    if (clickable) {
+      return css`
+        cursor: pointer;
+      `;
+    }
+  }}
 `;
 
 const ExpBar = styled.div`
@@ -18,6 +39,7 @@ const Exp = styled.div`
   background-color: #00a1a7;
 `;
 
+// noinspection CssReplaceWithShorthandSafely
 const Tag = styled.div`
   width: 25%;
   height: 100%;
@@ -43,17 +65,22 @@ const Number = styled.span`
 `;
 
 interface Props {
+  active?: boolean;
   title: string;
   exp: number;
   style?: React.CSSProperties;
   onClick?: Function;
 }
 
-const TechExpBar: React.FC<Props> = ({ title, exp, style, onClick = () => {} }) => {
+const TechExpBar: React.FC<Props> = ({ active = false, title, exp, style, onClick }) => {
   return (
-    <Wrap style={style} onClick={() => onClick(title)}>
+    <Wrap style={style} active={active} clickable={!!onClick} onClick={() => onClick && onClick(title)}>
       <ExpBar>
-        <Exp style={{ width: `${exp}%` }} />
+        <Exp
+          style={{
+            width: `${exp}%`,
+          }}
+        />
         <Tag>{title}</Tag>
         <Number>{`${exp}%`}</Number>
       </ExpBar>
