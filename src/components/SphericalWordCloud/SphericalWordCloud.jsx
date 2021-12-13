@@ -3,6 +3,8 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable @typescript-eslint/no-throw-literal */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
+// noinspection JSPotentiallyInvalidConstructorUsage
+
 import React from 'react';
 
 const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
@@ -60,21 +62,27 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       l[K] = l[K.toUpperCase()] = M.toString() + ',';
     }
+
     function ai(i) {
       return typeof i != 'undefined';
     }
+
     function I(i) {
       return typeof i == 'object' && i != null;
     }
+
     function av(i, j, aH) {
       return isNaN(i) ? aH : aD(aH, s(j, i));
     }
+
     function aA() {
       return false;
     }
+
     function G() {
       return new Date().valueOf();
     }
+
     function A(aH, aK) {
       var j = [],
         aI = aH.length,
@@ -85,6 +93,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       j.sort(aK);
       return j;
     }
+
     function an(j) {
       var aI = j.length - 1,
         aH,
@@ -97,11 +106,13 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aI = aI - 1;
       }
     }
+
     function ae(i, aH, j) {
       this.x = i;
       this.y = aH;
       this.z = j;
     }
+
     H = ae.prototype;
     H.length = function () {
       return F(this.x * this.x + this.y * this.y + this.z * this.z);
@@ -118,7 +129,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     H.angle = function (j) {
       var i = this.dot(j),
         aH;
-      if (i == 0) {
+      if (i === 0) {
         return Math.PI / 2;
       }
       aH = i / (this.length() * j.length());
@@ -134,6 +145,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       var i = this.length();
       return new ae(this.x / i, this.y / i, this.z / i);
     };
+
     function aj(aH, j) {
       j = (j * Math.PI) / 180;
       aH = (aH * Math.PI) / 180;
@@ -142,11 +154,13 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aI = -w(aH) * w(j);
       return new ae(i, aJ, aI);
     }
+
     function R(i) {
       this[1] = { 1: i[0], 2: i[1], 3: i[2] };
       this[2] = { 1: i[3], 2: i[4], 3: i[5] };
       this[3] = { 1: i[6], 2: i[7], 3: i[8] };
     }
+
     aF = R.prototype;
     R.Identity = function () {
       return new R([1, 0, 0, 0, 1, 0, 0, 0, 1]);
@@ -193,6 +207,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       j.z = i * this[1][3] + aJ * this[2][3] + aI * this[3][3];
       return j;
     };
+
     function q(aI, aK, aQ, aN, aP) {
       var aL,
         aO,
@@ -210,6 +225,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aR;
     }
+
     function W(aJ, aH, aM, aT, aQ, aS) {
       var aR,
         aU = [],
@@ -229,6 +245,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aU;
     }
+
     function N(aH, aI, aL, aR, aP, aN) {
       var aQ,
         aS = [],
@@ -244,20 +261,25 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aS;
     }
+
     function am(aJ, j, aH, aI, i) {
       return W(aJ, 0, j, aH, aI, i);
     }
+
     function au(aJ, j, aH, aI, i) {
       return W(aJ, 1, j, aH, aI, i);
     }
+
     function d(aJ, i, j, aH, aI) {
       aI = isNaN(aI) ? 0 : aI * 1;
       return N(0, aJ, i, j, aH, aI);
     }
+
     function n(aJ, i, j, aH, aI) {
       aI = isNaN(aI) ? 0 : aI * 1;
       return N(1, aJ, i, j, aH, aI);
     }
+
     function ao(aH) {
       var j = new Image();
       j.onload = function () {
@@ -271,6 +293,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       };
       j.src = aH.centreImage;
     }
+
     function U(aK, i) {
       var aJ = aK,
         aI,
@@ -299,6 +322,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aJ;
     }
+
     function P(i, j) {
       if (window.G_vmlCanvasManager) {
         return null;
@@ -308,6 +332,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aH.height = j;
       return aH;
     }
+
     function al() {
       var j = P(3, 3),
         aI,
@@ -326,6 +351,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       j = null;
       return aH.data[0] > 0;
     }
+
     function ak(aL, j, aK, aJ) {
       var aI = aL.createLinearGradient(0, 0, j, 0),
         aH;
@@ -335,6 +361,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aL.fillStyle = aI;
       aL.fillRect(0, aK, j, 1);
     }
+
     function k(aJ, aH, j) {
       var aI = 1024,
         aN = 1,
@@ -365,6 +392,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aO = aP.getImageData(~~((aI - 1) * aH), j, 1, 1).data;
       return 'rgba(' + aO[0] + ',' + aO[1] + ',' + aO[2] + ',' + aO[3] / 255 + ')';
     }
+
     function X(aQ, aJ, j, aU, aT, aR, aP, aL, aI, aS, aK, aO) {
       var aN = aT + (aL || 0) + (aI.length && aI[0] < 0 ? L(aI[0]) : 0),
         aH = aR + (aL || 0) + (aI.length && aI[1] < 0 ? L(aI[1]) : 0),
@@ -382,10 +410,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       for (aM = 0; aM < aU.length; ++aM) {
         aV = 0;
         if (aK) {
-          if ('right' == aO) {
+          if ('right' === aO) {
             aV = aS - aK[aM];
           } else {
-            if ('centre' == aO) {
+            if ('centre' === aO) {
               aV = (aS - aK[aM]) / 2;
             }
           }
@@ -394,6 +422,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aH += parseInt(aJ);
       }
     }
+
     function ar(aL, i, aK, j, aI, aJ, aH) {
       if (aJ) {
         aL.beginPath();
@@ -408,6 +437,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aL[aH ? 'strokeRect' : 'fillRect'](i, aK, j, aI);
       }
     }
+
     function g(aN, i, aL, aI, aM, aH, aJ, aK, j) {
       this.strings = aN;
       this.font = i;
@@ -419,6 +449,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.valign = aK;
       this.scale = j;
     }
+
     aa = g.prototype;
     aa.SetImage = function (aK, j, aI, i, aJ, aM, aH, aL) {
       this.image = aK;
@@ -432,10 +463,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     };
     aa.Align = function (j, aH, i) {
       var aI = 0;
-      if (i == 'right' || i == 'bottom') {
+      if (i === 'right' || i === 'bottom') {
         aI = aH - j;
       } else {
-        if (i != 'left' && i != 'top') {
+        if (i !== 'left' && i !== 'top') {
           aI = (aH - j) / 2;
         }
       }
@@ -471,13 +502,13 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aM = aK = aX + a1;
         aO = this.iwidth;
         aW = this.iheight;
-        if (this.ipos == 'top' || this.ipos == 'bottom') {
+        if (this.ipos === 'top' || this.ipos === 'bottom') {
           if (aO < this.width) {
             aM += this.Align(aO, this.width, this.ialign);
           } else {
             aH += this.Align(this.width, aO, this.align);
           }
-          if (this.ipos == 'top') {
+          if (this.ipos === 'top') {
             j += aW + this.ipad;
           } else {
             aK += this.height + this.ipad;
@@ -490,7 +521,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           } else {
             j += this.Align(this.height, aW, this.valign);
           }
-          if (this.ipos == 'right') {
+          if (this.ipos === 'right') {
             aM += this.width + this.ipad;
           } else {
             aH += aO + this.ipad;
@@ -538,6 +569,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aN;
     };
+
     function v(aI, j, aJ) {
       var aH = P(j, aJ),
         aK;
@@ -548,6 +580,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aK.drawImage(aI, (j - aI.width) / 2, (aJ - aI.height) / 2);
       return aH;
     }
+
     function ax(aI, j, aJ) {
       var aH = P(j, aJ),
         aK;
@@ -558,6 +591,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aK.drawImage(aI, 0, 0, j, aJ);
       return aH;
     }
+
     function aC(aU, aP, aV, aZ, aQ, aO, aM, aS, aK, aL) {
       var aI = aP + (2 * aS + aO) * aZ,
         aR = aV + (2 * aS + aO) * aZ,
@@ -606,6 +640,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return { image: aJ, width: aI / aZ, height: aR / aZ };
     }
+
     function aq(aK, j, aJ, aN, aO) {
       var aL,
         aM,
@@ -639,6 +674,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aM.drawImage(aK, 0, 0, aJ, aN);
       return aL;
     }
+
     function Z(aN, aT, aP, aJ, aR, aS, aI) {
       var aU = L(aI[0]),
         aO = L(aI[1]),
@@ -662,6 +698,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aQ.drawImage(aN, aM, aH, aT, aP);
       return { image: aL, width: aK / aJ, height: j / aJ };
     }
+
     function t(aT, aL, aR) {
       var aS = parseInt(aT.toString().length * aR),
         aK = parseInt(aR * 2 * aT.length),
@@ -704,20 +741,22 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           }
         }
       }
-      if (aJ != aS) {
+      if (aJ !== aS) {
         aM.min.x *= aS / aJ;
         aM.max.x *= aS / aJ;
       }
-      if (aN != aK) {
+      if (aN !== aK) {
         aM.min.y *= aS / aN;
         aM.max.y *= aS / aN;
       }
       aI = null;
       return aM;
     }
+
     function o(i) {
-      return "'" + i.replace(/(\'|\")/g, '').replace(/\s*,\s*/g, "', '") + "'";
+      return "'" + i.replace(/(['"])/g, '').replace(/\s*,\s*/g, "', '") + "'";
     }
+
     function ad(i, j, aH) {
       aH = aH || C;
       if (aH.addEventListener) {
@@ -726,6 +765,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aH.attachEvent('on' + i, j);
       }
     }
+
     function a(i, j, aH) {
       aH = aH || C;
       if (aH.removeEventListener) {
@@ -734,6 +774,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aH.detachEvent('on' + i, j);
       }
     }
+
     function aw(aL, aH, aP, aK) {
       var aQ = aK.imageScale,
         aN,
@@ -760,8 +801,6 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           aL
         );
       }
-      aH.width = aH.width;
-      aH.height = aH.height;
       if (aQ) {
         aL.width = aH.width * aQ;
         aL.height = aH.height * aQ;
@@ -797,12 +836,12 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           }
           if (aK.bgColour || aK.bgOutlineThickness) {
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            aM = aK.bgColour == 'tag' ? Y(aP.a, 'background-color') : aK.bgColour;
+            aM = aK.bgColour === 'tag' ? Y(aP.a, 'background-color') : aK.bgColour;
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            j = aK.bgOutline == 'tag' ? Y(aP.a, 'color') : aK.bgOutline || aK.textColour;
+            j = aK.bgOutline === 'tag' ? Y(aP.a, 'color') : aK.bgOutline || aK.textColour;
             aJ = aP.fimage.width;
             aO = aP.fimage.height;
-            if (aK.outlineMethod == 'colour') {
+            if (aK.outlineMethod === 'colour') {
               aI = aC(aP.fimage, aJ, aO, aN, aM, aK.bgOutlineThickness, aP.outline.colour, aK.padding, aK.bgRadius, 1);
               if (aI) {
                 aP.oimage = aI.image;
@@ -815,7 +854,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
               aP.h = aI.height;
             }
           }
-          if (aK.outlineMethod == 'size') {
+          if (aK.outlineMethod === 'size') {
             if (aK.outlineIncrease > 0) {
               aP.iw += 2 * aK.outlineIncrease;
               aP.ih += 2 * aK.outlineIncrease;
@@ -835,9 +874,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       aP.Init();
     }
+
     function Y(aI, aH) {
       var j = C.defaultView,
-        i = aH.replace(/\-([a-z])/g, function (aJ) {
+        i = aH.replace(/-([a-z])/g, function (aJ) {
           return aJ.charAt(1).toUpperCase();
         });
       return (
@@ -845,6 +885,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         (aI.currentStyle && aI.currentStyle[i])
       );
     }
+
     function u(j, aI, aH) {
       var i = 1,
         aJ;
@@ -860,9 +901,11 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return i;
     }
+
     function f(i) {
       return i.target && ai(i.target.id) ? i.target.id : i.srcElement.parentNode.id;
     }
+
     function S(aJ, aK) {
       var aI,
         aH,
@@ -886,6 +929,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return aI;
     }
+
     function B(aH) {
       var j = aH.target || aH.fromElement.parentNode,
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -896,6 +940,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         i.EndDrag();
       }
     }
+
     function af(aL) {
       var aI,
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -920,22 +965,24 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         j.drawn = 0;
       }
     }
+
     function z(aI) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
       var j = y,
         i = C.addEventListener ? 0 : 1,
         aH = f(aI);
-      if (aH && aI.button == i && j.tc[aH]) {
+      if (aH && aI.button === i && j.tc[aH]) {
         j.tc[aH].BeginDrag(aI);
       }
     }
+
     function aE(aJ) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
       var aH = y,
         j = C.addEventListener ? 0 : 1,
         aI = f(aJ),
         i;
-      if (aI && aJ.button == j && aH.tc[aI]) {
+      if (aI && aJ.button === j && aH.tc[aI]) {
         i = aH.tc[aI];
         af(aJ);
         if (!i.EndDrag() && !i.touchState) {
@@ -943,13 +990,14 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
       }
     }
+
     function T(aI) {
       var j = f(aI),
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         i = j && y.tc[j],
         aH;
       if (i && aI.changedTouches) {
-        if (aI.touches.length == 1 && i.touchState == 0) {
+        if (aI.touches.length === 1 && i.touchState === 0) {
           i.touchState = 1;
           i.BeginDrag(aI);
           if ((aH = S(aI, i.canvas))) {
@@ -958,7 +1006,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
             i.drawn = 0;
           }
         } else {
-          if (aI.targetTouches.length == 2 && i.pinchZoom) {
+          if (aI.targetTouches.length === 2 && i.pinchZoom) {
             i.touchState = 3;
             i.EndDrag();
             i.BeginPinch(aI);
@@ -970,6 +1018,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
       }
     }
+
     function r(aH) {
       var j = f(aH),
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -989,6 +1038,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         i.touchState = 0;
       }
     }
+
     function az(aL) {
       var aI,
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -1022,6 +1072,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         j.drawn = 0;
       }
     }
+
     function ag(aH) {
       var i = y,
         j = f(aH);
@@ -1032,7 +1083,8 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         i.tc[j].Wheel((aH.wheelDelta || aH.detail) > 0);
       }
     }
-    function ac(aI) {
+
+    function ac() {
       var aH,
         j = y;
       clearTimeout(j.scrollTimer);
@@ -1047,9 +1099,11 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
       }, j.scrollPause);
     }
+
     function O() {
       E(G());
     }
+
     function E(aI) {
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
       var j = y.tc,
@@ -1061,6 +1115,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         j[aH].Draw(aI);
       }
     }
+
     function ab(aH) {
       var aK = C.getElementById(aH),
         i = aK.getBoundingClientRect(),
@@ -1073,6 +1128,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         j = aN.clientTop || aL.clientTop;
       return { x: i.left + aI - aJ, y: i.top + aO - j };
     }
+
     function V(j, aI, aJ, aH) {
       var i = (j.radius * j.z1) / (j.z1 + j.z2 + aI.z);
       return {
@@ -1082,6 +1138,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         w: (j.z1 - aI.z) / j.z2,
       };
     }
+
     function aB(i) {
       this.e = i;
       this.br = 0;
@@ -1089,6 +1146,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.text = [];
       this.original = i.innerText || i.textContent;
     }
+
     aG = aB.prototype;
     aG.Empty = function () {
       for (var j = 0; j < this.text.length; ++j) {
@@ -1107,11 +1165,11 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aK = aJ.childNodes;
       j = aK.length;
       for (aH = 0; aH < j; ++aH) {
-        if (aK[aH].nodeName == 'BR') {
+        if (aK[aH].nodeName === 'BR') {
           this.text.push(this.line.join(' '));
           this.br = 1;
         } else {
-          if (aK[aH].nodeType == 3) {
+          if (aK[aH].nodeType === 3) {
             if (this.br) {
               this.line = [aK[aH].nodeValue];
               this.br = 0;
@@ -1148,6 +1206,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       return (this.text = aM);
     };
+
     function J(i, j) {
       this.ts = null;
       this.tc = i;
@@ -1160,10 +1219,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.adash = ~~i.outlineDash;
       this.agap = ~~i.outlineDashSpace || this.adash;
       this.aspeed = i.outlineDashSpeed * 1;
-      if (this.colour == 'tag') {
+      if (this.colour === 'tag') {
         this.colour = Y(j.a, 'color');
       } else {
-        if (this.colour == 'tagbg') {
+        if (this.colour === 'tagbg') {
           this.colour = Y(j.a, 'background-color');
         }
       }
@@ -1171,6 +1230,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.radius = i.outlineRadius | 0;
       this.SetMethod(i.outlineMethod);
     }
+
     x = J.prototype;
     x.SetMethod = function (aH) {
       var j = {
@@ -1182,7 +1242,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           none: ['LastDraw'],
         },
         i = j[aH] || j.outline;
-      if (aH == 'none') {
+      if (aH === 'none') {
         this.Draw = function () {
           return 1;
         };
@@ -1361,6 +1421,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       return j;
     };
     x.PreDraw = x.PostDraw = x.LastDraw = aA;
+
     function e(aI, aS, aO, aR, aP, aJ, aH, aL, aQ, aK, aN, j, aM, i) {
       this.tc = aI;
       this.image = null;
@@ -1384,8 +1445,9 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.weighted = !aI.weight;
       this.outline = new J(aI, this);
     }
+
     c = e.prototype;
-    c.Init = function (j) {
+    c.Init = function () {
       var i = this.tc;
       this.textHeight = i.textHeight;
       if (this.HasText()) {
@@ -1403,13 +1465,13 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     };
     c.EqualTo = function (aH) {
       var j = aH.getElementsByTagName('img');
-      if (this.a.href != aH.href) {
+      if (this.a.href !== aH.href) {
         return 0;
       }
       if (j.length) {
-        return this.image.src == j[0].src;
+        return this.image.src === j[0].src;
       }
-      return (aH.innerText || aH.textContent) == this.text_original;
+      return (aH.innerText || aH.textContent) === this.text_original;
     };
     c.SetImage = function (j) {
       this.image = this.fimage = j;
@@ -1474,7 +1536,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           aQ * this.padding,
           aQ * this.bgRadius
         );
-        if (aP.outlineMethod == 'colour') {
+        if (aP.outlineMethod === 'colour') {
           this.oimage = aK.Create(
             this.outline.colour,
             this.bgColour,
@@ -1487,7 +1549,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
             aQ * this.bgRadius
           );
         } else {
-          if (aP.outlineMethod == 'size') {
+          if (aP.outlineMethod === 'size') {
             aN = t(this.text, this.textFont, this.textHeight + aP.outlineIncrease);
             i = aN.max.y + aN.min.y;
             aJ = aQ * (this.textHeight + aP.outlineIncrease) + 'px ' + this.textFont;
@@ -1555,7 +1617,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.weighted = true;
       for (aI = 0; aI < aK; ++aI) {
         i = aJ[aI] || 'size';
-        if ('both' == i) {
+        if ('both' === i) {
           this.Weight(aH[aI], j.ctxt, j, 'size', j.min_weight[aI], j.max_weight[aI], aI);
           this.Weight(aH[aI], j.ctxt, j, 'colour', j.min_weight[aI], j.max_weight[aI], aI);
         } else {
@@ -1567,19 +1629,19 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     c.Weight = function (aH, aM, aI, j, aL, aJ, aK) {
       aH = isNaN(aH) ? 1 : aH;
       var i = (aH - aL) / (aJ - aL);
-      if ('colour' == j) {
+      if ('colour' === j) {
         this.colour = k(aI, i, aK);
       } else {
-        if ('bgcolour' == j) {
+        if ('bgcolour' === j) {
           this.bgColour = k(aI, i, aK);
         } else {
-          if ('bgoutline' == j) {
+          if ('bgoutline' === j) {
             this.bgOutline = k(aI, i, aK);
           } else {
-            if ('outline' == j) {
+            if ('outline' === j) {
               this.outline.colour = k(aI, i, aK);
             } else {
-              if ('size' == j) {
+              if ('size' === j) {
                 if (aI.weightSizeMin > 0 && aI.weightSizeMax > aI.weightSizeMin) {
                   this.textHeight = aI.weightSize * (aI.weightSizeMin + (aI.weightSizeMax - aI.weightSizeMin) * i);
                 } else {
@@ -1591,7 +1653,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
       }
     };
-    c.SetShadowColourFixed = function (aH, j, i) {
+    c.SetShadowColourFixed = function (aH, j) {
       aH.shadowColor = j;
     };
     c.SetShadowColourAlpha = function (aH, j, i) {
@@ -1612,10 +1674,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       aK += aI / aO - this.h / 2;
       for (j = 0; j < this.text.length; ++j) {
         aH = aL;
-        if ('right' == aN.textAlign) {
+        if ('right' === aN.textAlign) {
           aH += this.w / 2 - this.line_widths[j];
         } else {
-          if ('centre' == aN.textAlign) {
+          if ('centre' === aN.textAlign) {
             aH -= this.line_widths[j] / 2;
           } else {
             aH -= this.w / 2;
@@ -1683,12 +1745,12 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aH = this.UpdateActive(aJ, i, aI);
       return aH.Active(aJ, j.mx, j.my) ? aH : null;
     };
-    c.Clicked = function (aK) {
+    c.Clicked = function () {
       var j = this.a,
         aH = j.target,
         aI = j.href,
         i;
-      if (aH != '' && aH != '_self') {
+      if (aH !== '' && aH !== '_self') {
         if (self.frames[aH]) {
           self.frames[aH].document.location = aI;
         } else {
@@ -1717,6 +1779,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       C.location = aI;
     };
+
     function y(aN, j, aI) {
       var aH,
         aK,
@@ -1806,7 +1869,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       if (this.tooltip) {
         this.ctitle = aM.title;
         aM.title = '';
-        if (this.tooltip == 'native') {
+        if (this.tooltip === 'native') {
           this.Tooltip = this.TooltipNative;
         } else {
           this.Tooltip = this.TooltipDiv;
@@ -1866,6 +1929,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         y.started = 1;
       }
     }
+
     Q = y.prototype;
     Q.SourceElements = function () {
       if (C.querySelectorAll) {
@@ -1907,7 +1971,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aL,
         aJ;
       for (aI = 0; aI < aH.length; ++aI) {
-        if (aH[aI] != ' ') {
+        if (aH[aI] !== ' ') {
           j = aI - aH.length / 2;
           aK = C.createElement('A');
           aK.href = '#';
@@ -1931,7 +1995,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aM,
         aI,
         j = [0, 0, 0];
-      if ('text' != this.imageMode) {
+      if ('text' !== this.imageMode) {
         aO = aL.getElementsByTagName('img');
         if (aO.length) {
           aJ = new Image();
@@ -1944,7 +2008,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           }
         }
       }
-      if ('image' != this.imageMode) {
+      if ('image' !== this.imageMode) {
         aN = new aB(aL);
         aK = aN.Lines();
         if (!aN.Empty()) {
@@ -1952,8 +2016,8 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           if (this.splitWidth) {
             aK = aN.SplitWidth(this.splitWidth, this.ctxt, aH, this.textHeight);
           }
-          aM = this.bgColour == 'tag' ? Y(aL, 'background-color') : this.bgColour;
-          aI = this.bgOutline == 'tag' ? Y(aL, 'color') : this.bgOutline;
+          aM = this.bgColour === 'tag' ? Y(aL, 'background-color') : this.bgColour;
+          aI = this.bgOutline === 'tag' ? Y(aL, 'color') : this.bgOutline;
         } else {
           aN = null;
         }
@@ -1987,11 +2051,11 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     Q.UpdateTag = function (aH, i) {
       var aK = this.textColour || Y(i, 'color'),
         j = this.textFont || o(Y(i, 'font-family')),
-        aJ = this.bgColour == 'tag' ? Y(i, 'background-color') : this.bgColour,
-        aI = this.bgOutline == 'tag' ? Y(i, 'color') : this.bgOutline;
+        aJ = this.bgColour === 'tag' ? Y(i, 'background-color') : this.bgColour,
+        aI = this.bgOutline === 'tag' ? Y(i, 'color') : this.bgOutline;
       aH.a = i;
       aH.title = i.title;
-      if (aH.colour != aK || aH.textFont != j || aH.bgColour != aJ || aH.bgOutline != aI) {
+      if (aH.colour !== aK || aH.textFont !== j || aH.bgColour !== aJ || aH.bgOutline !== aI) {
         aH.SetFont(j, aK, aJ, aI);
       }
     };
@@ -2077,7 +2141,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
       }
       if (this.noTagsMessage && !aM.length) {
-        aO = this.imageMode && this.imageMode != 'both' ? this.imageMode + ' ' : '';
+        aO = this.imageMode && this.imageMode !== 'both' ? this.imageMode + ' ' : '';
         aM = this.Message('No ' + aO + 'tags');
       }
       this.taglist = aM;
@@ -2116,7 +2180,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           }
         }
         for (aL = 0, aJ = 0; aL < aN; ++aL) {
-          if (aM[aJ] == -1) {
+          if (aM[aJ] === -1) {
             aM.splice(aJ, 1);
           } else {
             ++aJ;
@@ -2174,7 +2238,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aK = this.taglist,
         aU = aK.length,
         j = this.frontSelect,
-        aS = this.centreFunc == aA,
+        aS = this.centreFunc === aA,
         aM;
       this.time = aR;
       if (this.frozen && this.drawn) {
@@ -2215,16 +2279,16 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
           }
           aS = true;
         }
-        if (!(aN && aN.tag == aK[aV] && aN.PreDraw(aX, aK[aV], aP, aO))) {
+        if (!(aN && aN.tag === aK[aV] && aN.PreDraw(aX, aK[aV], aP, aO))) {
           aK[aV].Draw(aX, aP, aO);
         }
-        aN && aN.tag == aK[aV] && aN.PostDraw(aX);
+        aN && aN.tag === aK[aV] && aN.PostDraw(aX);
       }
       if (this.freezeActive && aN) {
         this.Freeze();
       } else {
         this.UnFreeze();
-        this.drawn = aU == this.listLength;
+        this.drawn = aU === this.listLength;
       }
       if (this.fixedCallback) {
         this.fixedCallback(this, this.fixedCallbackTag);
@@ -2246,12 +2310,12 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
     Q.SetTTDiv = function (aI, j) {
       var i = this,
         aH = i.ttdiv.style;
-      if (aI != i.ttdiv.innerHTML) {
+      if (aI !== i.ttdiv.innerHTML) {
         aH.display = 'none';
       }
       i.ttdiv.innerHTML = aI;
       j && (j.title = i.ttdiv.innerHTML);
-      if (aH.display == 'none' && !i.tttimer) {
+      if (aH.display === 'none' && !i.tttimer) {
         i.tttimer = setTimeout(function () {
           var aJ = ab(i.canvas.id);
           aH.display = 'block';
@@ -2265,7 +2329,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       if (j && i && i.title) {
         this.SetTTDiv(i.title, i);
       } else {
-        if (!j && this.mx != -1 && this.my != -1 && this.ctitle.length) {
+        if (!j && this.mx !== -1 && this.my !== -1 && this.ctitle.length) {
           this.SetTTDiv(this.ctitle);
         } else {
           this.ttdiv.style.display = 'none';
@@ -2298,7 +2362,10 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         if (!this.fixedAnim.transform) {
           this.fixedAnim.transform = this.transform;
         }
-        (aH = this.fixedAnim), (j = G() - aH.t0), (aJ = aH.angle), i, (aI = this.animTiming(aH.t, j));
+        aH = this.fixedAnim;
+        j = G() - aH.t0;
+        aJ = aH.angle;
+        aI = this.animTiming(aH.t, j);
         this.transform = aH.transform;
         if (j >= aH.t) {
           this.fixedCallbackTag = aH.tag;
@@ -2309,7 +2376,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         }
         i = R.Rotation(aJ, aH.axis);
         this.transform = this.transform.mul(i);
-        return this.fixedAnim != 0;
+        return this.fixedAnim !== 0;
       }
       return false;
     };
@@ -2320,7 +2387,8 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aJ,
         aL;
       if (!j.frozen && i >= 0 && aM >= 0 && i < aH && aM < aK) {
-        (aJ = j.maxSpeed), (aL = j.reverse ? -1 : 1);
+        aJ = j.maxSpeed;
+        aL = j.reverse ? -1 : 1;
         j.lx || (j.yaw = ((i * 2 * aJ) / aH - aJ) * aL * aI);
         j.ly || (j.pitch = ((aM * 2 * aJ) / aK - aJ) * -aL * aI);
         j.initial = null;
@@ -2428,11 +2496,13 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.dragging = this.down = null;
       return i;
     };
+
     function D(aH) {
       var j = aH.targetTouches[0],
         i = aH.targetTouches[1];
       return F(at(i.pageX - j.pageX, 2) + at(i.pageY - j.pageY, 2));
     }
+
     Q.BeginPinch = function (i) {
       this.pinched = [D(i), this.zoom];
       i.preventDefault && i.preventDefault();
@@ -2449,7 +2519,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       this.zoom = aD(this.zoomMax, s(this.zoomMin, aI));
       this.Zoom(this.zoom);
     };
-    Q.EndPinch = function (i) {
+    Q.EndPinch = function () {
       this.pinched = null;
     };
     Q.Pause = function () {
@@ -2473,14 +2543,16 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       }
       var aI, aJ, j;
       if (ai(aH.id)) {
-        (aI = 'id'), (aJ = aH.id);
+        aI = 'id';
+        aJ = aH.id;
       } else {
         if (ai(aH.text)) {
-          (aI = 'innerText'), (aJ = aH.text);
+          aI = 'innerText';
+          aJ = aH.text;
         }
       }
       for (j = 0; j < this.taglist.length; ++j) {
-        if (this.taglist[j].a[aI] == aJ) {
+        if (this.taglist[j].a[aI] === aJ) {
           return this.taglist[j];
         }
       }
@@ -2491,7 +2563,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         aJ = aj(aO, aI),
         j = aK.angle(aJ),
         aL = aK.cross(aJ).unit();
-      if (j == 0) {
+      if (j === 0) {
         this.fixedCallbackTag = aP;
         this.fixedCallback = aM;
       } else {
@@ -2513,9 +2585,11 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
       y.Delete(aH);
       y.tc[aH] = new y(aH, i, j);
     };
+
     function ay(i, j) {
       y.tc[j] && y.tc[j][i]();
     }
+
     y.Linear = function (i, j) {
       return j / i;
     };
@@ -2716,7 +2790,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         textFont: 'Bebas Neue',
         animTiming: 'smooth',
         maxSpeed: 0.03,
-        textColour: '#0066ff',
+        textColour: '#00a1a7',
         initial: [0.2, 0.2],
         activeCursor: 'default',
         outlineMethod: 'none',
