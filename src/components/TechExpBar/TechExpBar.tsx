@@ -45,12 +45,11 @@ const Number = styled.span`
 interface Props {
   title: string;
   exp: number;
-  color: string;
   style?: React.CSSProperties;
   onClick?: Function;
 }
 
-const TechExpBar: React.FC<Props> = ({ title, exp, color, style, onClick = () => {} }) => {
+const TechExpBar: React.FC<Props> = ({ title, exp, style, onClick = () => {} }) => {
   return (
     <Wrap style={style} onClick={() => onClick(title)}>
       <ExpBar>

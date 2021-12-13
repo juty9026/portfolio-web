@@ -61,26 +61,6 @@ const SkillsArticle: React.FC = () => {
     return data.find((item) => item.position === activeItem)?.relatedSkills || [];
   }, [active, data]);
 
-  const colorPool = React.useMemo(
-    () => [
-      '#41ead4',
-      '#ff0022',
-      '#ebcfb2',
-      '#0f2c67',
-      '#cd1818',
-      '#f3950d',
-      '#f4e185',
-      '#3f0713',
-      '#b24080',
-      '#ecac5d',
-      '#fff9b2',
-      '#ff7c7c',
-      '#ffd082',
-      '#88e1f2',
-    ],
-    []
-  );
-
   return (
     <Article title="Skills & Expereince">
       <div style={{ backgroundColor: 'transparent' }}>
@@ -93,7 +73,6 @@ const SkillsArticle: React.FC = () => {
                   style={{ cursor: 'pointer' }}
                   title={position}
                   exp={exp}
-                  color={colorPool[Math.floor(Math.random() * colorPool.length)]}
                   onClick={setActive}
                 />
               ))}
@@ -101,12 +80,7 @@ const SkillsArticle: React.FC = () => {
             <div css={styles.spacer} />
             <section>
               {subItems.map(({ name, exp }) => (
-                <TechExpBar
-                  key={name}
-                  title={name}
-                  exp={exp}
-                  color={colorPool[Math.floor(Math.random() * colorPool.length)]}
-                />
+                <TechExpBar key={name} title={name} exp={exp} />
               ))}
             </section>
           </div>

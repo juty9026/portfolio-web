@@ -2716,7 +2716,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
         textFont: 'Bebas Neue',
         animTiming: 'smooth',
         maxSpeed: 0.03,
-        textColour: '#0066ff',
+        textColour: '#00a1a7',
         initial: [0.2, 0.2],
         activeCursor: 'default',
         outlineMethod: 'none',
