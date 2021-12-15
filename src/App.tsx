@@ -25,7 +25,7 @@ function App() {
             <Hero />
             <AboutMeArticle data={data.aboutMe} />
             <SkillsArticle />
-            <AbilitiesArticle data={data.abilities} />
+            <AbilitiesArticle />
             <WorkExperienceArticle />
           </main>
         ) : null // TODO: Loading Component
