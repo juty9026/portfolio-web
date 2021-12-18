@@ -1,73 +1,45 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { a, useSpring } from 'react-spring';
 
-const moveLeft = keyframes`
-
-  from {
-    transform: translate3d(0)
-  }
-  to {
-    transform: translate3d(-10px, 0, 0)
-  }
+const Wrap = styled.div`
+  display: inline-block;
+  font-size: 6rem;
+  color: #fff;
 `;
 
-const moveLeftI = keyframes`
-
-  from {
-    transform: translate3d(10px, 0, 0)
-  }
-  to {
-    transform: translate3d(0)
-  }
+const AnimatedDiv = styled(a.div)`
+  display: inline-block;
 `;
 
-const fadeIn = keyframes`
+interface Props {
+  change: boolean;
+}
 
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+const IAmPossible: React.FC<Props> = ({ change }) => {
+  const animIAm = useSpring({ x: change ? 10 : 0 });
+  const animStyleI = useSpring({
+    x: change ? 10 : -20,
+  });
+  const animStyleAm = useSpring({
+    opacity: change ? 1 : 0,
+    y: change ? 0 : -15,
+  });
 
-const Emphasis = styled.span`
-  font-size: 3rem;
-`;
-
-const IAmPossible: React.FC = () => {
   return (
-    <p>
-      <div
-        css={css`
-          animation: ${moveLeft} 2s ease;
-          display: inline-block;
-        `}
-      >
-        <div
-          css={css`
-            animation: ${moveLeftI} 2s ease;
-            display: inline-block;
-          `}
-        >
-          <Emphasis>I</Emphasis>
-        </div>
-        <div
-          css={css`
-            animation: ${fadeIn} 2s ease;
-            display: inline-block;
-          `}
-        >
-          <Emphasis>'</Emphasis>
-        </div>
-        <Emphasis>m</Emphasis>
-      </div>
-      <Emphasis>possible.</Emphasis>
-    </p>
+    <Wrap>
+      <span>I</span>
+      <AnimatedDiv style={animStyleAm}>
+        <span>'</span>
+      </AnimatedDiv>
+      <AnimatedDiv style={animStyleI}>
+        <span>m</span>
+        <AnimatedDiv style={animIAm}>
+          <span>possible.</span>
+        </AnimatedDiv>
+      </AnimatedDiv>
+    </Wrap>
   );
 };
 
