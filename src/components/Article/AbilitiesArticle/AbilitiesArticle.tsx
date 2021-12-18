@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Article from '../Article';
+import AbilitiesSection1 from '@components/Article/AbilitiesArticle/AbilitiesSection1';
 
 const Wrap = styled.div`
-  width: 980px;
+  width: 100vw;
   margin: auto;
 `;
 
@@ -36,24 +36,9 @@ const SubSection = styled.div`
 
 const AbilitiesArticle: React.FC = () => {
   return (
-    <Article title="Abilities">
+    <article>
       <Wrap>
-        <H3>자타공인 해결사.</H3>
-        <ParagraphContainer>
-          <H4>Step 1:</H4>
-          <P>
-            어디에서 문제가 생길까요? 원인이 발생하는 포인트를 감각적으로 찾아낼 수 있습니다. 확실하게 아닌 부분을
-            소거하고, 가능성이 높은 부분부터 확인해보면 답은 금방 나오게 되죠.
-          </P>
-        </ParagraphContainer>
-        <ParagraphContainer>
-          <H4>Step 2:</H4>
-          <P>
-            원인을 찾았으니 해결해봅시다. 잘못 구현되어 원하지 않는 결과가 나온것이라면 로직을 수정하고, 추가적인 기능이
-            필요하다면 적절한 위치에 끼워 넣으면 돼요. 하지만, 아무리 급해도 사이드 이펙트가 발생할 수 있는 부분은
-            꼼꼼하게 확인해야 합니다!
-          </P>
-        </ParagraphContainer>
+        <AbilitiesSection1 />
 
         <H3>불편함 없는 커뮤니케이션.</H3>
         <ParagraphContainer>
@@ -92,7 +77,7 @@ const AbilitiesArticle: React.FC = () => {
           <H5>멈추지 않는 성장</H5>
         </SubSection>
       </Wrap>
-    </Article>
+    </article>
   );
 };
 
