@@ -18,11 +18,16 @@ interface Props {
 }
 
 const IAmPossible: React.FC<Props> = ({ change }) => {
-  const animIAm = useSpring({ x: change ? 10 : 0 });
+  const animIAm = useSpring({
+    delay: 200,
+    x: change ? 10 : 0,
+  });
   const animStyleI = useSpring({
+    delay: 200,
     x: change ? 10 : -20,
   });
   const animStyleAm = useSpring({
+    delay: 200,
     opacity: change ? 1 : 0,
     y: change ? 0 : -15,
   });

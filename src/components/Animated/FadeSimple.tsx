@@ -18,13 +18,7 @@ const AnimatedDiv = styled(a.div)`
   display: inline-block;
 `;
 
-const FadeSimple: React.FC<Props> = ({
-  children,
-  style,
-  direction = 'none',
-  topOffset = '-10%',
-  bottomOffset = '30%',
-}) => {
+const FadeSimple: React.FC<Props> = ({ children, style, direction = 'none', topOffset = 0, bottomOffset = 0 }) => {
   const [inView, setInView] = useState(false);
 
   const fromX = useMemo(() => {
@@ -56,6 +50,7 @@ const FadeSimple: React.FC<Props> = ({
 
   return (
     <Wrap style={style}>
+      <AnimatedDiv style={{ ...spring, display: 'inline-block' }}>{children}</AnimatedDiv>
       <Waypoint
         onEnter={() => setInView(true)}
         onLeave={() => setInView(false)}
@@ -63,7 +58,6 @@ const FadeSimple: React.FC<Props> = ({
         bottomOffset={bottomOffset}
         fireOnRapidScroll
       />
-      <AnimatedDiv style={{ ...spring, display: 'inline-block' }}>{children}</AnimatedDiv>
     </Wrap>
   );
 };
