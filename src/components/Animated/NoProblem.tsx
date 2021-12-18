@@ -1,73 +1,38 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
-import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+import { a, useSpring } from 'react-spring';
 
-const fadeOutUpside = keyframes`
-
-  from {
-    opacity: 1;
-    transform: translate3d(0);
-  }
-  to {
-    opacity: 0;
-    transform: translate3d(0, -3rem, 0);
-  }
+const Wrap = styled.div`
+  width: 100%;
+  font-size: 6rem;
+  color: #fff;
+  white-space: pre-wrap;
 `;
 
-const fadeInUpside = keyframes`
-
-  from {
-    opacity: 0;
-    transform: translate3d(0, 3rem, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0);
-  }
-`;
-
-const Emphasis = styled.span`
-  font-size: 3rem;
-`;
-
-const InlineDiv = styled.div`
-  display: inline;
+const AnimatedDiv = styled(a.div)`
+  position: absolute;
+  display: inline-block;
+  font-size: 6rem;
+  color: #fff;
 `;
 
 interface Props {
-  transform?: boolean;
+  change: boolean;
 }
 
-interface AnimatedProps {
-  animation: string;
-}
-
-const AnimatedDiv = styled.div<Props & AnimatedProps>`
-  position: absolute;
-  display: inline;
-  margin: 0 0 0 0.5rem;
-  ${({ transform, animation }) =>
-    transform &&
-    css`
-      animation: ${animation} 2s ease;
-    `}
-`;
-
-const NoProblem: React.FC<Props> = ({ transform }) => (
-  <p>
-    <InlineDiv>
-      <Emphasis>No</Emphasis>
-    </InlineDiv>
-    <InlineDiv>
-      <AnimatedDiv transform={transform} animation={fadeOutUpside}>
-        <Emphasis>way.</Emphasis>
-      </AnimatedDiv>
-      <AnimatedDiv transform={transform} animation={fadeInUpside}>
-        <Emphasis>problem.</Emphasis>
-      </AnimatedDiv>
-    </InlineDiv>
-  </p>
-);
+const NoProblem: React.FC<Props> = ({ change }) => {
+  const { opacity, transform } = useSpring({
+    opacity: change ? 1 : 0,
+    transform: `perspective(600px) rotateX(${change ? 180 : 0}deg)`,
+  });
+  return (
+    <Wrap>
+      {'No '}
+      <AnimatedDiv style={{ opacity: opacity.to((o) => 1 - o), transform }}>Way.</AnimatedDiv>
+      <AnimatedDiv style={{ opacity, transform, rotateX: '180deg' }}>Problem.</AnimatedDiv>
+    </Wrap>
+  );
+};
 
 export default NoProblem;
