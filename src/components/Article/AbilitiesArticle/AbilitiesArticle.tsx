@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import AbilitiesSection1 from '@components/Article/AbilitiesArticle/AbilitiesSection1';
+import AbilitiesSection2 from '@components/Article/AbilitiesArticle/AbilitiesSection2';
 
 const Wrap = styled.div`
   width: 100vw;
@@ -39,6 +40,7 @@ const AbilitiesArticle: React.FC = () => {
     <article>
       <Wrap>
         <AbilitiesSection1 />
+        <AbilitiesSection2 />
 
         <H3>불편함 없는 커뮤니케이션.</H3>
         <ParagraphContainer>
@@ -65,10 +67,6 @@ const AbilitiesArticle: React.FC = () => {
           <P>서비스의 품질을 </P>
         </ParagraphContainer>
 
-        <H3>코드가 읽히는 마법.</H3>
-        <ParagraphContainer>
-          <P></P>
-        </ParagraphContainer>
         {/*TODO: 코드 이미지*/}
 
         <SubSection>
