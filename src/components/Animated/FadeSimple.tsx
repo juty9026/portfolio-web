@@ -18,7 +18,7 @@ const AnimatedDiv = styled(a.div)`
   display: inline-block;
 `;
 
-const FadeSimple: React.FC<Props> = ({ children, style, direction = 'none', topOffset = 0, bottomOffset = 0 }) => {
+const FadeSimple: React.FC<Props> = ({ children, style, direction = 'none', topOffset = '-10%', bottomOffset = 0 }) => {
   const [inView, setInView] = useState(false);
 
   const fromX = useMemo(() => {
