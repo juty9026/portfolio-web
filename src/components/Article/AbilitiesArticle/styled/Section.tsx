@@ -29,15 +29,16 @@ const Section = styled.section<SectionProps>`
   min-height: 100vh;
   padding: 50vh 5vw 30vh 5vw;
 
-  & h3 {
+  h3 {
     font-size: 4rem;
   }
 
-  & h4 {
+  h4 {
     font-size: 3rem;
   }
 
-  & p {
+  pre,
+  p {
     font-size: 2rem;
   }
 
