@@ -24,7 +24,7 @@ const IAmPossible: React.FC<Props> = ({ change }) => {
   });
   const animStyleI = useSpring({
     delay: 200,
-    x: change ? 10 : -20,
+    x: change ? 10 : -18,
   });
   const animStyleAm = useSpring({
     delay: 200,
@@ -34,15 +34,9 @@ const IAmPossible: React.FC<Props> = ({ change }) => {
 
   return (
     <Wrap>
-      <span>I</span>
-      <AnimatedDiv style={animStyleAm}>
-        <span>'</span>
-      </AnimatedDiv>
+      I<AnimatedDiv style={animStyleAm}>'</AnimatedDiv>
       <AnimatedDiv style={animStyleI}>
-        <span>m</span>
-        <AnimatedDiv style={animIAm}>
-          <span>possible.</span>
-        </AnimatedDiv>
+        m<AnimatedDiv style={animIAm}>possible.</AnimatedDiv>
       </AnimatedDiv>
     </Wrap>
   );

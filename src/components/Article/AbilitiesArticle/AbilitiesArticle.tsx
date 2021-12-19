@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import AbilitiesSection1 from '@components/Article/AbilitiesArticle/AbilitiesSection1';
 import AbilitiesSection2 from '@components/Article/AbilitiesArticle/AbilitiesSection2';
+import AbilitiesSection3 from '@components/Article/AbilitiesArticle/AbilitiesSection3';
 
 const Wrap = styled.div`
   width: 100vw;
@@ -41,6 +42,7 @@ const AbilitiesArticle: React.FC = () => {
       <Wrap>
         <AbilitiesSection1 />
         <AbilitiesSection2 />
+        <AbilitiesSection3 />
 
         <H3>불편함 없는 커뮤니케이션.</H3>
         <ParagraphContainer>
