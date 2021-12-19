@@ -75,9 +75,7 @@ const SectionCommunication: React.FC = () => {
         <Content1>
           <Waypoint
             onEnter={() => setPeopleVisible(true)}
-            onLeave={({ currentPosition }) => {
-              setPeopleVisible(currentPosition === 'above');
-            }}
+            onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'above')}
           />
           <FadeSimple direction="right" bottomOffset="20%">
             <p>
@@ -104,9 +102,7 @@ const SectionCommunication: React.FC = () => {
           </FadeSimple>
           <Waypoint
             onEnter={() => setPeopleVisible(true)}
-            onLeave={({ currentPosition }) => {
-              setPeopleVisible(currentPosition === 'below');
-            }}
+            onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'below')}
           />
         </Content2>
       </GridContainer>
