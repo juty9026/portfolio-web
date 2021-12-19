@@ -25,13 +25,16 @@ const themeDark = css`
 `;
 
 const Section = styled.section<SectionProps>`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  padding: 50vh 0 20vh 0;
+  padding: 50vh 5vw 30vh 5vw;
 
   & h3 {
-    display: inline-block;
     font-size: 4rem;
+  }
+
+  & h4 {
+    font-size: 3rem;
   }
 
   & p {

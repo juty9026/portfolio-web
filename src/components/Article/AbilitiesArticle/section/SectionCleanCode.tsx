@@ -4,7 +4,7 @@ import { a, useSpring } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import { Section, Spacer } from '@components/Article/AbilitiesArticle/styled';
 
-const AbilitiesSection2: React.FC = () => {
+const SectionCleanCode: React.FC = () => {
   const [codeVisible, setCodeVisible] = useState(false);
   const { transform } = useSpring({ transform: `perspective(6000px) rotateY(${codeVisible ? 0 : 90}deg)` });
 
@@ -41,4 +41,4 @@ const AbilitiesSection2: React.FC = () => {
   );
 };
 
-export default AbilitiesSection2;
+export default SectionCleanCode;

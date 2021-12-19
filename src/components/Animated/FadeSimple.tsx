@@ -4,6 +4,7 @@ import { Waypoint } from 'react-waypoint';
 import styled from '@emotion/styled';
 
 interface Props {
+  className?: string;
   style?: CSSProperties;
   direction?: 'none' | 'top' | 'topRight' | 'right' | 'rightBottom' | 'bottom' | 'bottomLeft' | 'left' | 'leftTop';
   topOffset?: string | number;
@@ -18,7 +19,14 @@ const AnimatedDiv = styled(a.div)`
   display: inline-block;
 `;
 
-const FadeSimple: React.FC<Props> = ({ children, style, direction = 'none', topOffset = '-10%', bottomOffset = 0 }) => {
+const FadeSimple: React.FC<Props> = ({
+  children,
+  className,
+  style,
+  direction = 'none',
+  topOffset = '-10%',
+  bottomOffset = 0,
+}) => {
   const [inView, setInView] = useState(false);
 
   const fromX = useMemo(() => {
@@ -49,7 +57,7 @@ const FadeSimple: React.FC<Props> = ({ children, style, direction = 'none', topO
   });
 
   return (
-    <Wrap style={style}>
+    <Wrap className={className} style={style}>
       <AnimatedDiv style={{ ...spring, display: 'inline-block' }}>{children}</AnimatedDiv>
       <Waypoint
         onEnter={() => setInView(true)}
