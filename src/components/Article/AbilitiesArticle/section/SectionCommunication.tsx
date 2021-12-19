@@ -74,18 +74,18 @@ const SectionCommunication: React.FC = () => {
           </FadeSimple>
         </Headline1>
         <Content1>
-          <FadeSimple direction="right" bottomOffset="20%">
-            <p>
-              협업을 위한 소통은 필수. 기술적인 이야기를 좋아합니다. 잡담은 할 줄 모르냐구요? 너무 좋아하죠! 저랑 커피
-              한 잔 어때요? ☕️
-            </p>
-          </FadeSimple>
           <Waypoint
             onEnter={() => setPeopleVisible(true)}
             onLeave={({ currentPosition }) => {
               setPeopleVisible(currentPosition === 'above');
             }}
           />
+          <FadeSimple direction="right" bottomOffset="20%">
+            <p>
+              협업을 위한 소통은 필수. 기술적인 이야기를 좋아합니다. 잡담은 할 줄 모르냐구요? 너무 좋아하죠! 저랑 커피
+              한 잔 어때요? ☕️
+            </p>
+          </FadeSimple>
         </Content1>
         <Headline2>
           <FadeSimple direction="left" bottomOffset="20%">
