@@ -7,7 +7,6 @@ import { a, useSpring } from 'react-spring';
 import conversationImage from '@images/conversation.png';
 
 const GridContainer = styled(a.div)`
-  min-height: 200vh;
   display: grid;
   grid-template-areas:
     'content1 headline1'
@@ -16,7 +15,7 @@ const GridContainer = styled(a.div)`
 `;
 
 const BaseGridItem = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 5vw 0 5vw;
   display: flex;
   place-items: center;
@@ -69,7 +68,7 @@ const SectionCommunication: React.FC = () => {
 
       <GridContainer>
         <Headline1>
-          <FadeSimple direction="right" bottomOffset="20%">
+          <FadeSimple direction="left" bottomOffset="20%">
             <h4>With 개발직군</h4>
           </FadeSimple>
         </Headline1>
@@ -88,7 +87,7 @@ const SectionCommunication: React.FC = () => {
           </FadeSimple>
         </Content1>
         <Headline2>
-          <FadeSimple direction="left" bottomOffset="20%">
+          <FadeSimple direction="right" bottomOffset="20%">
             <h4>With 비개발직군</h4>
           </FadeSimple>
         </Headline2>
