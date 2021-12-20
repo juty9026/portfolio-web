@@ -1,48 +1,57 @@
-/** @jsxImportSource @emotion/react */
-import { AbilityData } from '@types';
-import Article from '../Article';
-import styles from './AbilitiesArticle.e';
+import React from 'react';
+import styled from '@emotion/styled';
+import {
+  SectionCleanCode,
+  SectionCommunication,
+  SectionProblemSolver,
+} from '@components/Article/AbilitiesArticle/section';
 
-interface Props {
-  data: AbilityData[];
-}
+const Wrap = styled.div`
+  width: 100%;
+  margin: auto;
+`;
 
-const AbilitiesArticle: React.FC<Props> = ({ data }) => {
+const H3 = styled.h3`
+  font-size: 4rem;
+`;
+
+const H5 = styled.h5`
+  font-size: 2rem;
+`;
+
+const ParagraphContainer = styled.div`
+  padding: 10vh 5vw 10vh 5vw;
+`;
+
+const P = styled.p`
+  font-size: 2rem;
+  color: #6e6e73;
+`;
+
+const SubSection = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const AbilitiesArticle: React.FC = () => {
   return (
-    <Article title="Abilities">
-      <div>
-        <div css={styles.cardContainer}>
-          {data.map((ability) => (
-            <section key={ability.subject} css={styles.card}>
-              <h2 css={styles.cardSubject}>{ability.subject}</h2>
-              <div css={styles.spacer} />
-              <pre>{ability.content}</pre>
-            </section>
-          ))}
-        </div>
-        <div css={styles.parallaxContainer}>
-          <div css={styles.parallaxRow}>
-            <span css={styles.parallaxSpan}>#해결사</span>
-            <span css={styles.parallaxSpan}>#커뮤니케이션</span>
-            <span css={styles.parallaxSpan}>#취미는공부</span>
-            <span css={styles.parallaxSpan}>#노력</span>
-            <span css={styles.parallaxSpan}>#고양이집사</span>
-          </div>
-          <div css={styles.parallaxRow}>
-            <span css={styles.parallaxSpan}>#열정</span>
-            <span css={styles.parallaxSpan}>#배우는습관</span>
-            <span css={styles.parallaxSpan}>#일잘러</span>
-          </div>
-          <div css={styles.parallaxRow}>
-            <span css={styles.parallaxSpan}>#INTP</span>
-            <span css={styles.parallaxSpan}>#성실</span>
-            <span css={styles.parallaxSpan}>#Nerd</span>
-            <span css={styles.parallaxSpan}>#적응왕</span>
-            <span css={styles.parallaxSpan}>#반복개선</span>
-          </div>
-        </div>
-      </div>
-    </Article>
+    <article>
+      <Wrap>
+        <SectionCommunication />
+        <SectionProblemSolver />
+        <SectionCleanCode />
+        <H3>더 나은 결과물을 위해.</H3>
+        <ParagraphContainer>
+          <P>서비스의 품질을 </P>
+        </ParagraphContainer>
+
+        <SubSection>
+          <H5>놀라운 적응력</H5>
+          <H5>강한 개선 의지</H5>
+          <H5>멈추지 않는 성장</H5>
+        </SubSection>
+      </Wrap>
+    </article>
   );
 };
 

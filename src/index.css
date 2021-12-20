@@ -3,13 +3,7 @@
   margin-block-start: 0;
   margin-block-end: 0;
   position: relative;
-}
-
-::-webkit-scrollbar {
-  width: 2px;
-}
-::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  box-sizing: border-box;
 }
 
 html,
