@@ -24,7 +24,7 @@ const P06_HAPP: React.FC = () => {
               list: [
                 'Cooperate With Native Developer',
                 'Mobile Web Maintenance',
-                'Editor Deveopment',
+                'Editor Development',
                 'Fixing Issues in Mobile Safari',
               ],
             },

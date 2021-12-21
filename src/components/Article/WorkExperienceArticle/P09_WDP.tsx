@@ -32,7 +32,7 @@ const P09_WDP: React.FC = () => {
         <Description>
           {`
             디자인을 적용한 Seek Bar와 영상의 총 길이와 실제 재생 시간을 이용해 몇 가지 기능이 추가된 비디오 플레이어 컴포넌트를 개발했습니다.
-            키보드가 show/dimiss 될 때 Webview의 높이가 부자연스럽게 변경되는 문제를 발견하고 고친 경험이 있습니다.
+            키보드가 show/dismiss 될 때 Webview의 높이가 부자연스럽게 변경되는 문제를 발견하고 고친 경험이 있습니다.
           `}
         </Description>
         <TechStack frontend={['React', 'React Native']} />

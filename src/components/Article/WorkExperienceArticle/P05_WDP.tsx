@@ -34,7 +34,6 @@ const P05_WDP: React.FC = () => {
           {`
             유지보수가 용이하고 읽기 편한 컴포넌트 구조를 설계하고 중복되는 로직을 추출해 HOC를 작성했습니다.
             또한, 요구사항을 구현하기 위해 npm package를 직접 패치하였습니다.
-            
           `}
         </Description>
         <TechStack frontend={['React']} />
