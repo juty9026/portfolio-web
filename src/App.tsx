@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WebFont from 'webfontloader';
 import './App.css';
 import data from '@data';
@@ -7,9 +7,9 @@ import Hero from '@components/Hero';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 function App() {
-  const [fontLoadded, setFontLoadded] = React.useState(false);
+  const [fontLoadded, setFontLoadded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     WebFont.load({
       google: {
         families: ['Bebas Neue', 'Jua'],
