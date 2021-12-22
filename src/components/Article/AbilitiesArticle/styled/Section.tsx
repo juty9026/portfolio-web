@@ -1,28 +1,39 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-interface SectionProps {
-  theme?: 'light' | 'dark';
-}
-
-const textColor = css`
-  pre,
-  p,
-  span {
-    color: #6e6e73;
-  }
-`;
 const themeLight = css`
   background-color: #fff;
-  color: #000;
-  ${textColor}
+  color: #8e8e93;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  em {
+    color: #000;
+  }
 `;
 
 const themeDark = css`
   background-color: #000;
-  color: #fff;
-  ${textColor}
+  color: #6e6e73;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  em {
+    color: #fff;
+  }
 `;
+
+interface SectionProps {
+  theme?: 'light' | 'dark';
+}
 
 const Section = styled.section<SectionProps>`
   width: 100%;
@@ -40,6 +51,10 @@ const Section = styled.section<SectionProps>`
   pre,
   p {
     font-size: 2rem;
+  }
+
+  em {
+    font-style: normal;
   }
 
   ${({ theme }) => {
