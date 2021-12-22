@@ -24,7 +24,7 @@ const SectionCleanCode: React.FC = () => {
       />
       <a.div style={{ transform }}>
         <iframe
-          src="https://codesandbox.io/embed/react-playground-forked-0w2f8?fontsize=14&hidenavigation=1&hidedevtools=1&codemirror=1&theme=dark&autoresize=1"
+          src="https://codesandbox.io/embed/messenger-v4lpc?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
           style={{
             width: '80vw',
             height: '80vh',
@@ -32,7 +32,7 @@ const SectionCleanCode: React.FC = () => {
             borderRadius: '4px',
             overflow: 'hidden',
           }}
-          title="React PlayGround"
+          title="Messenger"
           allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
           sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
         />
