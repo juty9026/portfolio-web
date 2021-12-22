@@ -1,27 +1,34 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import Article from '../Article';
 import TechExpBar from '@components/TechExpBar';
 import SphericalWordCloud from '@components/SphericalWordCloud';
 
+const Article = styled.article`
+  min-height: 100vh;
+  padding: 5vh 10vw 5vh 10vw;
+`;
+
 const Wrap = styled.div`
   display: flex;
-  background-color: transparent;
+  flex-wrap: wrap-reverse;
 `;
 
-const LeftContainer = styled.div`
-  justify-content: center;
-  width: 40%;
+const H3 = styled.div`
+  font-size: 4rem;
+  color: #00a1a7;
 `;
 
-const RightContainer = styled.div`
-  justify-content: center;
-  width: 60%;
+const ExpBarSection = styled.section`
+  flex: 1 0 400px;
+`;
+
+const WordSection = styled.section`
+  flex: 1 0 800px;
 `;
 
 const Spacer = styled.div`
-  margin: 2rem 0 2rem 0;
+  height: 4vh;
 `;
 
 const SkillsArticle: React.FC = () => {
@@ -105,25 +112,27 @@ const SkillsArticle: React.FC = () => {
   }, [active, data]);
 
   return (
-    <Article title="Skills & Experience">
+    <Article>
+      <H3>Skills</H3>
       <Wrap>
-        <LeftContainer>
-          <section>
+        <ExpBarSection>
+          <div>
             {data.map(({ position, exp }) => (
               <TechExpBar key={position} active={active === position} title={position} exp={exp} onClick={setActive} />
             ))}
-          </section>
+          </div>
           <Spacer />
-          <section>
+          <div>
             {relatedSkills.map(({ tag, exp }) => (
               <TechExpBar key={tag} title={tag} exp={exp} />
             ))}
-          </section>
-        </LeftContainer>
-        <RightContainer>
+          </div>
+        </ExpBarSection>
+        <WordSection>
           <SphericalWordCloud data={wordCloudData} />
-        </RightContainer>
+        </WordSection>
       </Wrap>
+      <Spacer />
     </Article>
   );
 };
