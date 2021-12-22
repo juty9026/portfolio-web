@@ -11,9 +11,10 @@ import { css } from '@emotion/react';
 const GridContainer = styled(a.div)`
   display: grid;
   grid-template-areas:
-    'content1      headline1'
-    'headline2     content2'
+    'content1      .            '
+    '.             content2     '
     'bottom-spacer bottom-spacer';
+  grid-template-columns: 1fr 1fr;
   place-items: center;
   justify-content: center;
 `;
@@ -25,26 +26,11 @@ const cssBaseGridItem = css`
   place-items: center;
 `;
 
-const Headline1 = styled.div`
-  ${cssBaseGridItem};
-  grid-area: headline1;
-`;
-
-const Headline2 = styled.div`
-  ${cssBaseGridItem};
-  grid-area: headline2;
-`;
-
 const GridStickyContent = styled(StickyBox)`
   ${cssBaseGridItem};
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const Content2 = styled(StickyBox)`
-  ${cssBaseGridItem};
-  grid-area: content2;
 `;
 
 const GridBottomSpacer = styled(Spacer)`
@@ -75,51 +61,51 @@ const SectionCommunication: React.FC = () => {
   return (
     <Section theme="light">
       <FadeSimple direction={'top'} bottomOffset="50%">
-        <h3>협업 커뮤니케이션.</h3>
+        <h3>편안한 커뮤니케이션.</h3>
       </FadeSimple>
 
       <Spacer height="10vh" />
 
       <GridContainer>
-        {/*<Headline1>*/}
-        {/*  <FadeSimple direction="left" bottomOffset="20%">*/}
-        {/*    <h4>With 개발직군</h4>*/}
-        {/*  </FadeSimple>*/}
-        {/*</Headline1>*/}
         <Waypoint
           onEnter={() => setPeopleVisible(true)}
           onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'above')}
         />
+
         <GridStickyContent style={{ gridArea: 'content1' }}>
           <FadeSimple direction="right" bottomOffset="20%">
-            <p>
-              협업을 위한 소통은 필수. 기술적인 이야기를 좋아합니다. 잡담은 할 줄 모르냐구요? 너무 좋아하죠! 저랑 커피
-              한 잔 어때요? ☕️
-            </p>
+            <p>말이 잘 통하는 사람.</p>
+          </FadeSimple>
+          <Spacer height="2vh" />
+          <FadeSimple direction="right" bottomOffset="20%">
+            <p>함께 이야기하면 즐거운 사람.</p>
+          </FadeSimple>
+          <Spacer height="2vh" />
+          <FadeSimple direction="right" bottomOffset="20%">
+            <p>적절한 유머감각 겸비.</p>
           </FadeSimple>
         </GridStickyContent>
-        {/*<Headline2>*/}
-        {/*  <FadeSimple direction="right" bottomOffset="20%">*/}
-        {/*    <h4>With 비개발직군</h4>*/}
-        {/*  </FadeSimple>*/}
-        {/*</Headline2>*/}
+
         <GridStickyContent style={{ gridArea: 'content2' }}>
           <FadeSimple direction="left" bottomOffset="20%">
             <p>
-              개발직군과 비개발직군이 사용하는 용어가 다름을 잘 알고, 이해하기 쉽게 설명할 수 있습니다.
-              {/*<br />*/}
-              {/*아, 생각난 김에 이 내용도 써두겠습니다. 기술적으로 어려운 요구사항을 받고도 쉬운 척 하지는 않겠지만, 쉬운 걸*/}
-              {/*오래걸린다고 말하지도 않을거예요. 좋은 서비스를 제공하고 싶고, 사용자가 느끼기에 좋은 서비스란 UI/UX 비중이*/}
-              {/*크다고 생각하기 때문에 기술적으로 어려워도 최선을 다해서 작업할게요.*/}
+              <em>협업을 위한 소통은 기본.</em>
+              <br />
+              기술적인 이야기를 좋아합니다.
+              <br />
+              비개발직군과 <em>원활한 소통</em>이 가능합니다.
             </p>
           </FadeSimple>
+
           <Waypoint
             onEnter={() => setPeopleVisible(true)}
             onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'below')}
+            topOffset="50%"
           />
         </GridStickyContent>
         <GridBottomSpacer height="50vh" />
       </GridContainer>
+
       <ConversationImageContainer style={{ transform }}>
         <ConversationImage src={conversationImage} alt="conversation" />
       </ConversationImageContainer>
