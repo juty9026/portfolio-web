@@ -37,7 +37,7 @@ interface SectionProps {
 
 const Section = styled.section<SectionProps>`
   width: 100%;
-  min-height: 100vh;
+  min-height: 200vh;
   padding: 50vh 5vw 30vh 5vw;
 
   h3 {
