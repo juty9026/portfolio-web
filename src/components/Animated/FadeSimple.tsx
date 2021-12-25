@@ -27,7 +27,7 @@ const FadeSimple: React.FC<Props> = ({
   style,
   direction = 'none',
   topOffset = '-10%',
-  bottomOffset = 0,
+  bottomOffset = '10%',
 }) => {
   const [inView, setInView] = useState(false);
 
