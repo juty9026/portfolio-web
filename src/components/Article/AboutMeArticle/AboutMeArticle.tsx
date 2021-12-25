@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import styles from './AboutMeArticle.e';
 import Profile from '@components/Profile';
 import { PolaroidImage } from '@components/PolaroidImage';
 import Minu from '@images/minu-1a-640w.jpeg';
@@ -13,11 +11,21 @@ const Article = styled.article`
   padding: 5vh 10vw 5vh 10vw;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Section = styled.section`
+  flex: 1;
+  font-size: 1.5rem;
+`;
+
 const AboutMeArticle: React.FC = () => {
   return (
     <Article>
-      <div css={styles.container}>
-        <section css={styles.section}>
+      <Container>
+        <Section>
           <Profile />
           <div>
             <PolaroidImage
@@ -42,8 +50,8 @@ const AboutMeArticle: React.FC = () => {
               styleOuter={{ position: 'absolute', top: '160px', left: '240px' }}
             />
           </div>
-        </section>
-        <section css={styles.section}>
+        </Section>
+        <Section>
           <p>안녕하세요. 만 4년차 웹 개발자 정민우입니다.</p>
           <p>어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎</p>
           <br />
@@ -60,8 +68,8 @@ const AboutMeArticle: React.FC = () => {
           {/*  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit*/}
           {/*  anim id est laborum.*/}
           {/*</pre>*/}
-        </section>
-      </div>
+        </Section>
+      </Container>
     </Article>
   );
 };
