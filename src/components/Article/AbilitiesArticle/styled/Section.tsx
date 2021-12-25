@@ -49,7 +49,8 @@ const Section = styled.section<SectionProps>`
   }
 
   pre,
-  p {
+  p,
+  span {
     font-size: 2rem;
   }
 

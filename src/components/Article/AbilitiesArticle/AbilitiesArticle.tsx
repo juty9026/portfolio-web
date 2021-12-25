@@ -4,6 +4,7 @@ import {
   SectionCleanCode,
   SectionCommunication,
   SectionProblemSolver,
+  SectionWorkEfficiency,
 } from '@components/Article/AbilitiesArticle/section';
 
 const Wrap = styled.div`
@@ -19,15 +20,6 @@ const H5 = styled.h5`
   font-size: 2rem;
 `;
 
-const ParagraphContainer = styled.div`
-  padding: 10vh 5vw 10vh 5vw;
-`;
-
-const P = styled.p`
-  font-size: 2rem;
-  color: #6e6e73;
-`;
-
 const SubSection = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -40,10 +32,7 @@ const AbilitiesArticle: React.FC = () => {
         <SectionCommunication />
         <SectionProblemSolver />
         <SectionCleanCode />
-        <H3>더 나은 결과물을 위해.</H3>
-        <ParagraphContainer>
-          <P>서비스의 품질을 </P>
-        </ParagraphContainer>
+        <SectionWorkEfficiency />
 
         <SubSection>
           <H5>놀라운 적응력</H5>
