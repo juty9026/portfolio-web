@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WebFont from 'webfontloader';
 import './App.css';
-import data from '@data';
-import { AboutMeArticle, AbilitiesArticle, WorkExperienceArticle, SkillsArticle } from '@components/Article';
+import { AbilitiesArticle, AboutMeArticle, SkillsArticle, WorkExperienceArticle } from '@components/Article';
 import Hero from '@components/Hero';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -25,7 +24,7 @@ function App() {
           fontLoadded ? (
             <main>
               <Hero />
-              <AboutMeArticle data={data.aboutMe} />
+              <AboutMeArticle />
               <SkillsArticle />
               <AbilitiesArticle />
               <WorkExperienceArticle />
