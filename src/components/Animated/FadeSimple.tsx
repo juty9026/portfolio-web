@@ -4,6 +4,7 @@ import { Waypoint } from 'react-waypoint';
 import styled from '@emotion/styled';
 
 interface Props {
+  block?: boolean;
   className?: string;
   style?: CSSProperties;
   direction?: 'none' | 'top' | 'topRight' | 'right' | 'rightBottom' | 'bottom' | 'bottomLeft' | 'left' | 'leftTop';
@@ -20,6 +21,7 @@ const AnimatedDiv = styled(a.div)`
 `;
 
 const FadeSimple: React.FC<Props> = ({
+  block = false,
   children,
   className,
   style,
@@ -58,7 +60,7 @@ const FadeSimple: React.FC<Props> = ({
 
   return (
     <Wrap className={className} style={style}>
-      <AnimatedDiv style={{ ...spring, display: 'inline-block' }}>{children}</AnimatedDiv>
+      <AnimatedDiv style={{ ...spring, display: block ? 'block' : 'inline-block' }}>{children}</AnimatedDiv>
       <Waypoint
         onEnter={() => setInView(true)}
         onLeave={() => setInView(false)}
