@@ -136,7 +136,7 @@ const WorkExperience: React.FC = () => {
       )}
       <Container>
         {transition((style, { partner, title, period, overlayComponent }) => (
-          <a.div style={style}>
+          <a.div style={{ ...style, flex: '1 0 30%' }}>
             <WorkExperienceCard
               partner={partner}
               title={title}
