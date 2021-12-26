@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Profile from '@components/Profile';
 import { PolaroidImage } from '@components/PolaroidImage';
 import Minu from '@images/minu-1a-640w.jpeg';
 import Nosick from '@images/nosick-1-640w.jpeg';
 import Nolza from '@images/nolza-3-640w.jpeg';
+import { Waypoint } from 'react-waypoint';
+import { a, config, useTrail } from 'react-spring';
 
 const Article = styled.article`
   min-height: 100vh;
@@ -21,37 +23,70 @@ const Section = styled.section`
   font-size: 1.5rem;
 `;
 
+const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
+  const items = React.Children.toArray(children);
+  const trail = useTrail(items.length, {
+    x: visible ? 0 : -50,
+    y: visible ? 0 : 20,
+    opacity: visible ? 1 : 0,
+    reverse: !visible,
+    config: config.slow,
+  });
+
+  return (
+    <div>
+      {trail.map((style, i) => (
+        <a.div style={style}>{items[i]}</a.div>
+      ))}
+    </div>
+  );
+};
+
 const AboutMeArticle: React.FC = () => {
+  const [photoVisible, setPhotoVisible] = useState(false);
   return (
     <Article>
       <Container>
         <Section>
-          <Profile />
           <div>
-            <PolaroidImage
-              src={Nolza}
-              alt="Nolza"
-              title="Nolza"
-              width="240px"
-              styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.8)' }}
+            <Waypoint
+              onEnter={() => setPhotoVisible(true)}
+              onLeave={({ currentPosition }) => setPhotoVisible(currentPosition === 'above')}
+              topOffset="-50%"
+              bottomOffset="50%"
             />
-            <PolaroidImage
-              src={Nosick}
-              alt="Nosick"
-              title="Nosick"
-              width="240px"
-              styleOuter={{ position: 'absolute', top: '296px', left: '48px', transform: 'rotate(-10deg) scale(0.8)' }}
-            />
-            <PolaroidImage
-              src={Minu}
-              alt="Me"
-              title="Minu"
-              width="240px"
-              styleOuter={{ position: 'absolute', top: '160px', left: '240px' }}
-            />
+            <Trail visible={photoVisible}>
+              <PolaroidImage
+                src={Nolza}
+                alt="Nolza"
+                title="Nolza"
+                width="240px"
+                styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.8)' }}
+              />
+              <PolaroidImage
+                src={Nosick}
+                alt="Nosick"
+                title="Nosick"
+                width="240px"
+                styleOuter={{
+                  position: 'absolute',
+                  top: '296px',
+                  left: '48px',
+                  transform: 'rotate(-10deg) scale(0.8)',
+                }}
+              />
+              <PolaroidImage
+                src={Minu}
+                alt="Me"
+                title="Minu"
+                width="240px"
+                styleOuter={{ position: 'absolute', top: '160px', left: '240px' }}
+              />
+            </Trail>
           </div>
         </Section>
         <Section>
+          <Profile />
           <p>안녕하세요. 만 4년차 웹 개발자 정민우입니다.</p>
           <p>어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎</p>
           <br />
