@@ -6,13 +6,10 @@ import Nosick from '@images/nosick-1-640w.jpeg';
 import Nolza from '@images/nolza-3-640w.jpeg';
 import { Waypoint } from 'react-waypoint';
 import { a, config, useTrail } from 'react-spring';
-
-const Article = styled.article`
-  min-height: 100vh;
-  padding: 5vh 10vw 5vh 10vw;
-`;
+import Article from '@components/Article/Article';
 
 const Container = styled.div`
+  padding: 5vh 10vw 5vh 10vw;
   display: flex;
   flex-direction: row;
 `;
