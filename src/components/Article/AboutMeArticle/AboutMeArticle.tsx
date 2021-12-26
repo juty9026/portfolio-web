@@ -49,7 +49,7 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
 const AboutMeArticle: React.FC = () => {
   const [photoVisible, setPhotoVisible] = useState(false);
   return (
-    <Article>
+    <Article title="About">
       <Container>
         <Section>
           <div>

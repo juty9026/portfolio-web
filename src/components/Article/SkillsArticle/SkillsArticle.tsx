@@ -3,20 +3,12 @@ import React from 'react';
 import styled from '@emotion/styled';
 import TechExpBar from '@components/TechExpBar';
 import SphericalWordCloud from '@components/SphericalWordCloud';
-
-const Article = styled.article`
-  min-height: 100vh;
-  padding: 5vh 10vw 5vh 10vw;
-`;
+import Article from '@components/Article/Article';
 
 const Wrap = styled.div`
+  padding: 5vh 10vw 5vh 10vw;
   display: flex;
   flex-wrap: wrap-reverse;
-`;
-
-const H3 = styled.div`
-  font-size: 4rem;
-  color: #00a1a7;
 `;
 
 const ExpBarSection = styled.section`
@@ -112,8 +104,7 @@ const SkillsArticle: React.FC = () => {
   }, [active, data]);
 
   return (
-    <Article>
-      <H3>Skills</H3>
+    <Article title="Skills">
       <Wrap>
         <ExpBarSection>
           <div>
