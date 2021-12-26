@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Profile from '@components/Profile';
 import { PolaroidImage } from '@components/PolaroidImage';
 import Minu from '@images/minu-1a-640w.jpeg';
 import Nosick from '@images/nosick-1-640w.jpeg';
@@ -20,7 +19,15 @@ const Container = styled.div`
 
 const Section = styled.section`
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 1rem;
+`;
+
+const Headline = styled.h1`
+  font-size: 2rem;
+`;
+
+const Introduce = styled.p`
+  font-size: 1rem;
 `;
 
 const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
@@ -61,7 +68,7 @@ const AboutMeArticle: React.FC = () => {
                 alt="Nolza"
                 title="Nolza"
                 width="240px"
-                styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.8)' }}
+                styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.9)' }}
               />
               <PolaroidImage
                 src={Nosick}
@@ -70,9 +77,9 @@ const AboutMeArticle: React.FC = () => {
                 width="240px"
                 styleOuter={{
                   position: 'absolute',
-                  top: '296px',
-                  left: '48px',
-                  transform: 'rotate(-10deg) scale(0.8)',
+                  top: '240px',
+                  left: '184px',
+                  transform: 'rotate(-10deg) scale(0.9)',
                 }}
               />
               <PolaroidImage
@@ -80,29 +87,33 @@ const AboutMeArticle: React.FC = () => {
                 alt="Me"
                 title="Minu"
                 width="240px"
-                styleOuter={{ position: 'absolute', top: '160px', left: '240px' }}
+                styleOuter={{ position: 'absolute', top: '160px', right: 0 }}
               />
             </Trail>
           </div>
         </Section>
         <Section>
-          <Profile />
-          <p>안녕하세요. 만 4년차 웹 개발자 정민우입니다.</p>
-          <p>어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎</p>
-          <br />
-          <p>
-            웹 페이지 제작과 관련된 기술 대부분에 흥미가 있으며 계속해서 배우고, 도전하는 것을 좋아하여 빠르게 변화하는
-            트렌드에 금방 적응합니다.
-          </p>
-          <p>작은 웹 프로젝트를 설계부터 rc 단계까지 Front-end 리드한 경험이 있습니다.</p>
-          {/*<br />*/}
-          {/*<pre>*/}
-          {/*  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et*/}
-          {/*  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex*/}
-          {/*  ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat*/}
-          {/*  nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit*/}
-          {/*  anim id est laborum.*/}
-          {/*</pre>*/}
+          {/*<Profile />*/}
+          <div style={{ marginTop: '10vh', padding: '5vh 5vw' }}>
+            <Headline>
+              안녕하세요.
+              <br />만 4년차 웹 개발자 정민우입니다.
+            </Headline>
+            <br />
+            <br />
+            <Introduce>
+              유저 친화적이고 견고한 웹 애플리케이션에 대해 고민하며 최근에는 웹 표준과 접근성에 대해 배우고 있습니다.
+              <br />
+              <br />
+              낯선 환경에 빠르게 적응하고 논리를 바탕으로 새로운 기술을 빠르게 습득합니다.
+              <br />
+              <br />
+              도전하는 것을 좋아하고 그 결과에 상관없이 과정에서 얻는 경험의 가치를 높게 생각합니다.
+              <br />
+              <br />
+              어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎
+            </Introduce>
+          </div>
         </Section>
       </Container>
     </Article>
