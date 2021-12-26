@@ -16,13 +16,10 @@ import P09_WDP from './P09_WDP';
 import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
-
-const Article = styled.article`
-  min-height: 100vh;
-  padding: 5vh 10vw 5vh 10vw;
-`;
+import Article from '@components/Article/Article';
 
 const Container = styled.div`
+  padding: 5vh 10vw 5vh 10vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -131,7 +128,7 @@ const WorkExperience: React.FC = () => {
   }, []);
 
   return (
-    <Article style={{ minHeight: '100vh' }}>
+    <Article title="Works & Experience">
       {overlayVisible && (
         <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
           {overlayContent}
