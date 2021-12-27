@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import TechExpBar from '@components/TechExpBar';
 import SphericalWordCloud from '@components/SphericalWordCloud';
 import Article from '@components/Article/Article';
+import { a, config, useTransition } from 'react-spring';
 
 const Wrap = styled.div`
   padding: 5vh 10vw 5vh 10vw;
@@ -103,6 +104,15 @@ const SkillsArticle: React.FC = () => {
     return data.find((item) => item.position === activeItem)?.relatedSkills || [];
   }, [active, data]);
 
+  const transitions = useTransition(
+    relatedSkills.map((item, i) => ({ ...item, y: (i + 1) * -40 })),
+    {
+      from: ({ y }) => ({ y, opacity: 0 }),
+      enter: { y: 0, opacity: 1 },
+      config: config.molasses,
+    }
+  );
+
   return (
     <Article title="Skills">
       <Wrap>
@@ -114,8 +124,10 @@ const SkillsArticle: React.FC = () => {
           </div>
           <Spacer />
           <div>
-            {relatedSkills.map(({ tag, exp }) => (
-              <TechExpBar key={tag} title={tag} exp={exp} />
+            {transitions((style, { tag, exp }, t, index) => (
+              <a.div style={{ ...style, zIndex: relatedSkills.length - index }}>
+                <TechExpBar key={tag} title={tag} exp={exp} />
+              </a.div>
             ))}
           </div>
         </ExpBarSection>

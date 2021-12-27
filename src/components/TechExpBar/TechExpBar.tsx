@@ -17,6 +17,7 @@ const Wrap = styled.div<WrapProps>`
     if (active) {
       return css`
         border-color: #04c2c9;
+        transition: all 1s;
       `;
     }
     if (clickable) {
