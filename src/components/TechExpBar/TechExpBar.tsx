@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { a, config, Spring } from 'react-spring';
 
 interface WrapProps {
   active?: boolean;
@@ -32,7 +33,7 @@ const ExpBar = styled.div`
   background-color: #eeeeee;
 `;
 
-const Exp = styled.div`
+const AnimatedExp = styled(a.div)`
   position: absolute;
   height: 100%;
   border-radius: inherit;
@@ -74,17 +75,19 @@ interface Props {
 
 const TechExpBar: React.FC<Props> = ({ active = false, title, exp, style, onClick }) => {
   return (
-    <Wrap style={style} active={active} clickable={!!onClick} onClick={() => onClick && onClick(title)}>
-      <ExpBar>
-        <Exp
-          style={{
-            width: `${exp}%`,
-          }}
-        />
-        <Tag>{title}</Tag>
-        <Number>{`${exp}%`}</Number>
-      </ExpBar>
-    </Wrap>
+    <Spring from={{ width: '20%' }} to={{ width: `${exp}%` }} config={config.molasses}>
+      {(styles) => {
+        return (
+          <Wrap style={style} active={active} clickable={!!onClick} onClick={() => onClick && onClick(title)}>
+            <ExpBar>
+              <AnimatedExp style={styles} />
+              <Tag>{title}</Tag>
+              <Number>{`${exp}%`}</Number>
+            </ExpBar>
+          </Wrap>
+        );
+      }}
+    </Spring>
   );
 };
 
