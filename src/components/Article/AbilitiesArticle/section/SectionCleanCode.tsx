@@ -9,7 +9,7 @@ const SectionCleanCode: React.FC = () => {
   const { transform } = useSpring({ transform: `perspective(6000px) rotateY(${codeVisible ? 0 : 90}deg)` });
 
   return (
-    <Section theme="light">
+    <Section theme="light" style={{ zIndex: 0 }}>
       <FadeSimple direction="top" bottomOffset="50%">
         <h3>술술 읽히는 코드.</h3>
       </FadeSimple>
