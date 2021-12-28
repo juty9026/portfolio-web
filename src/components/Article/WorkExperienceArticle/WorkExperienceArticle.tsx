@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import styled from '@emotion/styled';
 import WorkExperienceCard from './WorkExperienceCard';
 import P01_TANGO_D from './P01_TANGO_D';
@@ -111,18 +111,24 @@ const works: Work[] = [
 
 const WorkExperience: React.FC = () => {
   const [content, setContent] = React.useState<ReactNode>(null);
+  const [activeIndex, setActiveIndex] = React.useState<number>(0);
+
+  useEffect(() => {
+    setContent(works[activeIndex].overlayComponent);
+  }, [activeIndex]);
 
   return (
     <Article title="Works & Experience">
       <ArticleMain>
         <SideBar>
-          {works.map(({ partner, title, period, overlayComponent }) => (
-            <FadeSimple direction="right" bottomOffset={0} block>
+          {works.map(({ partner, title, period }, index) => (
+            <FadeSimple key={index} direction="right" bottomOffset={0} block>
               <WorkExperienceCard
+                active={index === activeIndex}
                 partner={partner}
                 title={title}
                 period={period}
-                onClick={() => setContent(overlayComponent)}
+                onClick={() => setActiveIndex(index)}
               />
             </FadeSimple>
           ))}

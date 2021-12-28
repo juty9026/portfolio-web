@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { SerializedStyles } from '@emotion/react';
 
 const CardWrap = styled.div`
   display: flex;
@@ -18,12 +16,12 @@ const CardWrap = styled.div`
 
 interface Props {
   onClick?: React.MouseEventHandler;
-  css: SerializedStyles;
+  className?: string;
 }
 
-const Card: React.FC<Props> = ({ children, onClick, css }) => {
+const Card: React.FC<Props> = ({ className, children, onClick }) => {
   return (
-    <CardWrap css={css} onClick={onClick}>
+    <CardWrap className={className} onClick={onClick}>
       {children}
     </CardWrap>
   );
