@@ -7,7 +7,7 @@ const CardWrap = styled.div`
   flex: 0 0 30%;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 0.5s;
   margin: 6vh 6vw 6vh 6vw;
   z-index: 1;
   padding: 1vh 1vw 1vh 1vw;
