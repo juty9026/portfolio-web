@@ -109,7 +109,7 @@ const SectionWorkEfficiency: React.FC = () => {
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              반복되는 작업을 <em>자동화</em>하여 소요시간을 줄이고 <em>업무효율</em>을 향상시킵니다.
+              반복되는 작업을 <em>자동화</em>하여 소요시간을 줄이고 <em>업무효율</em>을 <em>향상</em>시킵니다.
             </p>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
