@@ -14,6 +14,10 @@ const StyledCard = styled(Card)<{ active?: boolean }>`
       background-color: #04c2c9;
       opacity: 0.9;
     `}
+
+  &:hover {
+    transform: translateX(2rem) scale(1.1);
+  }
 `;
 
 const Header = styled.header`
