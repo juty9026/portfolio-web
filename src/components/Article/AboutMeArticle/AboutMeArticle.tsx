@@ -10,6 +10,7 @@ import Article from '@components/Article/Article';
 
 const Container = styled.div`
   padding: 5vh 10vw 5vh 10vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
 `;
