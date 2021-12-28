@@ -8,6 +8,11 @@ import Slack from '@images/Slack.png';
 import SublimeText from '@images/SublimeText.png';
 import VisualStudioCode from '@images/VisualStudioCode.png';
 import WebStorm from '@images/WebStorm.png';
+import styled from '@emotion/styled';
+
+const Headline = styled.p`
+  padding: 2vh 0;
+`;
 
 const SectionWorkEfficiency: React.FC = () => {
   return (
@@ -20,7 +25,7 @@ const SectionWorkEfficiency: React.FC = () => {
 
       <Spacer height="20vh" />
 
-      <div style={{ position: 'absolute', top: '80vh', left: 0, width: '100vw' }}>
+      <div style={{ position: 'absolute', top: '100vh', left: 0, width: '100vw' }}>
         <ParallaxIcon
           src={IntelliJ}
           alt={'IntelliJ'}
@@ -69,9 +74,9 @@ const SectionWorkEfficiency: React.FC = () => {
       <div style={{ maxWidth: '640px', margin: 'auto', backgroundColor: '#000000' }}>
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
-            <p>
+            <Headline>
               텍스트 편집 능력. <em>최상</em>.
-            </p>
+            </Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>타이핑 속도가 빠르고, 툴을 잘 다룹니다.</p>
@@ -82,9 +87,9 @@ const SectionWorkEfficiency: React.FC = () => {
 
         <div>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
-            <p>
-              적응 능력도. <em>최상</em>.
-            </p>
+            <Headline>
+              적응 능력. <em>최상</em>.
+            </Headline>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
@@ -98,18 +103,18 @@ const SectionWorkEfficiency: React.FC = () => {
 
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
-            <p>
-              반복을 줄이고 <em>개선</em>하는 습관.
-            </p>
+            <Headline>
+              반복을 줄이고 <em>개선</em>하는 <em>습관</em>.
+            </Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              반복되는 작업을 자동화하여 소요시간을 줄이고 <em>업무효율을 높입니다</em>.
+              반복되는 작업을 <em>자동화</em>하여 소요시간을 줄이고 <em>업무효율</em>을 향상시킵니다.
             </p>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              반복되는 코드를 추상화하여 분리해내고 <em>유지보수를 쉽게 만듭니다</em>.
+              반복되는 코드를 추상화하여 분리해내고 <em>유지보수</em>를 <em>쉽게</em> 만듭니다.
             </p>
           </FadeSimple>
         </div>
