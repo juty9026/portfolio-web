@@ -46,6 +46,7 @@ span {
   font-size: inherit;
   letter-spacing: 0.1rem;
   text-align: left;
+  word-break: keep-all;
 }
 
 h1,
