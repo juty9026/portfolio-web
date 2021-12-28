@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
-import { a, useTransition } from 'react-spring';
-import { Waypoint } from 'react-waypoint';
 import PopupOverlay from '@components/PopupOverlay';
 import WorkExperienceCard from './WorkExperienceCard';
 import P01_TANGO_D from './P01_TANGO_D';
@@ -17,12 +15,12 @@ import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
+import { FadeSimple } from '@components/Animated';
 
-const Container = styled.div`
-  padding: 5vh 10vw 5vh 10vw;
+const SideBar = styled.aside`
+  width: 20vw;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 interface Work {
@@ -107,14 +105,6 @@ const works: Work[] = [
 const WorkExperience: React.FC = () => {
   const [overlayVisible, setOverlayVisible] = React.useState(false);
   const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
-  const [cardVisible, setCardVisible] = useState(false);
-
-  const transition = useTransition(cardVisible ? works : [], {
-    trail: 400 / works.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
-  });
 
   const openOverlay = React.useCallback((content) => {
     setOverlayVisible(true);
@@ -134,19 +124,18 @@ const WorkExperience: React.FC = () => {
           {overlayContent}
         </PopupOverlay>
       )}
-      <Container>
-        {transition((style, { partner, title, period, overlayComponent }) => (
-          <a.div style={{ ...style, flex: '1 0 30%' }}>
+      <SideBar>
+        {works.map(({ partner, title, period, overlayComponent }) => (
+          <FadeSimple direction="right" bottomOffset={0} block>
             <WorkExperienceCard
               partner={partner}
               title={title}
               period={period}
               onClick={() => openOverlay(overlayComponent)}
             />
-          </a.div>
+          </FadeSimple>
         ))}
-      </Container>
-      <Waypoint onEnter={() => setCardVisible(true)} onLeave={() => setCardVisible(false)} />
+      </SideBar>
     </Article>
   );
 };
