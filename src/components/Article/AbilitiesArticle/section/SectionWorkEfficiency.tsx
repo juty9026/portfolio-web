@@ -93,8 +93,17 @@ const SectionWorkEfficiency: React.FC = () => {
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              처음 접하는 <em>환경</em>, <em>사람</em>, <em>문화</em>. 그리고 <em>언어</em>, <em>프레임워크</em>,{' '}
-              <em>라이브러리</em> 뿐만 아니라 <em>다양한 도구</em>까지.
+              처음 접하는 <em>환경</em>, <em>사람</em>, <em>문화</em>.
+            </p>
+          </FadeSimple>
+          <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
+            <p>
+              그리고 <em>언어</em>, <em>프레임워크</em>, <em>라이브러리</em>.
+            </p>
+          </FadeSimple>
+          <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
+            <p>
+              뿐만 아니라 <em>다양한 도구</em>까지.
             </p>
           </FadeSimple>
         </div>
@@ -109,12 +118,20 @@ const SectionWorkEfficiency: React.FC = () => {
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              반복되는 작업을 <em>자동화</em>하여 소요시간을 줄이고 <em>업무효율</em>을 <em>향상</em>시킵니다.
+              반복되는 작업을 <em>자동화</em>하여 소요시간을 줄이고
             </p>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              반복되는 코드를 추상화하여 분리해내고 <em>유지보수</em>를 <em>쉽게</em> 만듭니다.
+              <em>업무효율</em>을 <em>향상</em>시킵니다.
+            </p>
+          </FadeSimple>
+          <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
+            <p>반복되는 코드를 추상화하여 분리해내고</p>
+          </FadeSimple>
+          <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
+            <p>
+              <em>유지보수</em>를 <em>쉽게</em> 만듭니다.
             </p>
           </FadeSimple>
         </div>
