@@ -16,7 +16,7 @@ const styles = {
   title: css`
     text-align: center;
     font-size: 2rem;
-    color: white;
+    color: black;
   `,
   textContainer: css`
     padding: 4vh 0 0 0;
@@ -27,7 +27,7 @@ const styles = {
   text: css`
     text-align: center;
     font-size: 1.5rem;
-    color: white;
+    color: black;
   `,
 };
 

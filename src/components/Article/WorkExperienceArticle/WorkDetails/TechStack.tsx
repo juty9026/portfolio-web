@@ -19,7 +19,7 @@ const styles = {
     align-items: center;
     text-align: center;
     font-size: 2rem;
-    color: white;
+    color: black;
   `,
   contentContainer: css`
     flex: 1;
@@ -30,7 +30,7 @@ const styles = {
     flex: 1;
     text-align: left;
     font-size: 1.5rem;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
