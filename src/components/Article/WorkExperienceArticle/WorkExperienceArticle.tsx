@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
-import PopupOverlay from '@components/PopupOverlay';
 import WorkExperienceCard from './WorkExperienceCard';
 import P01_TANGO_D from './P01_TANGO_D';
 import P02_LCAP from './P02_LCAP';
@@ -17,10 +16,18 @@ import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
 import { FadeSimple } from '@components/Animated';
 
+const ArticleMain = styled.div`
+  display: flex;
+`;
+
 const SideBar = styled.aside`
-  width: 20vw;
+  flex: 0 1 20vw;
   display: flex;
   flex-direction: column;
+`;
+
+const Section = styled.section`
+  flex: 1 80vw;
 `;
 
 interface Work {
@@ -103,39 +110,25 @@ const works: Work[] = [
 ];
 
 const WorkExperience: React.FC = () => {
-  const [overlayVisible, setOverlayVisible] = React.useState(false);
-  const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
-
-  const openOverlay = React.useCallback((content) => {
-    setOverlayVisible(true);
-    setOverlayContent(content);
-  }, []);
-
-  const onKeyDown = React.useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Esc' || e.key === 'Escape') {
-      setOverlayVisible(false);
-    }
-  }, []);
+  const [content, setContent] = React.useState<ReactNode>(null);
 
   return (
     <Article title="Works & Experience">
-      {overlayVisible && (
-        <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
-          {overlayContent}
-        </PopupOverlay>
-      )}
-      <SideBar>
-        {works.map(({ partner, title, period, overlayComponent }) => (
-          <FadeSimple direction="right" bottomOffset={0} block>
-            <WorkExperienceCard
-              partner={partner}
-              title={title}
-              period={period}
-              onClick={() => openOverlay(overlayComponent)}
-            />
-          </FadeSimple>
-        ))}
-      </SideBar>
+      <ArticleMain>
+        <SideBar>
+          {works.map(({ partner, title, period, overlayComponent }) => (
+            <FadeSimple direction="right" bottomOffset={0} block>
+              <WorkExperienceCard
+                partner={partner}
+                title={title}
+                period={period}
+                onClick={() => setContent(overlayComponent)}
+              />
+            </FadeSimple>
+          ))}
+        </SideBar>
+        <Section>{content}</Section>
+      </ArticleMain>
     </Article>
   );
 };
