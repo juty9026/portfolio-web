@@ -29,39 +29,39 @@ const SkillsArticle: React.FC = () => {
     () => [
       {
         position: 'Front-end',
-        exp: 60,
+        exp: 70,
         relatedSkills: [
           { tag: 'Javascript', exp: 80 },
-          { tag: 'Typescript', exp: 40 },
+          { tag: 'Typescript', exp: 60 },
           { tag: 'React', exp: 80 },
-          { tag: 'Vue', exp: 60 },
-          { tag: 'Angular', exp: 30 },
+          { tag: 'Vue', exp: 70 },
+          { tag: 'Angular', exp: 40 },
         ],
       },
       {
         position: 'Back-end',
-        exp: 50,
+        exp: 60,
         relatedSkills: [
           { tag: 'JAVA', exp: 80 },
           { tag: 'Node.js', exp: 30 },
-          { tag: 'Spring', exp: 60 },
-          { tag: 'JPA', exp: 40 },
+          { tag: 'Spring', exp: 70 },
+          { tag: 'JPA / QueryDSL', exp: 60 },
           { tag: 'MySQL / MariaDB', exp: 50 },
         ],
       },
       {
         position: 'DevOps',
-        exp: 30,
+        exp: 45,
         relatedSkills: [
           { tag: 'Networking', exp: 60 },
-          { tag: 'Cloud', exp: 20 },
-          { tag: 'CI / CD', exp: 30 },
-          { tag: 'Container', exp: 40 },
+          { tag: 'Cloud', exp: 30 },
+          { tag: 'CI / CD', exp: 40 },
+          { tag: 'Container', exp: 50 },
         ],
       },
       {
         position: 'Basics',
-        exp: 50,
+        exp: 60,
         relatedSkills: [
           { tag: 'Communication', exp: 80 },
           { tag: 'Git', exp: 70 },
