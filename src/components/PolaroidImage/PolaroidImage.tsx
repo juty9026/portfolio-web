@@ -24,6 +24,7 @@ const Wrap = styled.div<CSSProperties>`
 
   &:hover {
     animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
+    z-index: 1;
   }
 
   & p {
