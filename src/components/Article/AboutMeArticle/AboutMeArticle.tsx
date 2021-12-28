@@ -90,7 +90,6 @@ const AboutMeArticle: React.FC = () => {
           </div>
         </Section>
         <Section>
-          {/*<Profile />*/}
           <div style={{ marginTop: '10vh', padding: '5vh 5vw' }}>
             <Headline>
               안녕하세요.
