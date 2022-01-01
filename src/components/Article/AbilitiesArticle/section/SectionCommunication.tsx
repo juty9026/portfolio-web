@@ -5,8 +5,6 @@ import styled from '@emotion/styled';
 import { Waypoint } from 'react-waypoint';
 import { a, useSpring } from 'react-spring';
 import conversationImage from '@images/conversation.png';
-import StickyBox from 'react-sticky-box';
-import { css } from '@emotion/react';
 
 const GridContainer = styled(a.div)`
   display: grid;
@@ -14,23 +12,35 @@ const GridContainer = styled(a.div)`
     'content1      .            '
     '.             content2     '
     'bottom-spacer bottom-spacer';
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(100vh, 100vh));
   place-items: center;
   justify-content: center;
+
+  @media (max-width: 1023px) {
+    grid-template-areas:
+      'content1'
+      'content2'
+      'bottom-spacer';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(50vh, 50vh));
+  }
 `;
 
-const cssBaseGridItem = css`
-  min-height: 100vh;
+const GridStickyContent = styled.div`
+  position: sticky;
+  top: 0;
+  height: 100%;
   padding: 0 5vw 0 5vw;
   display: flex;
   place-items: center;
-`;
-
-const GridStickyContent = styled(StickyBox)`
-  ${cssBaseGridItem};
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1023px) {
+    position: relative;
+  }
 `;
 
 const GridBottomSpacer = styled(Spacer)`
@@ -68,7 +78,7 @@ const SectionCommunication: React.FC = () => {
 
       <GridContainer>
         <Waypoint
-          onEnter={() => setPeopleVisible(true)}
+          onEnter={({ previousPosition }) => previousPosition === 'below' && setPeopleVisible(true)}
           onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'above')}
         />
 
@@ -98,7 +108,7 @@ const SectionCommunication: React.FC = () => {
           </FadeSimple>
 
           <Waypoint
-            onEnter={() => setPeopleVisible(true)}
+            onEnter={({ previousPosition }) => previousPosition === 'above' && setPeopleVisible(true)}
             onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'below')}
             topOffset="50%"
           />
