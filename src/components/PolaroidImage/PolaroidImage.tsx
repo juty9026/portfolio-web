@@ -22,14 +22,46 @@ const Wrap = styled.div<CSSProperties>`
   transition: all 1s ease;
   top: 50px;
 
-  &:hover {
-    animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
-    z-index: 1;
-  }
-
   & p {
     font-family: 'Homemade Apple', cursive;
     text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
+      z-index: 1;
+    }
+  }
+`;
+
+const calculateWidth = (width: string | number | undefined, scale: number) => {
+  if (!width) {
+    return null;
+  }
+
+  if (typeof width === 'string') {
+    const valueRegEx = /\d+/;
+    const value = valueRegEx.test(width) ? Number(valueRegEx.exec(width)![0]) * scale : null;
+    const unitRegEx = /\D+/;
+    const unit = unitRegEx.test(width) ? unitRegEx.exec(width)![0] : null;
+    return value && unit ? `${value}${unit}` : null;
+  } else {
+    return width * scale;
+  }
+};
+
+const StyledImg = styled.img`
+  @media (max-width: 1023px) {
+    width: ${({ width }) => calculateWidth(width, 0.6)};
+  }
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    width: ${({ width }) => calculateWidth(width, 0.8)};
+  }
+
+  @media (min-width: 1440px) {
+    width: ${({ width }) => calculateWidth(width, 1)};
   }
 `;
 
@@ -41,7 +73,7 @@ interface PolaroidImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 const PolaroidImage: React.FC<PolaroidImageProps> = ({ title, styleOuter, styleImage, src, alt, ...imageProps }) => {
   return (
     <Wrap style={styleOuter}>
-      <img {...imageProps} src={src} alt={alt} style={styleImage} />
+      <StyledImg {...imageProps} src={src} alt={alt} style={styleImage} />
       <p>{title}</p>
     </Wrap>
   );

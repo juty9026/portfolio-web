@@ -9,19 +9,27 @@ import { a, config, useTrail } from 'react-spring';
 import Article from '@components/Article/Article';
 
 const Container = styled.div`
-  padding: 5vh 10vw 5vh 10vw;
+  margin: auto;
+  max-width: 1280px;
   min-height: 100vh;
+  padding: 5%;
   display: flex;
   flex-direction: row;
+  gap: 2rem;
 `;
 
-const Section = styled.section`
-  flex: 1;
+const SectionPhoto = styled.section`
+  flex: 1 0 60%;
+`;
+
+const SectionIntroduction = styled.section`
+  flex: 0 0 40%;
   font-size: 1rem;
 `;
 
 const Headline = styled.h1`
   font-size: 2rem;
+  text-align: left;
 `;
 
 const Introduce = styled.p`
@@ -39,9 +47,11 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
   });
 
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       {trail.map((style, i) => (
-        <a.div style={style}>{items[i]}</a.div>
+        <a.div key={i} style={{ ...style, height: '100%' }}>
+          {items[i]}
+        </a.div>
       ))}
     </div>
   );
@@ -52,8 +62,8 @@ const AboutMeArticle: React.FC = () => {
   return (
     <Article title="About">
       <Container>
-        <Section>
-          <div>
+        <SectionPhoto>
+          <div style={{ height: '100%' }}>
             <Waypoint
               onEnter={() => setPhotoVisible(true)}
               onLeave={({ currentPosition }) => setPhotoVisible(currentPosition === 'above')}
@@ -75,8 +85,8 @@ const AboutMeArticle: React.FC = () => {
                 width="240px"
                 styleOuter={{
                   position: 'absolute',
-                  top: '240px',
-                  left: '184px',
+                  top: '-70%',
+                  left: '25%',
                   transform: 'rotate(-10deg) scale(0.9)',
                 }}
               />
@@ -85,13 +95,13 @@ const AboutMeArticle: React.FC = () => {
                 alt="Me"
                 title="Minu"
                 width="240px"
-                styleOuter={{ position: 'absolute', top: '160px', right: 0 }}
+                styleOuter={{ position: 'absolute', top: '-190%', right: '2%' }}
               />
             </Trail>
           </div>
-        </Section>
-        <Section>
-          <div style={{ marginTop: '10vh', padding: '5vh 5vw' }}>
+        </SectionPhoto>
+        <SectionIntroduction>
+          <div>
             <Headline>
               안녕하세요.
               <br />만 4년차 웹 개발자 정민우입니다.
@@ -111,7 +121,7 @@ const AboutMeArticle: React.FC = () => {
               어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎
             </Introduce>
           </div>
-        </Section>
+        </SectionIntroduction>
       </Container>
     </Article>
   );
