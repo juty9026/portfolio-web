@@ -22,13 +22,15 @@ function App() {
       <div className="App">
         {
           fontLoadded ? (
-            <main>
+            <>
               <Hero />
-              <AboutMeArticle />
-              <SkillsArticle />
-              <AbilitiesArticle />
-              <WorkExperienceArticle />
-            </main>
+              <main>
+                <AboutMeArticle />
+                <SkillsArticle />
+                <AbilitiesArticle />
+                <WorkExperienceArticle />
+              </main>
+            </>
           ) : null // TODO: Loading Component
         }
       </div>

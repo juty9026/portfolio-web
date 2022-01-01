@@ -1,27 +1,53 @@
-/** @jsxImportSource @emotion/react */
-import { useScroll } from '@hooks';
 import React from 'react';
-import styles from './Hero.e';
+import styled from '@emotion/styled';
 
-interface Props {}
+const Wrap = styled.header`
+  height: 100vh;
+`;
 
-const Hero: React.FC<Props> = () => {
-  const { scrollY } = useScroll();
+const FixedContainer = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #262626;
+  color: white;
+`;
 
+const BannerTextWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 5rem;
+  gap: 0.2em;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+
+  @media (max-width: 767px) {
+    font-size: 4rem;
+  }
+`;
+
+const BannerText = styled.span`
+  @media (max-width: 767px) {
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+const Hero: React.FC = () => {
   return (
-    <div css={styles.wrapper} style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
-      <div css={styles.container} style={{ transform: `translateY(${scrollY * -0.42}px)` }}>
-        <div css={styles.helloContainer}>
-          <h5 css={styles.hello}>Hi there👋, I'm</h5>
-        </div>
-        <div css={styles.nameContainer}>
-          <h3 css={styles.name}>정민우</h3>
-        </div>
-        <div css={styles.positionContainer}>
-          <h4 css={styles.position}>Web developer</h4>
-        </div>
-      </div>
-    </div>
+    <Wrap>
+      <FixedContainer>
+        <BannerTextWrap>
+          <BannerText>LET'S</BannerText>
+          <BannerText>MAKE</BannerText>
+          <BannerText>SOMETHING</BannerText>
+          <BannerText>COOL</BannerText>
+          <BannerText>TOGETHER.</BannerText>
+        </BannerTextWrap>
+      </FixedContainer>
+    </Wrap>
   );
 };
 
