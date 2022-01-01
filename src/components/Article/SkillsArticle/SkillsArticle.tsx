@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
 import TechExpBar from '@components/TechExpBar';
@@ -9,15 +8,23 @@ import { a, config, useTransition } from 'react-spring';
 const Wrap = styled.div`
   padding: 5vh 10vw 5vh 10vw;
   display: flex;
-  flex-wrap: wrap-reverse;
+
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
 `;
 
-const ExpBarSection = styled.section`
-  flex: 1 0 400px;
+const SectionFlex = styled.section`
+  flex: 1;
 `;
 
-const WordSection = styled.section`
-  flex: 1 0 800px;
+const StyledSphericalWordCloud = styled(SphericalWordCloud)`
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 1023px) {
+    height: 100vh;
+  }
 `;
 
 const Spacer = styled.div`
@@ -116,7 +123,7 @@ const SkillsArticle: React.FC = () => {
   return (
     <Article title="Skills">
       <Wrap>
-        <ExpBarSection>
+        <SectionFlex>
           <div>
             {data.map(({ position, exp }) => (
               <TechExpBar key={position} active={active === position} title={position} exp={exp} onClick={setActive} />
@@ -130,10 +137,10 @@ const SkillsArticle: React.FC = () => {
               </a.div>
             ))}
           </div>
-        </ExpBarSection>
-        <WordSection>
-          <SphericalWordCloud data={wordCloudData} />
-        </WordSection>
+        </SectionFlex>
+        <SectionFlex>
+          <StyledSphericalWordCloud data={wordCloudData} />
+        </SectionFlex>
       </Wrap>
       <Spacer />
     </Article>

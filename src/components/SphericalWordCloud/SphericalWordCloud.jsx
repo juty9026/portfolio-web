@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
+const SphericalWordCloud = ({ data, className = undefined, width = 0, height = 0 }) => {
   (function () {
     var M,
       K,
@@ -2809,7 +2809,7 @@ const SphericalWordCloud = ({ data, width = 0, height = 0 }) => {
   }, []);
 
   return (
-    <div ref={setContainerRef} style={{ width: '100%', height: '100%' }}>
+    <div ref={setContainerRef} className={className}>
       <canvas
         id="myCanvas"
         ref={setCanvasRef}
