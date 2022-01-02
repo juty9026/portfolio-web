@@ -17,6 +17,7 @@ import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
+import Partner from '@customTypes/Partner';
 
 const Container = styled.div`
   padding: 5vh 10vw 5vh 10vw;
@@ -38,7 +39,7 @@ const StyledAnimatedDiv = styled(a.div)`
 `;
 
 interface Work {
-  partner: string;
+  partner: Partner;
   title: string;
   period: {
     start: string;
@@ -49,67 +50,67 @@ interface Work {
 const works: Work[] = [
   { partner: 'JUVIS', title: 'CRM', period: { start: '2021-11-01' }, overlayComponent: P12_JUVIS },
   {
-    partner: '오픈잇',
+    partner: 'Openit',
     title: '오픈몰',
     period: { start: '2021-10-13', end: '2021-10-29' },
     overlayComponent: P11_OPENMALL,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: '5GX Cloud',
     period: { start: '2021-05-03', end: '2021-11-05' },
     overlayComponent: P10_5GX_CLOUD,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'WDP',
     period: { start: '2021-04-03', end: '2021-04-30' },
     overlayComponent: P09_WDP,
   },
   {
-    partner: '오픈잇',
+    partner: 'Openit',
     title: '오픈몰',
     period: { start: '2021-02-01', end: '2021-04-02' },
     overlayComponent: P08_OPENMALL,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: '5GX Cloud',
     period: { start: '2020-12-01', end: '2021-01-29' },
     overlayComponent: P07_5GX_CLOUD,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'HAPP',
     period: { start: '2020-06-08', end: '2020-11-30' },
     overlayComponent: P06_HAPP,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'WDP',
     period: { start: '2020-04-20', end: '2020-05-29' },
     overlayComponent: P05_WDP,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'IDCube',
     period: { start: '2019-07-22', end: '2020-04-17' },
     overlayComponent: P04_IDCUBE,
   },
   {
-    partner: '호텔신라',
+    partner: 'HotelShilla',
     title: 'SHP',
     period: { start: '2019-02-08', end: '2019-05-31' },
     overlayComponent: P03_SHP,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'LCAP',
     period: { start: '2018-08-01', end: '2019-01-31' },
     overlayComponent: P02_LCAP,
   },
   {
-    partner: 'SK C&C',
+    partner: 'SKCC',
     title: 'TANGO-D',
     period: { start: '2018-02-01', end: '2018-05-31' },
     overlayComponent: P01_TANGO_D,

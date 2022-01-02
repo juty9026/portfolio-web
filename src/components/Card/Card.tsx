@@ -10,7 +10,6 @@ const CardWrap = styled.div`
   transition: 0.5s;
   margin: 6vh 6vw 6vh 6vw;
   z-index: 1;
-  padding: 1vh 1vw 1vh 1vw;
   font-size: 1rem;
 `;
 
