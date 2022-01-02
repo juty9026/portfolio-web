@@ -30,48 +30,48 @@ const SectionWorkEfficiency: React.FC = () => {
           src={IntelliJ}
           alt={'IntelliJ'}
           style={{ transform: 'scale(0.9)' }}
-          styleOuter={{ position: 'absolute', left: '360px' }}
+          styleOuter={{ position: 'absolute', left: '12%' }}
           y={['200px', '600px']}
         />
         <ParallaxIcon
           src={DataGrip}
           alt={'DataGrip'}
           style={{ transform: 'scale(0.75)' }}
-          styleOuter={{ position: 'absolute', right: '360px' }}
+          styleOuter={{ position: 'absolute', right: '12%' }}
           y={['200px', '600px']}
         />
         <ParallaxIcon
           src={Slack}
           alt={'Slack'}
           style={{ transform: 'scale(0.9)' }}
-          styleOuter={{ position: 'absolute', left: '100px' }}
+          styleOuter={{ position: 'absolute', left: '5%' }}
           y={['150px', '500px']}
         />
         <ParallaxIcon
           src={SublimeText}
           alt={'SublimeText'}
           style={{ transform: 'scale(0.6)' }}
-          styleOuter={{ position: 'absolute', right: '100px' }}
+          styleOuter={{ position: 'absolute', right: '5%' }}
           y={['100px', '500px']}
         />
         <ParallaxIcon
           src={WebStorm}
           alt={'WebStorm'}
-          styleOuter={{ position: 'absolute', left: '230px' }}
+          styleOuter={{ position: 'absolute', left: '18%' }}
           y={['150px', '400px']}
         />
         <ParallaxIcon
           src={VisualStudioCode}
           alt={'VisualStudioCode'}
           style={{ transform: 'scale(90%)' }}
-          styleOuter={{ position: 'absolute', right: '230px' }}
+          styleOuter={{ position: 'absolute', right: '18%' }}
           y={['100px', '400px']}
         />
       </div>
 
       <Spacer height="30vh" />
 
-      <div style={{ maxWidth: '640px', margin: 'auto', backgroundColor: '#000000' }}>
+      <div style={{ maxWidth: '1280px', margin: 'auto' }}>
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <Headline>
