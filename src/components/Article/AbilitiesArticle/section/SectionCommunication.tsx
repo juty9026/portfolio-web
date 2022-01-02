@@ -31,7 +31,6 @@ const GridStickyContent = styled.div`
   position: sticky;
   top: 0;
   height: 100%;
-  padding: 0 5vw 0 5vw;
   display: flex;
   place-items: center;
   flex-direction: column;
