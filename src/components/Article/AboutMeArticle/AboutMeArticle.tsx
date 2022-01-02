@@ -41,6 +41,10 @@ const SectionIntroduction = styled.section`
 const Headline = styled.h1`
   font-size: 2rem;
   text-align: left;
+
+  @media (max-width: 1023px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Introduce = styled.p`
