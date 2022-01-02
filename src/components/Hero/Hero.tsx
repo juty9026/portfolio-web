@@ -9,6 +9,7 @@ const FixedContainer = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
+  padding: 10%;
   background-color: #262626;
   color: white;
 `;
