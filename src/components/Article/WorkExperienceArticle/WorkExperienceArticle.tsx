@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { a, useTransition } from 'react-spring';
+import { a, config, useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import PopupOverlay from '@components/PopupOverlay';
 import WorkExperienceCard from './WorkExperienceCard';
@@ -23,6 +23,18 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const StyledAnimatedDiv = styled(a.div)`
+  flex: 0 30%;
+
+  @media (max-width: 767px) {
+    flex: 0 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    flex: 0 50%;
+  }
 `;
 
 interface Work {
@@ -109,11 +121,10 @@ const WorkExperience: React.FC = () => {
   const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
   const [cardVisible, setCardVisible] = useState(false);
 
-  const transition = useTransition(cardVisible ? works : [], {
-    trail: 400 / works.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
+  const trail = useTrail(works.length, {
+    opacity: cardVisible ? 1 : 0,
+    scale: cardVisible ? 1 : 0,
+    config: config.gentle,
   });
 
   const openOverlay = React.useCallback((content) => {
@@ -129,24 +140,27 @@ const WorkExperience: React.FC = () => {
 
   return (
     <Article title="Works & Experience">
+      <Waypoint
+        onEnter={() => setCardVisible(true)}
+        onLeave={({ currentPosition }) => setCardVisible(currentPosition === 'above')}
+      />
       {overlayVisible && (
         <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
           {overlayContent}
         </PopupOverlay>
       )}
       <Container>
-        {transition((style, { partner, title, period, overlayComponent }) => (
-          <a.div style={{ ...style, flex: '1 0 30%' }}>
+        {trail.map((style, index) => (
+          <StyledAnimatedDiv style={style}>
             <WorkExperienceCard
-              partner={partner}
-              title={title}
-              period={period}
-              onClick={() => openOverlay(overlayComponent)}
+              partner={works[index].partner}
+              title={works[index].title}
+              period={works[index].period}
+              onClick={() => openOverlay(works[index].overlayComponent)}
             />
-          </a.div>
+          </StyledAnimatedDiv>
         ))}
       </Container>
-      <Waypoint onEnter={() => setCardVisible(true)} onLeave={() => setCardVisible(false)} />
     </Article>
   );
 };

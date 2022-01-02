@@ -2,21 +2,15 @@ import React, { useMemo } from 'react';
 import styled from '@emotion/styled';
 import moment from 'moment';
 import Card from '@components/Card';
-import { css } from '@emotion/react';
 
 const StyledCard = styled(Card)<{ active?: boolean }>`
   margin: 0.5vh 0.2vw 0.5vh 0.2vw;
-  height: 10vh;
   cursor: pointer;
-  ${({ active }) =>
-    active &&
-    css`
-      background-color: #04c2c9;
-      opacity: 0.9;
-    `}
 
-  &:hover {
-    transform: translateX(2rem) scale(1.1);
+  @media (min-width: 1024px) {
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
