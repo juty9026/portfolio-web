@@ -23,13 +23,23 @@ const Wrap = styled.div<CSSProperties>`
   top: 50px;
 
   & p {
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Vujahday Script', cursive;
     text-align: center;
   }
 
   &:hover {
     animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
     z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2rem;
   }
 `;
 

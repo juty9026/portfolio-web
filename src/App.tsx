@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Bebas Neue', 'Jua'],
+        families: ['Bebas Neue', 'Jua', 'Vujahday Script'],
       },
       active: () => setFontLoadded(true),
     });
