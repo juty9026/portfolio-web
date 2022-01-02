@@ -41,7 +41,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@data', './src/data'],
           ['@images', './src/assets/images'],
-          ['@types', './src/types'],
+          ['@customTypes', './src/types'],
           ['@hooks', './src/hooks'],
           ['@section', './src/section'],
           ['@constants', './src/constants'],
