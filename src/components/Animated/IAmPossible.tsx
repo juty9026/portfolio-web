@@ -15,7 +15,7 @@ const Wrap = styled.div`
   }
 `;
 
-const AnimatedDiv = styled(a.div)`
+const StyledAnimatedDiv = styled(a.div)`
   display: inline-block;
 `;
 
@@ -24,15 +24,15 @@ interface Props {
 }
 
 const IAmPossible: React.FC<Props> = ({ change }) => {
-  const animIAm = useSpring({
+  const springPossible = useSpring({
     delay: 200,
     x: change ? 10 : 0,
   });
-  const animStyleI = useSpring({
+  const springMPossible = useSpring({
     delay: 200,
-    x: change ? 10 : -18,
+    x: change ? 0 : -18,
   });
-  const animStyleAm = useSpring({
+  const springApostrophe = useSpring({
     delay: 200,
     opacity: change ? 1 : 0,
     y: change ? 0 : -15,
@@ -40,10 +40,10 @@ const IAmPossible: React.FC<Props> = ({ change }) => {
 
   return (
     <Wrap>
-      I<AnimatedDiv style={animStyleAm}>'</AnimatedDiv>
-      <AnimatedDiv style={animStyleI}>
-        m<AnimatedDiv style={animIAm}>possible.</AnimatedDiv>
-      </AnimatedDiv>
+      I<StyledAnimatedDiv style={springApostrophe}>'</StyledAnimatedDiv>
+      <StyledAnimatedDiv style={springMPossible}>
+        m<StyledAnimatedDiv style={springPossible}>possible.</StyledAnimatedDiv>
+      </StyledAnimatedDiv>
     </Wrap>
   );
 };
