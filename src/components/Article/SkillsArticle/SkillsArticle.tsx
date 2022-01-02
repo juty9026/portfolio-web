@@ -6,8 +6,9 @@ import Article from '@components/Article/Article';
 import { a, config, useTransition } from 'react-spring';
 
 const Wrap = styled.div`
-  padding: 5vh 10vw 5vh 10vw;
+  padding: 5%;
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: 1023px) {
     flex-direction: column-reverse;
@@ -22,8 +23,11 @@ const StyledSphericalWordCloud = styled(SphericalWordCloud)`
   width: 100%;
   height: 100%;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 767px) {
     height: 50vh;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    height: 65vh;
   }
 `;
 
