@@ -75,12 +75,12 @@ const SectionCommunication: React.FC = () => {
 
       <Spacer height="10vh" />
 
+      <Waypoint
+        onEnter={({ previousPosition }) => previousPosition === 'below' && setPeopleVisible(true)}
+        onLeave={({ currentPosition }) => currentPosition === 'below' && setPeopleVisible(false)}
+        bottomOffset="50%"
+      />
       <GridContainer>
-        <Waypoint
-          onEnter={({ previousPosition }) => previousPosition === 'below' && setPeopleVisible(true)}
-          onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'above')}
-        />
-
         <GridStickyContent style={{ gridArea: 'content1' }}>
           <FadeSimple direction="right" bottomOffset="20%">
             <p>말이 잘 통하는 사람.</p>
@@ -105,13 +105,12 @@ const SectionCommunication: React.FC = () => {
               비개발직군과 <em>원활한 소통</em>이 가능합니다.
             </p>
           </FadeSimple>
-
-          <Waypoint
-            onEnter={({ previousPosition }) => previousPosition === 'above' && setPeopleVisible(true)}
-            onLeave={({ currentPosition }) => setPeopleVisible(currentPosition === 'below')}
-            topOffset="50%"
-          />
         </GridStickyContent>
+        <Waypoint
+          onEnter={({ previousPosition }) => previousPosition === 'above' && setPeopleVisible(true)}
+          onLeave={({ currentPosition }) => currentPosition === 'above' && setPeopleVisible(false)}
+          topOffset="50%"
+        />
         <GridBottomSpacer height="50vh" />
       </GridContainer>
 
