@@ -14,6 +14,17 @@ const Headline = styled.p`
   padding: 2vh 0;
 `;
 
+const ParallaxContainer = styled.div`
+  position: absolute;
+  top: 110vh;
+  left: 0;
+  width: 100vh;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
 const SectionWorkEfficiency: React.FC = () => {
   return (
     <Section theme="dark">
@@ -25,7 +36,7 @@ const SectionWorkEfficiency: React.FC = () => {
 
       <Spacer height="20vh" />
 
-      <div style={{ position: 'absolute', top: '100vh', left: 0, width: '100vw' }}>
+      <ParallaxContainer>
         <ParallaxIcon
           src={IntelliJ}
           alt={'IntelliJ'}
@@ -67,7 +78,7 @@ const SectionWorkEfficiency: React.FC = () => {
           styleOuter={{ position: 'absolute', right: '18%' }}
           y={['100px', '400px']}
         />
-      </div>
+      </ParallaxContainer>
 
       <Spacer height="30vh" />
 
