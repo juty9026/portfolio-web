@@ -18,7 +18,7 @@ const ParallaxContainer = styled.div`
   position: absolute;
   top: 110vh;
   left: 0;
-  width: 100vh;
+  width: 100vw;
 
   @media (max-width: 767px) {
     display: none;
