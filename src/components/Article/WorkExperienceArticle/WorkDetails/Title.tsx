@@ -4,17 +4,18 @@ import { css } from '@emotion/react';
 
 const styles = {
   titleContainer: css`
-    height: 30vh;
+    height: 60vh;
     display: flex;
+    margin-bottom: 5vh;
   `,
   title: css`
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    letter-spacing: 0.1em;
-    color: black;
+    font-size: 12rem;
+    letter-spacing: 1rem;
+    color: white;
   `,
 };
 
