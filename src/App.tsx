@@ -6,14 +6,14 @@ import Hero from '@components/Hero';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 function App() {
-  const [fontLoadded, setFontLoadded] = useState(false);
+  const [fontReady, setFontReady] = useState(false);
 
   useEffect(() => {
     WebFont.load({
       google: {
         families: ['Bebas Neue', 'Jua', 'Vujahday Script'],
       },
-      active: () => setFontLoadded(true),
+      active: () => setFontReady(true),
     });
   }, []);
 
@@ -21,7 +21,7 @@ function App() {
     <ParallaxProvider>
       <div className="App">
         {
-          fontLoadded ? (
+          fontReady ? (
             <>
               <Hero />
               <main>
