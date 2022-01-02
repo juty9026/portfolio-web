@@ -15,11 +15,20 @@ const Wrap = styled.div`
 `;
 
 const Container = styled.div`
-  margin: 5vh 10vw 5vh 10vw;
   background-color: #0a192f;
   min-height: 150vh;
   cursor: auto;
   z-index: 30;
+
+  @media (max-width: 767px) {
+    margin: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    margin: 2rem;
+  }
+  @media (min-width: 1024px) {
+    margin: 5vh 10vw 5vh 10vw;
+  }
 `;
 
 interface Props {

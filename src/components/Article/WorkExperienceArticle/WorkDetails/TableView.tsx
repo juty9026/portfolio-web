@@ -1,35 +1,59 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-const styles = {
-  wrap: css`
-    display: flex;
-    margin: 5vh 0 5vh 0;
-    padding: 5vh 5vw 5vh 5vw;
-  `,
-  itemContainer: css`
-    flex: 1;
-    display: flex;
+const Wrap = styled.div`
+  display: flex;
+  margin: 5vh 0 5vh 0;
+  padding: 5vh 5vw 5vh 5vw;
+
+  @media (max-width: 767px) {
     flex-direction: column;
-  `,
-  title: css`
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-  `,
-  textContainer: css`
-    padding: 4vh 0 0 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  `,
-  text: css`
-    text-align: center;
+    gap: 3rem;
+  }
+`;
+
+const TitleContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const Title = styled.span`
+  text-align: center;
+  color: white;
+
+  @media (max-width: 767px) {
     font-size: 1.5rem;
-    color: white;
-  `,
-};
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const TextContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Text = styled.span`
+  text-align: center;
+  color: white;
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+`;
 
 interface Props {
   data: {
@@ -40,20 +64,18 @@ interface Props {
 
 const TableView: React.FC<Props> = ({ data }) => {
   return (
-    <div css={styles.wrap}>
+    <Wrap>
       {data.map((item) => (
-        <div key={item.title} css={styles.itemContainer}>
-          <span css={styles.title}>{item.title}</span>
-          <div css={styles.textContainer}>
+        <TitleContainer key={item.title}>
+          <Title>{item.title}</Title>
+          <TextContainer>
             {item.list.map((listItem) => (
-              <span key={listItem} css={styles.text}>
-                {listItem}
-              </span>
+              <Text key={listItem}>{listItem}</Text>
             ))}
-          </div>
-        </div>
+          </TextContainer>
+        </TitleContainer>
       ))}
-    </div>
+    </Wrap>
   );
 };
 

@@ -1,29 +1,35 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-const styles = {
-  titleContainer: css`
-    height: 60vh;
-    display: flex;
-    margin-bottom: 5vh;
-  `,
-  title: css`
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12rem;
-    letter-spacing: 1rem;
-    color: white;
-  `,
-};
+const Wrap = styled.div`
+  height: 60vh;
+  margin-bottom: 5vh;
+`;
+
+const TitleText = styled.h3`
+  flex: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  letter-spacing: 0.1em;
+  color: white;
+
+  @media (max-width: 767px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 6rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 9rem;
+  }
+`;
 
 const Title: React.FC = ({ children }) => {
   return (
-    <div css={styles.titleContainer}>
-      <h3 css={styles.title}>{children}</h3>
-    </div>
+    <Wrap>
+      <TitleText>{children}</TitleText>
+    </Wrap>
   );
 };
 
