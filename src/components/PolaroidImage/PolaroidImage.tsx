@@ -50,15 +50,15 @@ const calculateWidth = (width: string | number | undefined, scale: number) => {
 };
 
 const StyledImg = styled.img`
-  @media (max-width: 1023px) {
-    width: ${({ width }) => calculateWidth(width, 0.6)};
+  @media (max-width: 767px) {
+    width: ${({ width }) => calculateWidth(width, 0.4)};
   }
 
-  @media (min-width: 1024px) and (max-width: 1439px) {
-    width: ${({ width }) => calculateWidth(width, 0.8)};
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: ${({ width }) => calculateWidth(width, 0.5)};
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     width: ${({ width }) => calculateWidth(width, 1)};
   }
 `;

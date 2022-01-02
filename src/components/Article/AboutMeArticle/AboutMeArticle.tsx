@@ -10,11 +10,11 @@ import Article from '@components/Article/Article';
 
 const Container = styled.div`
   margin: auto;
-  max-width: 1280px;
   min-height: 100vh;
   padding: 5%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 2rem;
 
   @media (max-width: 767px) {
@@ -51,7 +51,7 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
   });
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ width: '100%', height: '100%' }}>
       {trail.map((style, i) => (
         <a.div key={i} style={{ ...style, height: '100%' }}>
           {items[i]}
@@ -79,18 +79,18 @@ const AboutMeArticle: React.FC = () => {
                 src={Nolza}
                 alt="Nolza"
                 title="Nolza"
-                width="240px"
+                width="280px"
                 styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.9)' }}
               />
               <PolaroidImage
                 src={Nosick}
                 alt="Nosick"
                 title="Nosick"
-                width="240px"
+                width="280px"
                 styleOuter={{
                   position: 'absolute',
                   top: '-70%',
-                  left: '25%',
+                  left: '30%',
                   transform: 'rotate(-10deg) scale(0.9)',
                 }}
               />
@@ -98,8 +98,8 @@ const AboutMeArticle: React.FC = () => {
                 src={Minu}
                 alt="Me"
                 title="Minu"
-                width="240px"
-                styleOuter={{ position: 'absolute', top: '-190%', right: '2%' }}
+                width="280px"
+                styleOuter={{ position: 'absolute', top: '-190%', right: '5%' }}
               />
             </Trail>
           </div>
