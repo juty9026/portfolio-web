@@ -6,6 +6,13 @@ const Wrap = styled.div`
   display: inline-block;
   font-size: 6rem;
   color: #fff;
+
+  @media (max-width: 767px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 6rem;
+  }
 `;
 
 const AnimatedDiv = styled(a.div)`

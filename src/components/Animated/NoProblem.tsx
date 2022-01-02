@@ -1,19 +1,23 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
 import { a, useSpring } from 'react-spring';
 
 const Wrap = styled.div`
   width: 100%;
-  font-size: 6rem;
   color: #fff;
   white-space: pre-wrap;
+
+  @media (max-width: 767px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 6rem;
+  }
 `;
 
 const AnimatedDiv = styled(a.div)`
   position: absolute;
   display: inline-block;
-  font-size: 6rem;
   color: #fff;
 `;
 
