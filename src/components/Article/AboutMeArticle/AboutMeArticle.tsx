@@ -17,10 +17,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    gap: 2rem;
   }
 `;
 
@@ -72,7 +73,7 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
   });
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ width: '100%', height: '100%', display: 'flex' }}>
       {trail.map((style, i) => (
         <a.div key={i} style={{ ...style, height: '100%' }}>
           {items[i]}
@@ -88,7 +89,7 @@ const AboutMeArticle: React.FC = () => {
     <Article title="About">
       <Container>
         <SectionPhoto>
-          <div style={{ height: '100%' }}>
+          <div style={{ width: '100%', height: '100%' }}>
             <Waypoint
               onEnter={() => setPhotoVisible(true)}
               onLeave={({ currentPosition }) => setPhotoVisible(currentPosition === 'above')}
@@ -100,27 +101,17 @@ const AboutMeArticle: React.FC = () => {
                 src={Nolza}
                 alt="Nolza"
                 title="Nolza"
-                width="280px"
-                styleOuter={{ position: 'absolute', top: 0, left: 0, transform: 'rotate(5deg) scale(0.9)' }}
+                styleOuter={{ flex: 1, transform: 'rotate(5deg) scale(0.85)' }}
               />
+              <PolaroidImage src={Minu} alt="Me" title="Minu" styleOuter={{ flex: 1, transform: 'rotate(-5deg)' }} />
               <PolaroidImage
                 src={Nosick}
                 alt="Nosick"
                 title="Nosick"
-                width="280px"
                 styleOuter={{
-                  position: 'absolute',
-                  top: '-70%',
-                  left: '30%',
-                  transform: 'rotate(-10deg) scale(0.9)',
+                  flex: 1,
+                  transform: 'rotate(1deg) scale(0.9)',
                 }}
-              />
-              <PolaroidImage
-                src={Minu}
-                alt="Me"
-                title="Minu"
-                width="280px"
-                styleOuter={{ position: 'absolute', top: '-190%', right: '5%' }}
               />
             </Trail>
           </div>
@@ -148,7 +139,6 @@ const AboutMeArticle: React.FC = () => {
               <br />
               <br />
               낯선 환경에 빠르게 적응하고 논리를 바탕으로 새로운 기술을 빠르게 습득합니다.
-              <br />
               <br />
               도전하는 것을 좋아하고 그 결과에 상관없이 과정에서 얻는 경험의 가치를 높게 생각합니다.
               <br />
