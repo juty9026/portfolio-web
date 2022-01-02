@@ -16,6 +16,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 const SectionPhoto = styled.section`
