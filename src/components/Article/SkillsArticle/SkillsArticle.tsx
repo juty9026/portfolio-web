@@ -23,7 +23,7 @@ const StyledSphericalWordCloud = styled(SphericalWordCloud)`
   height: 100%;
 
   @media (max-width: 1023px) {
-    height: 100vh;
+    height: 50vh;
   }
 `;
 
