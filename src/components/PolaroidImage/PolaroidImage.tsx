@@ -65,7 +65,7 @@ const StyledImg = styled.img`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    width: ${({ width }) => calculateWidth(width, 0.5)};
+    width: ${({ width }) => calculateWidth(width, 0.65)};
   }
 
   @media (min-width: 1024px) {

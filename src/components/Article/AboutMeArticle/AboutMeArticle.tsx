@@ -15,22 +15,26 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 5%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
 
-  @media (max-width: 767px) {
-    flex-direction: column;
+  @media (min-width: 1024px) {
+    flex-direction: row;
   }
 `;
 
 const SectionPhoto = styled.section`
-  flex: 1 0 60%;
+  @media (min-width: 1024px) {
+    flex: 1 0 60%;
+  }
 `;
 
 const SectionIntroduction = styled.section`
-  flex: 0 0 40%;
-  font-size: 1rem;
+  @media (min-width: 1024px) {
+    flex: 0 0 40%;
+    font-size: 1rem;
+  }
 `;
 
 const Headline = styled.h1`
