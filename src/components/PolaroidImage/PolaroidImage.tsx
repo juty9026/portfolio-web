@@ -27,11 +27,9 @@ const Wrap = styled.div<CSSProperties>`
     text-align: center;
   }
 
-  @media (min-width: 1024px) {
-    &:hover {
-      animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
-      z-index: 1;
-    }
+  &:hover {
+    animation: ${({ style }) => zoomInKeyframes(style?.transform)} 1s ease both;
+    z-index: 1;
   }
 `;
 
