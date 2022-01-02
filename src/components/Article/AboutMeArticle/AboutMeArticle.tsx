@@ -7,6 +7,8 @@ import Nolza from '@images/nolza-3-640w.jpeg';
 import { Waypoint } from 'react-waypoint';
 import { a, config, useTrail } from 'react-spring';
 import Article from '@components/Article/Article';
+import github from '@images/github-128w.png';
+import linkedin from '@images/linkedin-128w.png';
 
 const Container = styled.div`
   margin: auto;
@@ -38,6 +40,21 @@ const Headline = styled.h1`
 
 const Introduce = styled.p`
   font-size: 1rem;
+`;
+
+const IconContainer = styled.div`
+  padding: 0 30%;
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const ContactIcon = styled.img`
+  @media (max-width: 1023px) {
+    max-width: 32px;
+  }
+  @media (min-width: 1024px) {
+    max-width: 40px;
+  }
 `;
 
 const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
@@ -110,6 +127,16 @@ const AboutMeArticle: React.FC = () => {
               안녕하세요.
               <br />만 4년차 웹 개발자 정민우입니다.
             </Headline>
+            <br />
+            <br />
+            <IconContainer>
+              <a href="https://github.com/juty9026" target="_blank">
+                <ContactIcon src={github} alt="github" />
+              </a>
+              <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EC%A0%95-9217b0225" target="_blank">
+                <ContactIcon src={linkedin} alt="linkedin" />
+              </a>
+            </IconContainer>
             <br />
             <br />
             <Introduce>
