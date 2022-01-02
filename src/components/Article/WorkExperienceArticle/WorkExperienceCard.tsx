@@ -68,8 +68,12 @@ interface WorkExperienceCardProps {
 const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ active = false, partner, title, period, onClick }) => {
   const periodText = useMemo(() => {
     const { start, end } = period;
-    const duration = moment.duration(moment(end).diff(moment(start))).humanize();
-    return `${start} ~ ${end || '현재'} (${duration})`;
+    return `${start} ~ ${end || '현재'}`;
+  }, [period]);
+
+  const durationText = useMemo(() => {
+    const { start, end } = period;
+    return moment.duration(moment(end).diff(moment(start))).humanize();
   }, [period]);
 
   return (
@@ -81,7 +85,10 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ active = false,
         <Title>{title}</Title>
       </Container>
       <Footer>
-        <Period>{periodText}</Period>
+        <Period>
+          {periodText}
+          <br />({durationText})
+        </Period>
       </Footer>
     </StyledCard>
   );
