@@ -143,7 +143,7 @@ const SectionProblemSolver: React.FC = () => {
             </FadeSimple>
             <FadeSimple direction="right" block>
               <TextWithCheckMark>
-                문제 인식부터 성과 측정까지 지치지 않는 <em>집요함</em>
+                문제 인식부터 성과 측정까지 포기하지 않는 <em>집요함</em>
               </TextWithCheckMark>
             </FadeSimple>
           </div>
