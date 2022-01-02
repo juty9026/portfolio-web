@@ -52,6 +52,10 @@ const Section = styled.section<SectionProps>`
   p,
   span {
     font-size: 2rem;
+
+    @media (max-width: 1023px) {
+      font-size: 1.5rem;
+    }
   }
 
   em {

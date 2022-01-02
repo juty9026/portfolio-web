@@ -1,9 +1,7 @@
-/** @jsxImportSource @emotion/react */
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { FadeSimple, IAmPossible, NoProblem } from '@components/Animated';
 import { Waypoint } from 'react-waypoint';
-import StickyBox from 'react-sticky-box';
 import { Section, Spacer } from '@components/Article/AbilitiesArticle/styled';
 import checkMark from '@images/check-mark-240.png';
 import externalLink from '@images/external-link-128.png';
@@ -16,10 +14,20 @@ const GridContainer = styled.div`
     'content    .         '
     'footer     footer    ';
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100vh 100vh;
+
+  @media (max-width: 1023px) {
+    min-height: 100vh;
+    grid-template-areas:
+      'flip-text'
+      'content'
+      'footer';
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, fit-content(50vh)) min-content;
+  }
 `;
 
 const BaseGridItem = styled.div`
-  height: 100vh;
   padding: 0 5vw 0 5vw;
   display: flex;
   flex-direction: column;
@@ -54,17 +62,33 @@ const Anchor = styled.a`
 
 const Content = styled(BaseGridItem)`
   grid-area: content;
-  padding: 0 1vw 0 1vw;
   position: sticky;
   top: 0;
+  padding: 0 1vw 0 1vw;
+
+  @media (max-width: 1023px) {
+    position: relative;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+  }
 `;
 
-const FlipText = styled(StickyBox)`
+const FlipText = styled.div`
   grid-area: flip-text;
-  height: 100vh;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 1023px) {
+    position: relative;
+    left: 50%;
+    width: fit-content;
+    padding: 20% 0;
+    transform: translateX(-50%);
+  }
 `;
 
 const Footer = styled.div`
