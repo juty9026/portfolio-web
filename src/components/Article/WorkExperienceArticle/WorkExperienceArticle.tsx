@@ -1,5 +1,8 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import { a, useTransition } from 'react-spring';
+import { Waypoint } from 'react-waypoint';
+import PopupOverlay from '@components/PopupOverlay';
 import WorkExperienceCard from './WorkExperienceCard';
 import P01_TANGO_D from './P01_TANGO_D';
 import P02_LCAP from './P02_LCAP';
@@ -14,20 +17,12 @@ import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
-import { FadeSimple } from '@components/Animated';
 
-const ArticleMain = styled.div`
+const Container = styled.div`
+  padding: 5vh 10vw 5vh 10vw;
   display: flex;
-`;
-
-const SideBar = styled.aside`
-  flex: 0 1 20vw;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Section = styled.section`
-  flex: 1 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 interface Work {
@@ -110,31 +105,48 @@ const works: Work[] = [
 ];
 
 const WorkExperience: React.FC = () => {
-  const [content, setContent] = React.useState<ReactNode>(null);
-  const [activeIndex, setActiveIndex] = React.useState<number>(0);
+  const [overlayVisible, setOverlayVisible] = React.useState(false);
+  const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
+  const [cardVisible, setCardVisible] = useState(false);
 
-  useEffect(() => {
-    setContent(works[activeIndex].overlayComponent);
-  }, [activeIndex]);
+  const transition = useTransition(cardVisible ? works : [], {
+    trail: 400 / works.length,
+    from: { opacity: 0, scale: 0 },
+    enter: { opacity: 1, scale: 1 },
+    leave: { opacity: 0, scale: 0 },
+  });
+
+  const openOverlay = React.useCallback((content) => {
+    setOverlayVisible(true);
+    setOverlayContent(content);
+  }, []);
+
+  const onKeyDown = React.useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Esc' || e.key === 'Escape') {
+      setOverlayVisible(false);
+    }
+  }, []);
 
   return (
     <Article title="Works & Experience">
-      <ArticleMain>
-        <SideBar>
-          {works.map(({ partner, title, period }, index) => (
-            <FadeSimple key={index} direction="right" bottomOffset={0} block>
-              <WorkExperienceCard
-                active={index === activeIndex}
-                partner={partner}
-                title={title}
-                period={period}
-                onClick={() => setActiveIndex(index)}
-              />
-            </FadeSimple>
-          ))}
-        </SideBar>
-        <Section>{content}</Section>
-      </ArticleMain>
+      {overlayVisible && (
+        <PopupOverlay onClickOutside={() => setOverlayVisible(false)} onKeyDown={onKeyDown}>
+          {overlayContent}
+        </PopupOverlay>
+      )}
+      <Container>
+        {transition((style, { partner, title, period, overlayComponent }) => (
+          <a.div style={{ ...style, flex: '1 0 30%' }}>
+            <WorkExperienceCard
+              partner={partner}
+              title={title}
+              period={period}
+              onClick={() => openOverlay(overlayComponent)}
+            />
+          </a.div>
+        ))}
+      </Container>
+      <Waypoint onEnter={() => setCardVisible(true)} onLeave={() => setCardVisible(false)} />
     </Article>
   );
 };
