@@ -48,6 +48,16 @@ const StyledH1 = styled.h1`
   &:after {
     transform: skew(-45deg);
   }
+
+  @media (max-width: 767px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const HeaderTitle: React.FC = ({ children }) => {
