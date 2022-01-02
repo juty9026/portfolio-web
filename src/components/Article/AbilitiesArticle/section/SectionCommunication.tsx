@@ -106,13 +106,13 @@ const SectionCommunication: React.FC = () => {
             </p>
           </FadeSimple>
         </GridStickyContent>
-        <Waypoint
-          onEnter={({ previousPosition }) => previousPosition === 'above' && setPeopleVisible(true)}
-          onLeave={({ currentPosition }) => currentPosition === 'above' && setPeopleVisible(false)}
-          topOffset="50%"
-        />
         <GridBottomSpacer height="50vh" />
       </GridContainer>
+      <Waypoint
+        onEnter={({ previousPosition }) => previousPosition === 'above' && setPeopleVisible(true)}
+        onLeave={({ currentPosition }) => currentPosition === 'above' && setPeopleVisible(false)}
+        topOffset="80%"
+      />
 
       <ConversationImageContainer style={{ transform }}>
         <ConversationImage src={conversationImage} alt="conversation" />
