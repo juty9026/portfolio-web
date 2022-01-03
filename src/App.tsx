@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WebFont from 'webfontloader';
 import './App.css';
-import { AbilitiesArticle, AboutMeArticle, SkillsArticle, WorkExperienceArticle } from '@components/Article';
+import { AbilitiesArticle, AboutMeArticle, SkillsArticle, ProjectsArticle } from '@components/Article';
 import Hero from '@components/Hero';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -28,7 +28,7 @@ function App() {
                 <AboutMeArticle />
                 <SkillsArticle />
                 <AbilitiesArticle />
-                <WorkExperienceArticle />
+                <ProjectsArticle />
               </main>
             </>
           ) : null // TODO: Loading Component

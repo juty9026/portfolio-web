@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Period from '@components/Article/WorkExperienceArticle/WorkDetails/Period';
+import Period from '@components/Article/ProjectsArticle/WorkDetails/Period';
 
 const Wrap = styled.div`
   height: 60vh;

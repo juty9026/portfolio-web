@@ -60,7 +60,7 @@ interface WorkExperienceCardProps {
   period: { start: string; end?: string };
   onClick: React.MouseEventHandler;
 }
-const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ active = false, partner, title, period, onClick }) => {
+const ProjectCard: React.FC<WorkExperienceCardProps> = ({ active = false, partner, title, period, onClick }) => {
   const periodText = useMemo(() => {
     const { start, end } = period;
     return `${start} ~ ${end || '현재'}`;
@@ -89,4 +89,4 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ active = false,
   );
 };
 
-export default WorkExperienceCard;
+export default ProjectCard;

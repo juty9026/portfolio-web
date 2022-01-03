@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { a, config, useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import PopupOverlay from '@components/PopupOverlay';
-import WorkExperienceCard from './WorkExperienceCard';
+import ProjectCard from './ProjectCard';
 import P01_TANGO_D from './P01_TANGO_D';
 import P02_LCAP from './P02_LCAP';
 import P03_SHP from './P03_SHP';
@@ -15,7 +15,7 @@ import P08_OPENMALL from './P08_OPENMALL';
 import P09_WDP from './P09_WDP';
 import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
-import P12_JUVIS from '@components/Article/WorkExperienceArticle/P12_JUVIS';
+import P12_JUVIS from '@components/Article/ProjectsArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
 import Partner from '@customTypes/Partner';
 
@@ -149,7 +149,7 @@ const WorkExperience: React.FC = () => {
   }, []);
 
   return (
-    <Article title="Works & Experience">
+    <Article title="Projects">
       <Waypoint
         onEnter={() => setCardVisible(true)}
         onLeave={({ currentPosition }) => setCardVisible(currentPosition === 'above')}
@@ -163,7 +163,7 @@ const WorkExperience: React.FC = () => {
         {trail.map((style, index) => (
           <HoverWrap>
             <a.div style={style}>
-              <WorkExperienceCard
+              <ProjectCard
                 partner={works[index].partner}
                 title={works[index].title}
                 period={works[index].period}
