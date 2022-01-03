@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P07_5GX_CLOUD: React.FC = () => {
   return (
     <Wrap>
-      <Title>5GX Cloud - CAP</Title>
+      <Title title="5GX Cloud" period="2020-12-01 ~ 2021-01-29" />
       <Content>
         <Description>
           {`

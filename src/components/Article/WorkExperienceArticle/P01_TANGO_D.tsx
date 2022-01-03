@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P01_TANGO_D: React.FC = () => {
   return (
     <Wrap>
-      <Title>TANGO-D</Title>
+      <Title title="TANGO-D" period="2018-02-01 ~ 2018-05-31" />
       <Content>
         <Description>
           {`

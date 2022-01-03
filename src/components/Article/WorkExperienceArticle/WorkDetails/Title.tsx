@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Period from '@components/Article/WorkExperienceArticle/WorkDetails/Period';
 
 const Wrap = styled.div`
   height: 60vh;
   margin-bottom: 5vh;
+  color: white;
 `;
 
-const TitleText = styled.h3`
-  flex: 1;
+const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+`;
+
+const TitleText = styled.h3`
   letter-spacing: 0.1em;
-  color: white;
 
   @media (max-width: 767px) {
     font-size: 3rem;
@@ -25,10 +28,17 @@ const TitleText = styled.h3`
   }
 `;
 
-const Title: React.FC = ({ children }) => {
+interface TitleProps {
+  title?: string;
+  period?: string;
+}
+const Title: React.FC<TitleProps> = ({ title, period }) => {
   return (
     <Wrap>
-      <TitleText>{children}</TitleText>
+      <Container>
+        <TitleText>{title}</TitleText>
+        <Period>{period}</Period>
+      </Container>
     </Wrap>
   );
 };

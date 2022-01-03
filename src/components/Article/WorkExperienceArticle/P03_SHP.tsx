@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P03_SHP: React.FC = () => {
   return (
     <Wrap>
-      <Title>SHP</Title>
+      <Title title="SHP" period="2019-02-08 ~ 2019-05-31" />
       <Content>
         <Description>
           {`

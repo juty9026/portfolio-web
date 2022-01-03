@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P04_IDCUBE: React.FC = () => {
   return (
     <Wrap>
-      <Title>IDCube</Title>
+      <Title title="IDCube" period="2019-07-22 ~ 2020-04-17" />
       <Content>
         <Description>
           {`

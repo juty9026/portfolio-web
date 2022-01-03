@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P12_JUVIS: React.FC = () => {
   return (
     <Wrap>
-      <Title>JUVIS - CRM</Title>
+      <Title title="CRM" period="2021-10-13 ~ 현재" />
       <Content>
         <Description>
           {`

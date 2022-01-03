@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P08_OPENMALL: React.FC = () => {
   return (
     <Wrap>
-      <Title>Openmall</Title>
+      <Title title="오픈몰" period="2021-02-01 ~ 2021-04-02" />
       <Content>
         <Description>
           {`

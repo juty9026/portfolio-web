@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P02_LCAP: React.FC = () => {
   return (
     <Wrap>
-      <Title>LCAP</Title>
+      <Title title="LCAP" period="2018-08-01 ~ 2019-01-31" />
       <Content>
         <Description>
           {`

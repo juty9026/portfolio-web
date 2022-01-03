@@ -9,7 +9,7 @@ import Wrap from './WorkDetails/Wrap';
 const P05_WDP: React.FC = () => {
   return (
     <Wrap>
-      <Title>WDP</Title>
+      <Title title="WDP" period="2020-04-20 ~ 2020-05-29" />
       <Content>
         <Description>
           {`
