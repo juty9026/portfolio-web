@@ -22,14 +22,6 @@ const StyledCard = styled(Card)<{ active?: boolean }>`
   margin: 0.5vh 0.2vw 0.5vh 0.2vw;
   cursor: pointer;
   background-color: white;
-  transition: 0.4s;
-
-  @media (min-width: 1024px) {
-    &:hover {
-      transform: rotateX(360deg);
-      transition: 1s;
-    }
-  }
 `;
 
 const Header = styled.header`
