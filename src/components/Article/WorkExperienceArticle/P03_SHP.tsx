@@ -22,7 +22,7 @@ const P03_SHP: React.FC = () => {
             { title: 'ROLE', list: ['Back-end Development', 'Front-end Development'] },
             {
               title: 'RESPONSIBILITIES',
-              list: ['Mobile Web Maintenance', 'Query Optimization', 'Communication with App Developer'],
+              list: ['Mobile Web Maintenance', 'Query Optimization', 'Communicating with App Developer'],
             },
           ]}
         />
