@@ -132,7 +132,7 @@ const AboutMeArticle: React.FC = () => {
               <a href="https://github.com/juty9026" target="_blank">
                 <ContactIcon src={github} alt="github" />
               </a>
-              <a href="https://www.linkedin.com/in/%EB%AF%BC%EC%9A%B0-%EC%A0%95-9217b0225" target="_blank">
+              <a href="https://www.linkedin.com/in/정민우" target="_blank">
                 <ContactIcon src={linkedin} alt="linkedin" />
               </a>
             </IconContainer>
