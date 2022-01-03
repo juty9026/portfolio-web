@@ -21,7 +21,7 @@ const P04_IDCUBE: React.FC = () => {
             { title: 'ROLE', list: ['Back-end Development', 'Front-end Development'] },
             {
               title: 'RESPONSIBILITIES',
-              list: ['Query Optimization', 'Web Performance Improvment', 'Data Visualization'],
+              list: ['Query Optimization', 'Web Performance Improvement', 'Data Visualization'],
             },
           ]}
         />
