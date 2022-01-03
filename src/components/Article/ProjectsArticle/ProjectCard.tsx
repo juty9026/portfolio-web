@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import moment from 'moment';
 import Card from '@components/Card';
 import PartnerType from '@customTypes/Partner';
+import { DevIcon, DevIconName } from '@components/DevIcon';
 
 const colors: Record<PartnerType, CSSProperties> = {
   Openit: { background: 'linear-gradient(45deg, white, dodgerblue, seagreen, white)' },
@@ -58,9 +59,17 @@ interface WorkExperienceCardProps {
   partner: PartnerType;
   title: string;
   period: { start: string; end?: string };
+  iconNames?: DevIconName[];
   onClick: React.MouseEventHandler;
 }
-const ProjectCard: React.FC<WorkExperienceCardProps> = ({ active = false, partner, title, period, onClick }) => {
+const ProjectCard: React.FC<WorkExperienceCardProps> = ({
+  active = false,
+  partner,
+  title,
+  period,
+  iconNames,
+  onClick,
+}) => {
   const periodText = useMemo(() => {
     const { start, end } = period;
     return `${start} ~ ${end || '현재'}`;
@@ -79,11 +88,16 @@ const ProjectCard: React.FC<WorkExperienceCardProps> = ({ active = false, partne
       <Container>
         <Title>{title}</Title>
       </Container>
+      <Period>
+        {periodText}
+        <br />({durationText})
+      </Period>
       <Footer>
-        <Period>
-          {periodText}
-          <br />({durationText})
-        </Period>
+        <div>
+          {iconNames?.map((iconName) => (
+            <DevIcon name={iconName} />
+          ))}
+        </div>
       </Footer>
     </StyledCard>
   );

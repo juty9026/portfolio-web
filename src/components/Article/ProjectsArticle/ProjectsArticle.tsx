@@ -18,6 +18,7 @@ import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from '@components/Article/ProjectsArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
 import Partner from '@customTypes/Partner';
+import { DevIconName } from '@components/DevIcon';
 
 const Container = styled.div`
   padding: 5vh 10vw 5vh 10vw;
@@ -54,74 +55,92 @@ interface Work {
     start: string;
     end?: string;
   };
+  iconNames?: DevIconName[];
   overlayComponent: React.FC;
 }
 const works: Work[] = [
-  { partner: 'JUVIS', title: 'CRM', period: { start: '2021-11-01' }, overlayComponent: P12_JUVIS },
+  {
+    partner: 'JUVIS',
+    title: 'CRM',
+    period: { start: '2021-11-01' },
+    iconNames: ['AngularJS'],
+    overlayComponent: P12_JUVIS,
+  },
   {
     partner: 'Openit',
     title: '오픈몰',
     period: { start: '2021-10-13', end: '2021-10-29' },
+    iconNames: ['React', 'SpringBoot'],
     overlayComponent: P11_OPENMALL,
   },
   {
     partner: 'SKCC',
     title: '5GX Cloud',
     period: { start: '2021-05-03', end: '2021-11-05' },
+    iconNames: ['Vue.js', 'SpringBoot'],
     overlayComponent: P10_5GX_CLOUD,
   },
   {
     partner: 'SKCC',
     title: 'WDP',
     period: { start: '2021-04-03', end: '2021-04-30' },
+    iconNames: ['React', 'ReactNative'],
     overlayComponent: P09_WDP,
   },
   {
     partner: 'Openit',
     title: '오픈몰',
     period: { start: '2021-02-01', end: '2021-04-02' },
+    iconNames: ['React'],
     overlayComponent: P08_OPENMALL,
   },
   {
     partner: 'SKCC',
     title: '5GX Cloud',
     period: { start: '2020-12-01', end: '2021-01-29' },
+    iconNames: ['Vue.js', 'SpringBoot'],
     overlayComponent: P07_5GX_CLOUD,
   },
   {
     partner: 'SKCC',
     title: 'HAPP',
     period: { start: '2020-06-08', end: '2020-11-30' },
+    iconNames: ['ReactNative', 'jQuery'],
     overlayComponent: P06_HAPP,
   },
   {
     partner: 'SKCC',
     title: 'WDP',
     period: { start: '2020-04-20', end: '2020-05-29' },
+    iconNames: ['React'],
     overlayComponent: P05_WDP,
   },
   {
     partner: 'SKCC',
     title: 'IDCube',
     period: { start: '2019-07-22', end: '2020-04-17' },
+    iconNames: ['Angular', 'SpringBoot'],
     overlayComponent: P04_IDCUBE,
   },
   {
     partner: 'HotelShilla',
     title: 'SHP',
     period: { start: '2019-02-08', end: '2019-05-31' },
+    iconNames: ['jQuery', 'Spring'],
     overlayComponent: P03_SHP,
   },
   {
     partner: 'SKCC',
     title: 'LCAP',
     period: { start: '2018-08-01', end: '2019-01-31' },
+    iconNames: ['Spring'],
     overlayComponent: P02_LCAP,
   },
   {
     partner: 'SKCC',
     title: 'TANGO-D',
     period: { start: '2018-02-01', end: '2018-05-31' },
+    iconNames: ['Spring'],
     overlayComponent: P01_TANGO_D,
   },
 ];
@@ -167,6 +186,7 @@ const WorkExperience: React.FC = () => {
                 partner={works[index].partner}
                 title={works[index].title}
                 period={works[index].period}
+                iconNames={works[index].iconNames}
                 onClick={() => openOverlay(works[index].overlayComponent)}
               />
             </a.div>
