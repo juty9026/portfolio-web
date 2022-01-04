@@ -54,6 +54,16 @@ const Period = styled.h5`
   flex: 1;
 `;
 
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+const StyledDevIcon = styled(DevIcon)`
+  flex: 0;
+`;
+
 interface WorkExperienceCardProps {
   active?: boolean;
   partner: PartnerType;
@@ -93,11 +103,11 @@ const ProjectCard: React.FC<WorkExperienceCardProps> = ({
         <br />({durationText})
       </Period>
       <Footer>
-        <div>
+        <IconContainer>
           {iconNames?.map((iconName) => (
-            <DevIcon name={iconName} />
+            <StyledDevIcon name={iconName} />
           ))}
-        </div>
+        </IconContainer>
       </Footer>
     </StyledCard>
   );
