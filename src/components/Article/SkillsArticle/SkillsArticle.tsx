@@ -50,7 +50,7 @@ const SkillsArticle: React.FC = () => {
         position: 'Back-end',
         exp: 60,
         relatedSkills: [
-          { tag: 'JAVA', exp: 80 },
+          { tag: 'Java', exp: 80 },
           { tag: 'Node.js', exp: 30 },
           { tag: 'Spring', exp: 70 },
           { tag: 'JPA / QueryDSL', exp: 60 },
