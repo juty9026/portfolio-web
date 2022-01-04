@@ -153,7 +153,7 @@ const WorkExperience: React.FC = () => {
   const trail = useTrail(works.length, {
     opacity: cardVisible ? 1 : 0,
     scale: cardVisible ? 1 : 0,
-    config: config.gentle,
+    config: config.stiff,
   });
 
   const openOverlay = React.useCallback((content) => {
