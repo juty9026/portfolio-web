@@ -16,7 +16,7 @@ const Wrap = styled.div<WrapProps>`
   ${({ active, clickable }) => {
     if (active) {
       return css`
-        border-color: #04c2c9;
+        border-color: #25d7af;
         transition: all 1s;
       `;
     }
@@ -38,7 +38,7 @@ const AnimatedExp = styled(a.div)`
   position: absolute;
   height: 100%;
   border-radius: inherit;
-  background-color: #00a1a7;
+  background-color: #03b58d;
 `;
 
 // noinspection CssReplaceWithShorthandSafely
@@ -51,7 +51,7 @@ const Tag = styled.div`
   border-radius: inherit;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: #04c2c9;
+  background-color: #25d7af;
   color: #ffffff;
   font-size: 1rem;
 `;

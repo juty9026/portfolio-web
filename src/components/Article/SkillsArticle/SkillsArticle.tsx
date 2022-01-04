@@ -134,7 +134,8 @@ const SkillsArticle: React.FC = () => {
           <p
             style={{
               fontSize: '2rem',
-              color: '#00a1a7',
+              color: '#03b58d',
+              fontWeight: 'bold',
               opacity: 0.8,
               textAlign: 'center',
               zIndex: 0,
