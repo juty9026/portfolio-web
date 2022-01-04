@@ -10,6 +10,7 @@ interface DevIconProps {
   plain?: boolean;
   wordmark?: boolean;
   color?: boolean;
+  className?: string;
 }
 const DevIcon: React.FC<DevIconProps> = ({
   name,
@@ -18,32 +19,35 @@ const DevIcon: React.FC<DevIconProps> = ({
   plain = false,
   wordmark = false,
   color = false,
+  className,
 }) => {
   const basename = useMemo(() => {
     return devIconMap[name];
   }, [name]);
 
-  const className = useMemo(() => {
+  const iClassName = useMemo(() => {
     if (!font) {
       return undefined;
     }
 
-    return `devicon-${basename}-plain${wordmark ? '-wordmark' : ''}${color ? ' colored' : ''}`;
-  }, [basename, wordmark, color]);
+    return `devicon-${basename}-plain${wordmark ? '-wordmark' : ''}${color ? ' colored' : ''}${
+      className ? ` ${className}` : ''
+    }`;
+  }, [basename, font, wordmark, color]);
 
-  const src = useMemo(() => {
+  const imgSrc = useMemo(() => {
     if (font) {
       return undefined;
     }
 
     const filename = `${basename}/${basename}-${plain ? 'plain' : 'original'}${wordmark ? '-wordmark' : ''}.svg`;
     return require(`../../../node_modules/devicon/icons/${filename}`).default;
-  }, [basename, plain, wordmark]);
+  }, [basename, font, plain, wordmark]);
 
   return font ? (
-    <i className={className} style={{ fontSize: size }} />
+    <i className={iClassName} style={{ fontSize: size }} />
   ) : (
-    <img width={size} height={size} src={src} alt={basename} />
+    <img className={className} width={size} height={size} src={imgSrc} alt={basename} />
   );
 };
 
