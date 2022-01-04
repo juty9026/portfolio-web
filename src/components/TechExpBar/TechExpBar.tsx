@@ -54,6 +54,7 @@ const Tag = styled.div`
   background-color: #25d7af;
   color: #ffffff;
   font-size: 1rem;
+  font-weight: bold;
 `;
 
 const Number = styled.span`
