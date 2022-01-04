@@ -17,7 +17,7 @@ const TitleContainer = styled.div`
   display: flex;
 `;
 
-const Title = styled.span`
+const Title = styled.em`
   flex: 1;
   display: flex;
   justify-content: center;

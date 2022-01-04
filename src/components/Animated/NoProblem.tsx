@@ -21,6 +21,10 @@ const AnimatedDiv = styled(a.div)`
   color: #fff;
 `;
 
+const StyledEm = styled.em`
+  display: inline-block;
+`;
+
 interface Props {
   change: boolean;
 }
@@ -32,11 +36,11 @@ const NoProblem: React.FC<Props> = ({ change }) => {
   });
   return (
     <Wrap>
-      <em>
+      <StyledEm>
         {'No '}
         <AnimatedDiv style={{ opacity: opacity.to((o) => 1 - o), transform }}>Way.</AnimatedDiv>
         <AnimatedDiv style={{ opacity, transform, rotateX: '180deg' }}>Problem.</AnimatedDiv>
-      </em>
+      </StyledEm>
     </Wrap>
   );
 };

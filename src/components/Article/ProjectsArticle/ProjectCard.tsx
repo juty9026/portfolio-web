@@ -6,10 +6,10 @@ import PartnerType from '@customTypes/Partner';
 import { DevIcon, DevIconName } from '@components/DevIcon';
 
 const colors: Record<PartnerType, CSSProperties> = {
-  Openit: { background: 'linear-gradient(45deg, white, dodgerblue, seagreen, white)' },
-  SKCC: { background: 'linear-gradient(45deg, white, #f4741c, #e42c3c, #f4741c, white)' },
-  HotelShilla: { background: 'linear-gradient(45deg, white, #3c443c, white' },
-  JUVIS: { background: 'linear-gradient(45deg, white, #ea7492, white)' },
+  Openit: { background: 'linear-gradient(45deg, dodgerblue, seagreen)' },
+  SKCC: { background: 'linear-gradient(45deg, #f4741c, #e42c3c, #f4741c)' },
+  HotelShilla: { background: 'linear-gradient(45deg, #3c443c, #3c443c' },
+  JUVIS: { background: 'linear-gradient(45deg, #ea7492, #ea7492)' },
 };
 
 const partnerNames: Record<PartnerType, string> = {
@@ -25,39 +25,52 @@ const StyledCard = styled(Card)<{ active?: boolean }>`
   background-color: white;
 `;
 
-const Header = styled.header`
+const CardHeader = styled.header`
   flex: 1 0 25%;
   padding: 2% 0;
 `;
 
-const Container = styled.div`
-  flex: 1 0 50%;
-  padding: 2% 0;
+const CardBody = styled.div`
+  display: flex;
+  padding: 5%;
 `;
 
-const Footer = styled.div`
-  flex: 1 0 25%;
-  padding: 2% 0;
+const TextContainer = styled.div`
+  flex: 1 min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+`;
+
+const IconContainer = styled.div`
+  flex: 0 fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 `;
 
 const Partner = styled.h4`
+  font-size: 1.2rem;
   flex: 1;
   color: white;
 `;
 
-const Title = styled.h3`
-  font-size: 2rem;
-  text-align: center;
+const Title = styled.span`
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
 
-const Period = styled.h5`
+const Period = styled.span`
+  display: block;
+  font-size: 0.8rem;
   flex: 1;
-`;
 
-const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledDevIcon = styled(DevIcon)`
@@ -92,23 +105,23 @@ const ProjectCard: React.FC<WorkExperienceCardProps> = ({
 
   return (
     <StyledCard active={active} onClick={onClick}>
-      <Header style={colors[partner]}>
+      <CardHeader style={colors[partner]}>
         <Partner>{partnerNames[partner]}</Partner>
-      </Header>
-      <Container>
-        <Title>{title}</Title>
-      </Container>
-      <Period>
-        {periodText}
-        <br />({durationText})
-      </Period>
-      <Footer>
+      </CardHeader>
+      <CardBody>
+        <TextContainer>
+          <Title>{title}</Title>
+          <Period>
+            {periodText}
+            <br />({durationText})
+          </Period>
+        </TextContainer>
         <IconContainer>
           {iconNames?.map((iconName) => (
             <StyledDevIcon name={iconName} />
           ))}
         </IconContainer>
-      </Footer>
+      </CardBody>
     </StyledCard>
   );
 };

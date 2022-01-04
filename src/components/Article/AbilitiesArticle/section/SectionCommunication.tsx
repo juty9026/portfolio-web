@@ -70,7 +70,7 @@ const SectionCommunication: React.FC = () => {
   return (
     <Section theme="light">
       <FadeSimple direction={'top'} bottomOffset="50%">
-        <h3>편안한 커뮤니케이션.</h3>
+        <h3>편안한 커뮤니케이션</h3>
       </FadeSimple>
 
       <Spacer height="10vh" />
@@ -83,15 +83,15 @@ const SectionCommunication: React.FC = () => {
       <GridContainer>
         <GridStickyContent style={{ gridArea: 'content1' }}>
           <FadeSimple direction="right" bottomOffset="20%">
-            <p>말이 잘 통하는 사람.</p>
+            <p>말이 잘 통하는 사람</p>
           </FadeSimple>
           <Spacer height="2vh" />
           <FadeSimple direction="right" bottomOffset="20%">
-            <p>함께 이야기하면 즐거운 사람.</p>
+            <p>함께 이야기하면 즐거운 사람</p>
           </FadeSimple>
           <Spacer height="2vh" />
           <FadeSimple direction="right" bottomOffset="20%">
-            <p>적절한 유머감각 겸비.</p>
+            <p>적절한 유머감각 겸비</p>
           </FadeSimple>
         </GridStickyContent>
 

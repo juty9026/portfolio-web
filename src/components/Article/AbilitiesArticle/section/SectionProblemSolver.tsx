@@ -101,7 +101,7 @@ const SectionProblemSolver: React.FC = () => {
   return (
     <Section theme="dark">
       <FadeSimple direction={'top'} bottomOffset="50%">
-        <h3>문제 해결사.</h3>
+        <h3>문제 해결사</h3>
       </FadeSimple>
 
       <Spacer height="20vh" />

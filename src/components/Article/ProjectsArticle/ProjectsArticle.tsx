@@ -4,7 +4,7 @@ import { a, config, useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import PopupOverlay from '@components/PopupOverlay';
 import ProjectCard from './ProjectCard';
-import P01_TANGO_D from './P01_TANGO_D';
+import P01_TANGO from './P01_TANGO';
 import P02_LCAP from './P02_LCAP';
 import P03_SHP from './P03_SHP';
 import P04_IDCUBE from './P04_IDCUBE';
@@ -21,10 +21,11 @@ import Partner from '@customTypes/Partner';
 import { DevIconName } from '@components/DevIcon';
 
 const Container = styled.div`
-  padding: 5vh 10vw 5vh 10vw;
+  padding: 5% 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 0.5rem;
 `;
 
 const HoverWrap = styled.div`
@@ -37,7 +38,7 @@ const HoverWrap = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    flex: 0 50%;
+    flex: 0 45%;
   }
 
   @media (hover: hover) {
@@ -138,10 +139,10 @@ const works: Work[] = [
   },
   {
     partner: 'SKCC',
-    title: 'TANGO-D',
+    title: 'TANGO',
     period: { start: '2018-02-01', end: '2018-05-31' },
     iconNames: ['Spring'],
-    overlayComponent: P01_TANGO_D,
+    overlayComponent: P01_TANGO,
   },
 ];
 

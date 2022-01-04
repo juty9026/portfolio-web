@@ -29,11 +29,23 @@ const BannerTextWrap = styled.div`
   }
 `;
 
-const BannerText = styled.h1`
+const StyledEm = styled.em`
   @media (max-width: 767px) {
     text-align: center;
     width: 100%;
   }
+`;
+
+const BannerText: React.FC = ({ children }) => {
+  return (
+    <span>
+      <StyledEm>{children}</StyledEm>
+    </span>
+  );
+};
+
+const ColorText = styled.span`
+  color: #03b58d;
 `;
 
 const Hero: React.FC = () => {
@@ -41,11 +53,19 @@ const Hero: React.FC = () => {
     <Wrap>
       <FixedContainer>
         <BannerTextWrap>
-          <BannerText>LET'S</BannerText>
+          <BannerText>
+            LET<ColorText>'</ColorText>S
+          </BannerText>
           <BannerText>MAKE</BannerText>
-          <BannerText>SOMETHING</BannerText>
-          <BannerText>COOL</BannerText>
-          <BannerText>TOGETHER.</BannerText>
+          <BannerText>
+            S<ColorText>O</ColorText>METHING
+          </BannerText>
+          <BannerText>
+            C<ColorText>OO</ColorText>L
+          </BannerText>
+          <BannerText>
+            T<ColorText>O</ColorText>GETHER<ColorText>.</ColorText>
+          </BannerText>
         </BannerTextWrap>
       </FixedContainer>
     </Wrap>

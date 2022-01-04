@@ -31,7 +31,7 @@ const SectionWorkEfficiency: React.FC = () => {
       <Spacer height="20vh" />
 
       <FadeSimple direction="top" bottomOffset="50%">
-        <h3>업무 효율 극대화.</h3>
+        <h3>업무 효율 극대화</h3>
       </FadeSimple>
 
       <Spacer height="20vh" />

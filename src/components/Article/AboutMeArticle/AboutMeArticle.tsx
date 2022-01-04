@@ -137,19 +137,8 @@ const AboutMeArticle: React.FC = () => {
               <br />웹 개발자 정민우입니다.
             </Headline>
 
-            <ContactContainer>
-              <EmailContainer>
-                <Email>juty9026@gmail.com</Email>
-              </EmailContainer>
-              <IconContainer>
-                <a href="https://github.com/juty9026" target="_blank">
-                  <DevIcon name="GitHub" size={40} />
-                </a>
-                <a href="https://www.linkedin.com/in/정민우" target="_blank">
-                  <DevIcon name="LinkedIn" size={40} />
-                </a>
-              </IconContainer>
-            </ContactContainer>
+            <br />
+            <br />
 
             <Introduce>
               4년의 Front-end 및 Back-end 개발 경력을 가지고있습니다.
@@ -166,6 +155,20 @@ const AboutMeArticle: React.FC = () => {
               <br />
               어제보다 성장한 오늘을 살고, 오늘보다 멋진 내일을 꿈꿉니다. 😎
             </Introduce>
+
+            <ContactContainer>
+              <EmailContainer>
+                <Email>juty9026@gmail.com</Email>
+              </EmailContainer>
+              <IconContainer>
+                <a href="https://github.com/juty9026" target="_blank">
+                  <DevIcon name="GitHub" size={40} />
+                </a>
+                <a href="https://www.linkedin.com/in/정민우" target="_blank">
+                  <DevIcon name="LinkedIn" size={40} />
+                </a>
+              </IconContainer>
+            </ContactContainer>
           </div>
         </SectionIntroduction>
       </Container>

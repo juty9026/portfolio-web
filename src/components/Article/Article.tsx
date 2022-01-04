@@ -19,10 +19,11 @@ const StyledHeader = styled.header`
     flex: 1;
   }
 `;
+
 const StyledH1 = styled.h1`
   font-size: 3rem;
   font-weight: normal;
-  padding: 0.25em 1em;
+  padding: 0.25em 2em;
   overflow: hidden;
   background: linear-gradient(currentcolor, currentcolor) no-repeat top center,
     linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
@@ -63,7 +64,9 @@ const StyledH1 = styled.h1`
 const HeaderTitle: React.FC = ({ children }) => {
   return (
     <StyledHeader>
-      <StyledH1>{children}</StyledH1>
+      <StyledH1>
+        <em>{children}</em>
+      </StyledH1>
     </StyledHeader>
   );
 };

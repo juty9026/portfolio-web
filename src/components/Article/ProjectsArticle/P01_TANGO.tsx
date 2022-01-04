@@ -6,10 +6,10 @@ import Description from './WorkDetails/Description';
 import Content from './WorkDetails/Content';
 import Wrap from './WorkDetails/Wrap';
 
-const P01_TANGO_D: React.FC = () => {
+const P01_TANGO: React.FC = () => {
   return (
     <Wrap>
-      <Title title="TANGO-D" period="2018-02-01 ~ 2018-05-31" />
+      <Title title="TANGO" period="2018-02-01 ~ 2018-05-31" />
       <Content>
         <Description>
           {`
@@ -46,4 +46,4 @@ const P01_TANGO_D: React.FC = () => {
   );
 };
 
-export default P01_TANGO_D;
+export default P01_TANGO;

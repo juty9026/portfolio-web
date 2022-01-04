@@ -12,11 +12,11 @@ const Wrap = styled.div<WrapProps>`
   margin: 0.4rem 0 0.4rem 0;
   padding: 0.4rem;
   border: 2px solid transparent;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   ${({ active, clickable }) => {
     if (active) {
       return css`
-        border-color: #04c2c9;
+        border-color: #25d7af;
         transition: all 1s;
       `;
     }
@@ -30,7 +30,7 @@ const Wrap = styled.div<WrapProps>`
 
 const ExpBar = styled.div`
   height: 2.2rem;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   background-color: #eeeeee;
 `;
 
@@ -38,7 +38,7 @@ const AnimatedExp = styled(a.div)`
   position: absolute;
   height: 100%;
   border-radius: inherit;
-  background-color: #00a1a7;
+  background-color: #03b58d;
 `;
 
 // noinspection CssReplaceWithShorthandSafely
@@ -51,9 +51,19 @@ const Tag = styled.div`
   border-radius: inherit;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: #04c2c9;
+  background-color: #25d7af;
   color: #ffffff;
-  font-size: 1rem;
+  font-weight: bold;
+
+  @media (max-width: 767px) {
+    font-size: 0.6rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const Number = styled.span`

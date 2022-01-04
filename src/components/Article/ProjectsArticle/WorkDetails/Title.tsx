@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Period from '@components/Article/ProjectsArticle/WorkDetails/Period';
 
 const Wrap = styled.div`
   height: 60vh;
@@ -15,16 +14,33 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.h3`
+  padding: 5% 0;
   letter-spacing: 0.1em;
 
   @media (max-width: 767px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 6rem;
+    font-size: 5rem;
   }
   @media (min-width: 1024px) {
-    font-size: 9rem;
+    font-size: 8rem;
+  }
+`;
+
+const Period = styled.p`
+  padding: 0 5%;
+  color: white;
+  text-align: right;
+
+  @media (max-width: 767px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.8rem;
   }
 `;
 
