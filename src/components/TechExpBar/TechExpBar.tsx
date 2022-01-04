@@ -12,7 +12,7 @@ const Wrap = styled.div<WrapProps>`
   margin: 0.4rem 0 0.4rem 0;
   padding: 0.4rem;
   border: 2px solid transparent;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   ${({ active, clickable }) => {
     if (active) {
       return css`
@@ -30,7 +30,7 @@ const Wrap = styled.div<WrapProps>`
 
 const ExpBar = styled.div`
   height: 2.2rem;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   background-color: #eeeeee;
 `;
 
