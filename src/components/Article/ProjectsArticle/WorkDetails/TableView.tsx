@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
   gap: 1rem;
 `;
 
-const Title = styled.span`
+const Title = styled.em`
   text-align: center;
   color: white;
 
