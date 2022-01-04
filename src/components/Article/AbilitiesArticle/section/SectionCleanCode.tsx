@@ -11,7 +11,7 @@ const SectionCleanCode: React.FC = () => {
   return (
     <Section theme="light" style={{ zIndex: 0 }}>
       <FadeSimple direction="top" bottomOffset="50%">
-        <h3>술술 읽히는 코드.</h3>
+        <h3>술술 읽히는 코드</h3>
       </FadeSimple>
 
       <Spacer height="10vh" />
