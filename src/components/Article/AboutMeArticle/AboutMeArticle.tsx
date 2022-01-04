@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 10rem;
 
   @media (min-width: 1024px) {
     flex-direction: row;
