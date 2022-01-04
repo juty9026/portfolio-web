@@ -9,7 +9,7 @@
 html,
 body {
   overscroll-behavior: none;
-  font-family: Jua, sans-serif;
+  font-family: Noto Sans, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,7 +40,6 @@ h6,
 pre,
 p,
 span {
-  font-family: Jua, sans-serif;
   font-size: inherit;
   letter-spacing: 0.1rem;
   text-align: left;
@@ -53,11 +52,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Bebas Neue, Jua, sans-serif;
   text-align: center;
 }
 
 em {
-  font-family: Bebas Neue, Jua, sans-serif;
+  font-family: Bebas Neue, sans-serif;
   font-style: normal;
 }
