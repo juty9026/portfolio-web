@@ -4,6 +4,7 @@ import TechExpBar from '@components/TechExpBar';
 import SphericalWordCloud from '@components/SphericalWordCloud';
 import Article from '@components/Article/Article';
 import { a, config, useTransition } from 'react-spring';
+import { Spacer } from '@components/Article/AbilitiesArticle/styled';
 
 const Wrap = styled.div`
   padding: 5%;
@@ -29,10 +30,6 @@ const StyledSphericalWordCloud = styled(SphericalWordCloud)`
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 65vh;
   }
-`;
-
-const Spacer = styled.div`
-  height: 4vh;
 `;
 
 const SkillsArticle: React.FC = () => {
@@ -128,13 +125,24 @@ const SkillsArticle: React.FC = () => {
     <Article title="Skills">
       <Wrap>
         <SectionFlex>
-          <div>
+          <div style={{ zIndex: 1 }}>
             {data.map(({ position, exp }) => (
               <TechExpBar key={position} active={active === position} title={position} exp={exp} onClick={setActive} />
             ))}
           </div>
-          <Spacer />
-          <div>
+          <Spacer height="4vh" />
+          <p
+            style={{
+              fontSize: '2rem',
+              color: '#00a1a7',
+              opacity: 0.8,
+              textAlign: 'center',
+              zIndex: 0,
+            }}
+          >
+            {active}
+          </p>
+          <div style={{ zIndex: 1 }}>
             {transitions((style, { tag, exp }, t, index) => (
               <a.div style={{ ...style, zIndex: relatedSkills.length - index }}>
                 <TechExpBar key={tag} title={tag} exp={exp} />
@@ -146,7 +154,7 @@ const SkillsArticle: React.FC = () => {
           <StyledSphericalWordCloud data={wordCloudData} />
         </SectionFlex>
       </Wrap>
-      <Spacer />
+      <Spacer height="5vh" />
     </Article>
   );
 };
