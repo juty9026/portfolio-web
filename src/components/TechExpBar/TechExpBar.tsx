@@ -92,7 +92,9 @@ const TechExpBar: React.FC<Props> = ({ active = false, title, exp, style, onClic
           <Wrap style={style} active={active} clickable={!!onClick} onClick={() => onClick && onClick(title)}>
             <ExpBar>
               <AnimatedExp style={styles} />
-              <Tag>{title}</Tag>
+              <Tag>
+                <span>{title}</span>
+              </Tag>
               <Number>{`${exp}%`}</Number>
             </ExpBar>
           </Wrap>
