@@ -50,7 +50,27 @@ const Introduce = styled.p`
   font-size: 1rem;
 `;
 
+const ContactContainer = styled.div`
+  margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const EmailContainer = styled.div`
+  flex: 1;
+`;
+
+const Email = styled.h5`
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  font-weight: normal;
+  transform: translate3d(-50%, -50%, 0);
+`;
+
 const IconContainer = styled.div`
+  flex: 1;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -116,18 +136,21 @@ const AboutMeArticle: React.FC = () => {
               안녕하세요.
               <br />웹 개발자 정민우입니다.
             </Headline>
-            <br />
-            <br />
-            <IconContainer>
-              <a href="https://github.com/juty9026" target="_blank">
-                <DevIcon name="GitHub" size={40} />
-              </a>
-              <a href="https://www.linkedin.com/in/정민우" target="_blank">
-                <DevIcon name="LinkedIn" size={40} />
-              </a>
-            </IconContainer>
-            <br />
-            <br />
+
+            <ContactContainer>
+              <EmailContainer>
+                <Email>juty9026@gmail.com</Email>
+              </EmailContainer>
+              <IconContainer>
+                <a href="https://github.com/juty9026" target="_blank">
+                  <DevIcon name="GitHub" size={40} />
+                </a>
+                <a href="https://www.linkedin.com/in/정민우" target="_blank">
+                  <DevIcon name="LinkedIn" size={40} />
+                </a>
+              </IconContainer>
+            </ContactContainer>
+
             <Introduce>
               4년의 Front-end 및 Back-end 개발 경력을 가지고있습니다.
               <br />
