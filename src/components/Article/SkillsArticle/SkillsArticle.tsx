@@ -39,8 +39,8 @@ const SkillsArticle: React.FC = () => {
         position: 'Front-end',
         exp: 70,
         relatedSkills: [
-          { tag: 'Javascript', exp: 80 },
-          { tag: 'Typescript', exp: 60 },
+          { tag: 'JavaScript', exp: 80 },
+          { tag: 'TypeScript', exp: 60 },
           { tag: 'React', exp: 80 },
           { tag: 'Vue.js', exp: 70 },
           { tag: 'Angular', exp: 40 },
