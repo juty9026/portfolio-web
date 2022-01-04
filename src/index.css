@@ -9,15 +9,14 @@
 html,
 body {
   overscroll-behavior: none;
+  font-family: Jua, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: white;
   margin: 0;
-  font-family: 'Bebas Neue', 'Jua', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 article {
@@ -41,7 +40,7 @@ h6,
 pre,
 p,
 span {
-  font-family: inherit;
+  font-family: Jua, sans-serif;
   font-size: inherit;
   letter-spacing: 0.1rem;
   text-align: left;
@@ -54,5 +53,11 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: Bebas Neue, Jua, sans-serif;
   text-align: center;
+}
+
+em {
+  font-family: Bebas Neue, Jua, sans-serif;
+  font-style: normal;
 }

@@ -4,6 +4,7 @@ const devIconMap: Record<DevIconName, string> = {
   Angular: 'angularjs',
   AngularJS: 'angularjs',
   GitHub: 'github',
+  Jenkins: 'jenkins',
   LinkedIn: 'linkedin',
   React: 'react',
   ReactNative: 'react',

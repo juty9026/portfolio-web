@@ -32,9 +32,11 @@ const NoProblem: React.FC<Props> = ({ change }) => {
   });
   return (
     <Wrap>
-      {'No '}
-      <AnimatedDiv style={{ opacity: opacity.to((o) => 1 - o), transform }}>Way.</AnimatedDiv>
-      <AnimatedDiv style={{ opacity, transform, rotateX: '180deg' }}>Problem.</AnimatedDiv>
+      <em>
+        {'No '}
+        <AnimatedDiv style={{ opacity: opacity.to((o) => 1 - o), transform }}>Way.</AnimatedDiv>
+        <AnimatedDiv style={{ opacity, transform, rotateX: '180deg' }}>Problem.</AnimatedDiv>
+      </em>
     </Wrap>
   );
 };

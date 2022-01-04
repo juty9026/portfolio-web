@@ -2,6 +2,7 @@ type DevIconName =
   | 'Angular'
   | 'AngularJS'
   | 'GitHub'
+  | 'Jenkins'
   | 'LinkedIn'
   | 'jQuery'
   | 'React'
