@@ -21,7 +21,7 @@ import Partner from '@customTypes/Partner';
 import { DevIconName } from '@components/DevIcon';
 
 const Container = styled.div`
-  padding: 5vh 10vw 5vh 10vw;
+  padding: 5vh 5vw 5vh 5vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
