@@ -32,16 +32,19 @@ const CardHeader = styled.header`
 
 const CardBody = styled.div`
   display: flex;
+  padding: 5%;
 `;
 
 const TextContainer = styled.div`
-  flex: 1;
-  padding: 5%;
+  flex: 1 min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   text-align: left;
 `;
 
 const IconContainer = styled.div`
-  flex: 0 1 35%;
+  flex: 0 fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,8 +65,12 @@ const Title = styled.span`
 
 const Period = styled.span`
   display: block;
-  font-size: 1rem;
+  font-size: 0.8rem;
   flex: 1;
+
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledDevIcon = styled(DevIcon)`

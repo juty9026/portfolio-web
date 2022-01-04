@@ -21,10 +21,11 @@ import Partner from '@customTypes/Partner';
 import { DevIconName } from '@components/DevIcon';
 
 const Container = styled.div`
-  padding: 5vh 5vw 5vh 5vw;
+  padding: 5% 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 0.5rem;
 `;
 
 const HoverWrap = styled.div`
@@ -37,7 +38,7 @@ const HoverWrap = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    flex: 0 50%;
+    flex: 0 45%;
   }
 
   @media (hover: hover) {
