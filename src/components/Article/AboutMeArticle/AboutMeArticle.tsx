@@ -61,12 +61,12 @@ const EmailContainer = styled.div`
   flex: 1;
 `;
 
-const Email = styled.h5`
+const Email = styled.p`
   top: 50%;
-  left: 50%;
+  text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
-  transform: translate3d(-50%, -50%, 0);
+  transform: translateY(-50%);
 `;
 
 const IconContainer = styled.div`

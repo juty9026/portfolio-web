@@ -40,10 +40,12 @@ const IAmPossible: React.FC<Props> = ({ change }) => {
 
   return (
     <Wrap>
-      I<StyledAnimatedDiv style={springApostrophe}>'</StyledAnimatedDiv>
-      <StyledAnimatedDiv style={springMPossible}>
-        m<StyledAnimatedDiv style={springPossible}>possible.</StyledAnimatedDiv>
-      </StyledAnimatedDiv>
+      <em>
+        I<StyledAnimatedDiv style={springApostrophe}>'</StyledAnimatedDiv>
+        <StyledAnimatedDiv style={springMPossible}>
+          m<StyledAnimatedDiv style={springPossible}>possible.</StyledAnimatedDiv>
+        </StyledAnimatedDiv>
+      </em>
     </Wrap>
   );
 };

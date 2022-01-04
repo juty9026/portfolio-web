@@ -29,7 +29,7 @@ const BannerTextWrap = styled.div`
   }
 `;
 
-const BannerText = styled.span`
+const BannerText = styled.h1`
   @media (max-width: 767px) {
     text-align: center;
     width: 100%;
