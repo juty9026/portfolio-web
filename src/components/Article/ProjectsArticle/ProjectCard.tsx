@@ -36,7 +36,7 @@ const CardBody = styled.div`
 `;
 
 const TextContainer = styled.div`
-  flex: 1 min-content;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -46,7 +46,7 @@ const TextContainer = styled.div`
 const IconContainer = styled.div`
   flex: 0 fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 0.2rem;
 `;

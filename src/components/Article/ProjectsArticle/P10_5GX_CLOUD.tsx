@@ -33,7 +33,7 @@ const P10_5GX_CLOUD: React.FC = () => {
             각 필터 항목이 서로 의존하고, 기능 명세가 화면별로 조금씩 다르며 여러 개발자가 사용할 컴포넌트였기 여러가지를 신경쓰며 공들여 개발했습니다.
           `}
         </Description>
-        <TechStack backend={['MariaDB', 'MyBatis', 'Spring Boot']} frontend={['Vue']} />
+        <TechStack backend={['MariaDB', 'MyBatis', 'Spring Boot']} frontend={['Vue.js']} />
         <Description>
           {`
             개발 후 샘플로 화면에 붙여놓은 부분을 다른 개발자가 그대로 떼어다가 사용하고, 잘못된 사용으로 인해 기능이 제대로 동작하지 않아 문의를 많이 받았습니다.

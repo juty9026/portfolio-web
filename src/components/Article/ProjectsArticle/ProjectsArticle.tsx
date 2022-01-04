@@ -64,7 +64,7 @@ const works: Work[] = [
     partner: 'JUVIS',
     title: 'CRM',
     period: { start: '2021-11-01' },
-    iconNames: ['AngularJS', 'Spring', 'Jenkins'],
+    iconNames: ['AngularJS', 'Spring'],
     overlayComponent: P12_JUVIS,
   },
   {

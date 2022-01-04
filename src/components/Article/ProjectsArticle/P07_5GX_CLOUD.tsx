@@ -32,7 +32,7 @@ const P07_5GX_CLOUD: React.FC = () => {
             d3와 Vue 모두 DOM을 직접 조작하려고 하기 때문에 충돌을 피하고 유지보수를 용이하게 만들기 위해 책임을 적절하게 분리했습니다.
           `}
         </Description>
-        <TechStack backend={['MariaDB', 'MyBatis', 'Spring Boot']} frontend={['Vue']} />
+        <TechStack backend={['MariaDB', 'MyBatis', 'Spring Boot']} frontend={['Vue.js']} />
         <Description>
           {`
             개발 진행 중 권한체크를 통해 버튼을 숨기거나 노출시키는 기능이 필요하게 되었습니다.

@@ -61,7 +61,10 @@ const Tag = styled.div`
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 0.8rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1919px) {
+    font-size: 0.9rem;
+  }
+  @media (min-width: 1920px) {
     font-size: 1rem;
   }
 `;
@@ -92,7 +95,9 @@ const TechExpBar: React.FC<Props> = ({ active = false, title, exp, style, onClic
           <Wrap style={style} active={active} clickable={!!onClick} onClick={() => onClick && onClick(title)}>
             <ExpBar>
               <AnimatedExp style={styles} />
-              <Tag>{title}</Tag>
+              <Tag>
+                <span>{title}</span>
+              </Tag>
               <Number>{`${exp}%`}</Number>
             </ExpBar>
           </Wrap>
