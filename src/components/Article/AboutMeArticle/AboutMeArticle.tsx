@@ -7,8 +7,7 @@ import Nolza from '@images/nolza-3-640w.jpeg';
 import { Waypoint } from 'react-waypoint';
 import { a, config, useTrail } from 'react-spring';
 import Article from '@components/Article/Article';
-import github from '@images/github-128w.png';
-import linkedin from '@images/linkedin-128w.png';
+import { DevIcon } from '@components/DevIcon';
 
 const Container = styled.div`
   margin: auto;
@@ -52,18 +51,9 @@ const Introduce = styled.p`
 `;
 
 const IconContainer = styled.div`
-  padding: 0 30%;
   display: flex;
-  justify-content: space-evenly;
-`;
-
-const ContactIcon = styled.img`
-  @media (max-width: 1023px) {
-    max-width: 32px;
-  }
-  @media (min-width: 1024px) {
-    max-width: 40px;
-  }
+  justify-content: center;
+  gap: 2rem;
 `;
 
 const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
@@ -130,10 +120,10 @@ const AboutMeArticle: React.FC = () => {
             <br />
             <IconContainer>
               <a href="https://github.com/juty9026" target="_blank">
-                <ContactIcon src={github} alt="github" />
+                <DevIcon name="GitHub" size={40} />
               </a>
               <a href="https://www.linkedin.com/in/정민우" target="_blank">
-                <ContactIcon src={linkedin} alt="linkedin" />
+                <DevIcon name="LinkedIn" size={40} />
               </a>
             </IconContainer>
             <br />
