@@ -53,8 +53,17 @@ const Tag = styled.div`
   border-bottom-right-radius: 0;
   background-color: #25d7af;
   color: #ffffff;
-  font-size: 1rem;
   font-weight: bold;
+
+  @media (max-width: 767px) {
+    font-size: 0.6rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 const Number = styled.span`
