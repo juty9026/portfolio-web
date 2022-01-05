@@ -14,49 +14,41 @@ const Wrap = styled.div`
 
 const TitleContainer = styled.div`
   flex: 1;
-  display: flex;
 `;
 
 const Title = styled.em`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 2rem;
+  display: inline-block;
   color: white;
 
   @media (max-width: 767px) {
     font-size: 1.5rem;
   }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 768px) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (min-width: 768px) and (max-width: 1439px) {
     font-size: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     font-size: 2.5rem;
   }
 `;
 
 const ContentContainer = styled.div`
   flex: 1;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Content = styled.span`
-  flex: 1;
-  text-align: left;
-  font-size: 1.5rem;
+  display: block;
+  text-align: center;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   @media (max-width: 767px) {
     font-size: 1rem;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   @media (min-width: 1024px) {
     font-size: 1.5rem;
@@ -76,8 +68,8 @@ const TechStack: React.FC<Props> = ({ backend = [], frontend = [], devops = [] }
         <Title>Skills</Title>
       </TitleContainer>
       <ContentContainer>
-        {!!backend.length && <Content>{backend.join(', ')}</Content>}
         {!!frontend.length && <Content>{frontend.join(', ')}</Content>}
+        {!!backend.length && <Content>{backend.join(', ')}</Content>}
         {!!devops.length && <Content>{devops.join(', ')}</Content>}
       </ContentContainer>
     </Wrap>

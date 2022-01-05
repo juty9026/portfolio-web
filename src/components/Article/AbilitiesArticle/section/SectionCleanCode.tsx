@@ -26,8 +26,8 @@ const SectionCleanCode: React.FC = () => {
         <iframe
           src="https://codesandbox.io/embed/messenger-v4lpc?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fclient%2Fsrc%2FChatRoom.tsx&theme=dark"
           style={{
-            width: '80vw',
-            height: '80vh',
+            width: '85vw',
+            height: '85vh',
             border: '1px solid black',
             borderRadius: '4px',
             overflow: 'hidden',

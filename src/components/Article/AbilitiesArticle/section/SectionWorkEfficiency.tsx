@@ -86,7 +86,7 @@ const SectionWorkEfficiency: React.FC = () => {
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <Headline>
-              텍스트 편집 능력. <em>최상</em>.
+              텍스트 편집 능력 : <em>최상</em>
             </Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
@@ -99,7 +99,7 @@ const SectionWorkEfficiency: React.FC = () => {
         <div>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <Headline>
-              적응 능력. <em>최상</em>.
+              적응 능력 : <em>최상</em>
             </Headline>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
@@ -109,12 +109,12 @@ const SectionWorkEfficiency: React.FC = () => {
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              그리고 <em>언어</em>, <em>프레임워크</em>, <em>라이브러리</em>.
+              그리고 <em>언어</em>, <em>프레임워크</em>, <em>라이브러리</em>
             </p>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
-              뿐만 아니라 <em>다양한 도구</em>까지.
+              뿐만 아니라 <em>다양한 도구</em>까지
             </p>
           </FadeSimple>
         </div>
@@ -124,7 +124,7 @@ const SectionWorkEfficiency: React.FC = () => {
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <Headline>
-              반복을 줄이고 <em>개선</em>하는 <em>습관</em>.
+              반복을 줄이고 <em>개선</em>하는 <em>습관</em>
             </Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
