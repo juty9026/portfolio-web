@@ -61,10 +61,10 @@ const Tag = styled.div`
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 0.8rem;
   }
-  @media (min-width: 1024px) and (max-width: 1919px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
     font-size: 0.9rem;
   }
-  @media (min-width: 1920px) {
+  @media (min-width: 1440px) {
     font-size: 1rem;
   }
 `;
