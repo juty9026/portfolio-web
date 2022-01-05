@@ -15,21 +15,21 @@ const P01_TANGO: React.FC = () => {
           {`
             첫 번째로 경험한 프로젝트입니다! 🎉
 
-            TANGO-D는 SKT가 개발한 AI 네트워크 관리 시스템 Tango의 일부로, Data 관련 업무가 핵심인 프로젝트입니다.
+            TANGO는 SKT가 개발한 AI 네트워크 관리 시스템입니다.
           `}
         </Description>
         <TableView
           data={[
-            { title: 'ROLE', list: ['Back-end Development'] },
+            { title: 'ROLE', list: ['백엔드 개발', '데이터 운영'] },
             {
               title: 'RESPONSIBILITIES',
-              list: ['Data Collecting Module Development', 'Back Office Development', 'Data Monitoring & Reprocessing'],
+              list: ['백오피스 개발', 'Data 수집 프로그램 개발', 'Data 모니터링 및 재처리'],
             },
           ]}
         />
         <Description>
           {`
-            다양한 소스로부터 데이터를 수집하기 위한 Java 어플리케이션을 주로 개발하였고, 각 데이터의 수집 상태 모니터링 및 재처리를 위한 백오피스 웹을 개발했습니다.
+            다양한 소스로부터 데이터를 수집하기 위한 자바 애플리케이션을 주로 개발하였고, 각 데이터의 수집 상태 모니터링 및 재처리를 위한 백오피스 웹을 개발했습니다.
           `}
         </Description>
         <TechStack backend={['Hadoop', 'Hive', 'ActiveMQ', 'Spring', 'JSP']} />

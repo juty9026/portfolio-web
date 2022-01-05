@@ -19,10 +19,10 @@ const P12_JUVIS: React.FC = () => {
         </Description>
         <TableView
           data={[
-            { title: 'ROLE', list: ['Front-end Development', 'Back-end Development', 'DevOps'] },
+            { title: 'ROLE', list: ['프론트엔드 개발', '백엔드 개발', '데브옵스'] },
             {
               title: 'RESPONSIBILITIES',
-              list: ['Web Application Maintenance'],
+              list: ['웹 개발'],
             },
           ]}
         />
@@ -35,7 +35,7 @@ const P12_JUVIS: React.FC = () => {
         <TechStack backend={['MySQL', 'MyBatis', 'Spring']} frontend={['AngularJS']} devops={['Jenkins', 'Linux']} />
         <Description>
           {`
-            파편화되어 여기저기 흩어져 있는 코드와 사용하지 않는 코드들을 보며, 유지보수성과 확장성을 높이기 위한 클린코드와 리팩토링이 얼마나 중요한지를 다시 한 번 느끼게 되었습니다.
+            파편화되어 여기저기 흩어져 있는 코드와 사용하지 않는 코드들을 보며, 유지보수성과 확장성을 높이기 위한 클린코드와 리팩토링이 얼마나 중요한지를 다시 한 번 느끼고 있습니다.
           `}
         </Description>
       </Content>
