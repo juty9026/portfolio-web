@@ -141,7 +141,7 @@ const AboutMeArticle: React.FC = () => {
             <br />
 
             <Introduce>
-              4년의 Front-end 및 Back-end 개발 경력을 가지고있습니다.
+              4년의 웹 애플리케이션 개발 경력을 가지고있습니다.
               <br />
               <br />
               유저 친화적인 UI/UX에 관심이 있으며 확장 가능한, 견고한 웹 애플리케이션에 대해 고민하고 웹 표준과 접근성을
