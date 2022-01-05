@@ -13,6 +13,7 @@ const themeLight = css`
   h6,
   em {
     color: #000;
+    font-weight: bold;
   }
 `;
 
@@ -28,6 +29,7 @@ const themeDark = css`
   h6,
   em {
     color: #fff;
+    font-weight: bold;
   }
 `;
 
