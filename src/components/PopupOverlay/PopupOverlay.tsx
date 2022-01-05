@@ -21,12 +21,15 @@ const Container = styled.div`
   z-index: 30;
 
   @media (max-width: 767px) {
-    margin: 1rem;
+    margin: 1.5rem;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     margin: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    margin: 3rem;
+  }
+  @media (min-width: 1440px) {
     margin: 5vh 10vw 5vh 10vw;
   }
 `;
