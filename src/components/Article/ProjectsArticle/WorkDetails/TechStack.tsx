@@ -76,8 +76,8 @@ const TechStack: React.FC<Props> = ({ backend = [], frontend = [], devops = [] }
         <Title>Skills</Title>
       </TitleContainer>
       <ContentContainer>
-        {!!backend.length && <Content>{backend.join(', ')}</Content>}
         {!!frontend.length && <Content>{frontend.join(', ')}</Content>}
+        {!!backend.length && <Content>{backend.join(', ')}</Content>}
         {!!devops.length && <Content>{devops.join(', ')}</Content>}
       </ContentContainer>
     </Wrap>
