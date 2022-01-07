@@ -27,20 +27,14 @@ const BannerTextWrap = styled.div`
 
   @media (max-width: 767px) {
     font-size: 4rem;
-  }
-`;
-
-const StyledEm = styled.em`
-  @media (max-width: 767px) {
-    text-align: center;
-    width: 100%;
+    flex-direction: column;
   }
 `;
 
 const BannerText: React.FC = ({ children }) => {
   return (
     <span>
-      <StyledEm>{children}</StyledEm>
+      <em>{children}</em>
     </span>
   );
 };
