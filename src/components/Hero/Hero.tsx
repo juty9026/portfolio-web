@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
+import { a, config, useTrail } from 'react-spring';
 
 const Wrap = styled.header`
   height: 100vh;
@@ -48,6 +49,27 @@ const ColorText = styled.span`
   color: #03b58d;
 `;
 
+const Trail: React.FC = ({ children }) => {
+  const childrenArray = useMemo(() => {
+    return React.Children.toArray(children);
+  }, [children]);
+
+  const trail = useTrail(childrenArray.length, {
+    from: { transform: 'scale(100)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+    config: config.molasses,
+    delay: 1000,
+  });
+
+  return (
+    <>
+      {trail.map((style, index) => (
+        <a.div style={style}>{childrenArray[index]}</a.div>
+      ))}
+    </>
+  );
+};
+
 const Hero: React.FC = () => {
   const paragraph = useMemo(() => {
     return "LET'S MAKE SOMETHING COOL TOGETHER.";
@@ -75,7 +97,9 @@ const Hero: React.FC = () => {
   return (
     <Wrap>
       <FixedContainer>
-        <BannerTextWrap>{words.map((word) => renderWord(word))}</BannerTextWrap>
+        <BannerTextWrap>
+          <Trail>{words.map(renderWord)}</Trail>
+        </BannerTextWrap>
       </FixedContainer>
     </Wrap>
   );
