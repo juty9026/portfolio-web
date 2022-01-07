@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { PolaroidImage } from '@components/PolaroidImage';
 import Minu from '@images/minu-1a-640w.jpeg';
@@ -8,6 +8,8 @@ import { Waypoint } from 'react-waypoint';
 import { a, config, useTrail } from 'react-spring';
 import Article from '@components/Article/Article';
 import { DevIcon } from '@components/DevIcon';
+import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Container = styled.div`
   margin: auto;
@@ -61,8 +63,12 @@ const EmailContainer = styled.div`
   flex: 1;
 `;
 
-const Email = styled.p`
+const Email = styled.span`
   top: 50%;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
   text-align: center;
   font-size: 1.5rem;
   font-weight: normal;
@@ -98,6 +104,7 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
 };
 
 const AboutMeArticle: React.FC = () => {
+  const ref = useRef<null | AddFunction>(null);
   const [photoVisible, setPhotoVisible] = useState(false);
   return (
     <Article title="About">
@@ -163,7 +170,9 @@ const AboutMeArticle: React.FC = () => {
 
             <ContactContainer>
               <EmailContainer>
-                <Email>juty9026@gmail.com</Email>
+                <CopyToClipboard text="juty9026@gmail.com" onCopy={() => ref.current?.('복사되었습니다!')}>
+                  <Email>juty9026@gmail.com</Email>
+                </CopyToClipboard>
               </EmailContainer>
               <IconContainer>
                 <a href="https://github.com/juty9026" target="_blank">
@@ -176,6 +185,12 @@ const AboutMeArticle: React.FC = () => {
             </ContactContainer>
           </div>
         </SectionIntroduction>
+        <MessageHub
+          timeout={3000}
+          children={(add: AddFunction) => {
+            ref.current = add;
+          }}
+        />
       </Container>
     </Article>
   );
