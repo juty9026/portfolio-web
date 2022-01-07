@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
 
 const Wrap = styled.header`
@@ -49,24 +49,33 @@ const ColorText = styled.span`
 `;
 
 const Hero: React.FC = () => {
+  const paragraph = useMemo(() => {
+    return "LET'S MAKE SOMETHING COOL TOGETHER.";
+  }, []);
+
+  const words = useMemo(() => {
+    return paragraph.split(' ');
+  }, [paragraph]);
+
+  const colorCharacters = useMemo(() => {
+    return ["'", '.', 'O'];
+  }, []);
+
+  const renderWord = useCallback(
+    (word: string) => (
+      <BannerText>
+        {Array.from(word).map((char) =>
+          colorCharacters.includes(char) ? <ColorText>{char}</ColorText> : <span>{char}</span>
+        )}
+      </BannerText>
+    ),
+    [colorCharacters]
+  );
+
   return (
     <Wrap>
       <FixedContainer>
-        <BannerTextWrap>
-          <BannerText>
-            LET<ColorText>'</ColorText>S
-          </BannerText>
-          <BannerText>MAKE</BannerText>
-          <BannerText>
-            S<ColorText>O</ColorText>METHING
-          </BannerText>
-          <BannerText>
-            C<ColorText>OO</ColorText>L
-          </BannerText>
-          <BannerText>
-            T<ColorText>O</ColorText>GETHER<ColorText>.</ColorText>
-          </BannerText>
-        </BannerTextWrap>
+        <BannerTextWrap>{words.map((word) => renderWord(word))}</BannerTextWrap>
       </FixedContainer>
     </Wrap>
   );
