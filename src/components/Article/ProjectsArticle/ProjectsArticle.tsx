@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { a, config, useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
@@ -19,6 +19,7 @@ import P12_JUVIS from '@components/Article/ProjectsArticle/P12_JUVIS';
 import Article from '@components/Article/Article';
 import Partner from '@customTypes/Partner';
 import { DevIconName } from '@components/DevIcon';
+import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';
 
 const Container = styled.div`
   padding: 5% 3%;
@@ -147,6 +148,7 @@ const works: Work[] = [
 ];
 
 const WorkExperience: React.FC = () => {
+  const ref = useRef<null | AddFunction>(null);
   const [overlayVisible, setOverlayVisible] = React.useState(false);
   const [overlayContent, setOverlayContent] = React.useState<React.ReactNode>(false);
   const [cardVisible, setCardVisible] = useState(false);
@@ -160,6 +162,7 @@ const WorkExperience: React.FC = () => {
   const openOverlay = React.useCallback((content) => {
     setOverlayVisible(true);
     setOverlayContent(content);
+    ref.current?.('바깥쪽 영역을 클릭하거나 ESC키를 눌러 닫을 수 있습니다.');
   }, []);
 
   const onKeyDown = React.useCallback((e: KeyboardEvent) => {
@@ -194,6 +197,11 @@ const WorkExperience: React.FC = () => {
           </HoverWrap>
         ))}
       </Container>
+      <MessageHub
+        children={(add: AddFunction) => {
+          ref.current = add;
+        }}
+      />
     </Article>
   );
 };
