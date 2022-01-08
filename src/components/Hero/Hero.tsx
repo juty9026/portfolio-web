@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
+import { a, config, useTrail } from 'react-spring';
 
 const Wrap = styled.header`
   height: 100vh;
@@ -26,20 +27,14 @@ const BannerTextWrap = styled.div`
 
   @media (max-width: 767px) {
     font-size: 4rem;
-  }
-`;
-
-const StyledEm = styled.em`
-  @media (max-width: 767px) {
-    text-align: center;
-    width: 100%;
+    flex-direction: column;
   }
 `;
 
 const BannerText: React.FC = ({ children }) => {
   return (
     <span>
-      <StyledEm>{children}</StyledEm>
+      <em>{children}</em>
     </span>
   );
 };
@@ -48,24 +43,56 @@ const ColorText = styled.span`
   color: #03b58d;
 `;
 
+const Trail: React.FC = ({ children }) => {
+  const childrenArray = useMemo(() => {
+    return React.Children.toArray(children);
+  }, [children]);
+
+  const trail = useTrail(childrenArray.length, {
+    from: { transform: 'scale(100)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+    config: config.molasses,
+    delay: 1000,
+  });
+
+  return (
+    <>
+      {trail.map((style, index) => (
+        <a.div style={style}>{childrenArray[index]}</a.div>
+      ))}
+    </>
+  );
+};
+
 const Hero: React.FC = () => {
+  const paragraph = useMemo(() => {
+    return "LET'S MAKE SOMETHING COOL TOGETHER.";
+  }, []);
+
+  const words = useMemo(() => {
+    return paragraph.split(' ');
+  }, [paragraph]);
+
+  const colorCharacters = useMemo(() => {
+    return ["'", '.', 'O'];
+  }, []);
+
+  const renderWord = useCallback(
+    (word: string) => (
+      <BannerText>
+        {Array.from(word).map((char) =>
+          colorCharacters.includes(char) ? <ColorText>{char}</ColorText> : <span>{char}</span>
+        )}
+      </BannerText>
+    ),
+    [colorCharacters]
+  );
+
   return (
     <Wrap>
       <FixedContainer>
         <BannerTextWrap>
-          <BannerText>
-            LET<ColorText>'</ColorText>S
-          </BannerText>
-          <BannerText>MAKE</BannerText>
-          <BannerText>
-            S<ColorText>O</ColorText>METHING
-          </BannerText>
-          <BannerText>
-            C<ColorText>OO</ColorText>L
-          </BannerText>
-          <BannerText>
-            T<ColorText>O</ColorText>GETHER<ColorText>.</ColorText>
-          </BannerText>
+          <Trail>{words.map(renderWord)}</Trail>
         </BannerTextWrap>
       </FixedContainer>
     </Wrap>
