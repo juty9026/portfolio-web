@@ -24,7 +24,7 @@ const SectionCleanCode: React.FC = () => {
       />
       <a.div style={{ transform }}>
         <iframe
-          src="https://codesandbox.io/embed/messenger-v4lpc?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fclient%2Fsrc%2FChatRoom.tsx&theme=dark"
+          src="https://codesandbox.io/embed/messenger-client-xjx2i?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fclient%2Fsrc%2FChatRoom.tsx&theme=dark"
           style={{
             width: '85vw',
             height: '85vh',
