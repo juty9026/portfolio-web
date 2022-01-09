@@ -20,10 +20,10 @@ const P05_WDP: React.FC = () => {
         </Description>
         <TableView
           data={[
-            { title: 'ROLE', list: ['Front-end Development'] },
+            { title: 'ROLE', list: ['프론트엔드 개발'] },
             {
               title: 'RESPONSIBILITIES',
-              list: ['모바일 웹 개발', '컴포넌트 구조 재설계 및 리팩토링', 'NPM 패키지 패치'],
+              list: ['모바일 웹 개발', '컴포넌트 구조 재설계 및 리팩토링', 'npm 패키지 패치'],
             },
           ]}
         />

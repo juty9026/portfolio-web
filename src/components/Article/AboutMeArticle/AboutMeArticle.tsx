@@ -88,6 +88,7 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
     x: visible ? 0 : -50,
     y: visible ? 0 : 20,
     opacity: visible ? 1 : 0,
+    zIndex: 1,
     reverse: !visible,
     config: config.slow,
   });
