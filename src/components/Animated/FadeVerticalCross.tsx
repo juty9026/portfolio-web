@@ -1,6 +1,7 @@
 import React, { CSSProperties, useCallback, useMemo, useState } from 'react';
-import { a, useTrail } from 'react-spring';
+import { useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
+import * as S from './styles';
 
 interface Props {
   style?: CSSProperties;
@@ -42,15 +43,16 @@ const FadeVerticalCross: React.FC<Props> = ({ children, style, text }) => {
   );
 
   return (
-    <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)} bottomOffset="30%">
+    <S.Wrap>
+      <Waypoint onEnter={() => setInView(true)} onLeave={() => setInView(false)} bottomOffset="30%" />
       <div style={style}>
         {trail.map((s, i) => (
-          <a.div key={i} style={{ ...s, display: 'inline-block' }}>
+          <S.AnimatedDiv key={i} style={{ ...s }}>
             {items[i]}
-          </a.div>
+          </S.AnimatedDiv>
         ))}
       </div>
-    </Waypoint>
+    </S.Wrap>
   );
 };
 export default FadeVerticalCross;

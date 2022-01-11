@@ -1,7 +1,7 @@
 import React, { CSSProperties, useMemo, useState } from 'react';
-import { a, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
-import styled from '@emotion/styled';
+import * as S from './styles';
 
 interface Props {
   block?: boolean;
@@ -11,14 +11,6 @@ interface Props {
   topOffset?: string | number;
   bottomOffset?: string | number;
 }
-
-const Wrap = styled.div`
-  display: inline-block;
-`;
-
-const AnimatedDiv = styled(a.div)`
-  display: inline-block;
-`;
 
 const FadeSimple: React.FC<Props> = ({
   block = false,
@@ -59,8 +51,8 @@ const FadeSimple: React.FC<Props> = ({
   });
 
   return (
-    <Wrap className={className} style={style}>
-      <AnimatedDiv style={{ ...spring, display: block ? 'block' : 'inline-block' }}>{children}</AnimatedDiv>
+    <S.Wrap className={className} style={style}>
+      <S.AnimatedDiv style={{ ...spring, display: block ? 'block' : 'inline-block' }}>{children}</S.AnimatedDiv>
       <Waypoint
         onEnter={() => setInView(true)}
         onLeave={() => setInView(false)}
@@ -68,7 +60,7 @@ const FadeSimple: React.FC<Props> = ({
         bottomOffset={bottomOffset}
         fireOnRapidScroll
       />
-    </Wrap>
+    </S.Wrap>
   );
 };
 
