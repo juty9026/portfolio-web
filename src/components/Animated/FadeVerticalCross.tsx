@@ -3,12 +3,11 @@ import { useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import * as S from './styles';
 
-interface Props {
+interface FadeVerticalCrossProps {
   style?: CSSProperties;
   text?: string;
 }
-
-const FadeVerticalCross: React.FC<Props> = ({ children, style, text }) => {
+const FadeVerticalCross: React.FC<FadeVerticalCrossProps> = ({ children, style, text }) => {
   const [inView, setInView] = useState(false);
 
   const items = useMemo(() => {

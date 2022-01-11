@@ -2,11 +2,10 @@ import React from 'react';
 import { useSpring } from 'react-spring';
 import * as S from './styles';
 
-interface Props {
+interface IAmPossibleProps {
   change: boolean;
 }
-
-const IAmPossible: React.FC<Props> = ({ change }) => {
+const IAmPossible: React.FC<IAmPossibleProps> = ({ change }) => {
   const springPossible = useSpring({
     delay: 200,
     x: change ? 10 : 0,

@@ -3,7 +3,7 @@ import { useSpring } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import * as S from './styles';
 
-interface Props {
+interface FadeSimpleProps {
   block?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -11,8 +11,7 @@ interface Props {
   topOffset?: string | number;
   bottomOffset?: string | number;
 }
-
-const FadeSimple: React.FC<Props> = ({
+const FadeSimple: React.FC<FadeSimpleProps> = ({
   block = false,
   children,
   className,

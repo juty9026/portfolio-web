@@ -3,12 +3,11 @@ import { useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
 import * as S from './styles';
 
-interface Props {
+interface FadeHorizontalProps {
   style?: CSSProperties;
   text?: string;
 }
-
-const FadeHorizontal: React.FC<Props> = ({ children, style, text }) => {
+const FadeHorizontal: React.FC<FadeHorizontalProps> = ({ children, style, text }) => {
   const [inView, setInView] = useState(false);
 
   const items = useMemo(() => {
