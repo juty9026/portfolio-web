@@ -16,12 +16,12 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 5%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
   gap: 10rem;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 2rem;
   }
 `;
@@ -88,7 +88,6 @@ const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
     x: visible ? 0 : -50,
     y: visible ? 0 : 20,
     opacity: visible ? 1 : 0,
-    zIndex: 1,
     reverse: !visible,
     config: config.slow,
   });
@@ -110,34 +109,6 @@ const AboutMeArticle: React.FC = () => {
   return (
     <Article title="About">
       <Container>
-        <SectionPhoto>
-          <div style={{ width: '100%', height: '100%' }}>
-            <Waypoint
-              onEnter={() => setPhotoVisible(true)}
-              onLeave={({ currentPosition }) => setPhotoVisible(currentPosition === 'above')}
-              topOffset="-50%"
-              bottomOffset="50%"
-            />
-            <Trail visible={photoVisible}>
-              <PolaroidImage
-                src={Nolza}
-                alt="Nolza"
-                title="Nolza"
-                styleOuter={{ flex: 1, transform: 'rotate(5deg) scale(0.85)' }}
-              />
-              <PolaroidImage src={Minu} alt="Me" title="Minu" styleOuter={{ flex: 1, transform: 'rotate(-5deg)' }} />
-              <PolaroidImage
-                src={Nosick}
-                alt="Nosick"
-                title="Nosick"
-                styleOuter={{
-                  flex: 1,
-                  transform: 'rotate(1deg) scale(0.9)',
-                }}
-              />
-            </Trail>
-          </div>
-        </SectionPhoto>
         <SectionIntroduction>
           <div>
             <Headline>
@@ -186,6 +157,34 @@ const AboutMeArticle: React.FC = () => {
             </ContactContainer>
           </div>
         </SectionIntroduction>
+        <SectionPhoto>
+          <div style={{ width: '100%', height: '100%' }}>
+            <Waypoint
+              onEnter={() => setPhotoVisible(true)}
+              onLeave={({ currentPosition }) => setPhotoVisible(currentPosition === 'above')}
+              topOffset="-50%"
+              bottomOffset="50%"
+            />
+            <Trail visible={photoVisible}>
+              <PolaroidImage
+                src={Nolza}
+                alt="Nolza"
+                title="Nolza"
+                styleOuter={{ flex: 1, transform: 'rotate(5deg) scale(0.85)' }}
+              />
+              <PolaroidImage src={Minu} alt="Me" title="Minu" styleOuter={{ flex: 1, transform: 'rotate(-5deg)' }} />
+              <PolaroidImage
+                src={Nosick}
+                alt="Nosick"
+                title="Nosick"
+                styleOuter={{
+                  flex: 1,
+                  transform: 'rotate(1deg) scale(0.9)',
+                }}
+              />
+            </Trail>
+          </div>
+        </SectionPhoto>
         <MessageHub
           timeout={3000}
           children={(add: AddFunction) => {
