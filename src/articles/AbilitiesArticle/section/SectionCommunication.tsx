@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Section, Spacer } from '@components/Article/AbilitiesArticle/styled';
+import { Section, Spacer } from '../styled';
 import { FadeSimple } from '@components/Animated';
 import styled from '@emotion/styled';
 import { Waypoint } from 'react-waypoint';

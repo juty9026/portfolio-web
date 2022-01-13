@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import WebFont from 'webfontloader';
 import './App.css';
-import { AbilitiesArticle, AboutMeArticle, ProjectsArticle, SkillsArticle } from '@components/Article';
+import { AbilitiesArticle, AboutMeArticle, ProjectsArticle, SkillsArticle } from '@articles';
 import Hero from '@components/Hero';
 import { ParallaxProvider } from 'react-scroll-parallax';
 

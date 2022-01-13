@@ -45,6 +45,8 @@ module.exports = {
           ['@hooks', './src/hooks'],
           ['@section', './src/section'],
           ['@constants', './src/constants'],
+          ['@articles', './src/articles'],
+          ['@layouts', './src/layouts'],
         ],
         extensions: ['.ts', '.tsx'],
       },

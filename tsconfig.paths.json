@@ -8,7 +8,9 @@
       "@customTypes/*": ["src/types/*"],
       "@hooks": ["src/hooks"],
       "@section/*": ["src/section/*"],
-      "@constants": ["src/constants"]
+      "@constants": ["src/constants"],
+      "@articles": ["src/articles"],
+      "@layouts/*": ["src/layouts/*"]
     }
   }
 }

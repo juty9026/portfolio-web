@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import TechExpBar from '@components/TechExpBar';
 import SphericalWordCloud from '@components/SphericalWordCloud';
-import Article from '@components/Article/Article';
+import Article from '@layouts/Article';
 import { a, config, useTransition } from 'react-spring';
-import { Spacer } from '@components/Article/AbilitiesArticle/styled';
+import { Spacer } from '../AbilitiesArticle/styled';
 
 const Wrap = styled.div`
   padding: 5%;

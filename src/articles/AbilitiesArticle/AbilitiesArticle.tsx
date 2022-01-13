@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  SectionCleanCode,
-  SectionCommunication,
-  SectionProblemSolver,
-  SectionWorkEfficiency,
-} from '@components/Article/AbilitiesArticle/section';
+import { SectionCleanCode, SectionCommunication, SectionProblemSolver, SectionWorkEfficiency } from './section';
 
 const AbilitiesArticle: React.FC = () => {
   return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FadeSimple } from '@components/Animated';
 import { a, useSpring } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
-import { Section, Spacer } from '@components/Article/AbilitiesArticle/styled';
+import { Section, Spacer } from '../styled';
 
 const SectionCleanCode: React.FC = () => {
   const [codeVisible, setCodeVisible] = useState(false);
