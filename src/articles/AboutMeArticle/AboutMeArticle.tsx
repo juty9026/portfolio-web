@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import styled from '@emotion/styled';
 import { PolaroidImage } from '@components/PolaroidImage';
 import Minu from '@images/minu-1a-640w.jpeg';
 import Nosick from '@images/nosick-1-640w.jpeg';
@@ -10,77 +9,17 @@ import Article from '@layouts/Article';
 import { DevIcon } from '@components/DevIcon';
 import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
-const Container = styled.div`
-  margin: auto;
-  min-height: 100vh;
-  padding: 5%;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  gap: 10rem;
-
-  @media (min-width: 1024px) {
-    flex-direction: row-reverse;
-    gap: 2rem;
-  }
-`;
-
-const SectionPhoto = styled.section`
-  @media (min-width: 1024px) {
-    flex: 1 0 60%;
-  }
-`;
-
-const SectionIntroduction = styled.section`
-  @media (min-width: 1024px) {
-    flex: 0 0 40%;
-    font-size: 1rem;
-  }
-`;
-
-const Headline = styled.h1`
-  font-size: 2rem;
-  text-align: left;
-
-  @media (max-width: 1023px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const Introduce = styled.p`
-  font-size: 1rem;
-`;
-
-const ContactContainer = styled.div`
-  margin: 5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const EmailContainer = styled.div`
-  flex: 1;
-`;
-
-const Email = styled.span`
-  top: 50%;
-  display: block;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: normal;
-  transform: translateY(-50%);
-`;
-
-const IconContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-`;
+import {
+  Container,
+  ContactContainer,
+  IconContainer,
+  EmailContainer,
+  Email,
+  SectionIntroduction,
+  Introduce,
+  SectionPhoto,
+  Headline,
+} from './styles';
 
 const Trail: React.FC<{ visible: boolean }> = ({ visible, children }) => {
   const items = React.Children.toArray(children);

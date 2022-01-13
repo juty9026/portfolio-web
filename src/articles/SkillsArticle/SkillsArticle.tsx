@@ -1,36 +1,9 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import TechExpBar from '@components/TechExpBar';
-import SphericalWordCloud from '@components/SphericalWordCloud';
 import Article from '@layouts/Article';
 import { a, config, useTransition } from 'react-spring';
 import { Spacer } from '../AbilitiesArticle/styled';
-
-const Wrap = styled.div`
-  padding: 5%;
-  display: flex;
-  justify-content: space-between;
-
-  @media (max-width: 1023px) {
-    flex-direction: column-reverse;
-  }
-`;
-
-const SectionFlex = styled.section`
-  flex: 1;
-`;
-
-const StyledSphericalWordCloud = styled(SphericalWordCloud)`
-  width: 100%;
-  height: 100%;
-
-  @media (max-width: 767px) {
-    height: 50vh;
-  }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    height: 65vh;
-  }
-`;
+import { SectionFlex, StyledSphericalWordCloud, Wrap } from './styles';
 
 const SkillsArticle: React.FC = () => {
   const data = React.useMemo(
