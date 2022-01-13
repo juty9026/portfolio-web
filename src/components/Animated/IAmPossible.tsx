@@ -1,29 +1,11 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { a, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
+import * as S from './styles';
 
-const Wrap = styled.div`
-  display: inline-block;
-  font-size: 6rem;
-  color: #fff;
-
-  @media (max-width: 767px) {
-    font-size: 3rem;
-  }
-  @media (min-width: 768px) {
-    font-size: 6rem;
-  }
-`;
-
-const StyledAnimatedDiv = styled(a.div)`
-  display: inline-block;
-`;
-
-interface Props {
+interface IAmPossibleProps {
   change: boolean;
 }
-
-const IAmPossible: React.FC<Props> = ({ change }) => {
+const IAmPossible: React.FC<IAmPossibleProps> = ({ change }) => {
   const springPossible = useSpring({
     delay: 200,
     x: change ? 10 : 0,
@@ -39,14 +21,14 @@ const IAmPossible: React.FC<Props> = ({ change }) => {
   });
 
   return (
-    <Wrap>
+    <S.Wrap bigFont>
       <em>
-        I<StyledAnimatedDiv style={springApostrophe}>'</StyledAnimatedDiv>
-        <StyledAnimatedDiv style={springMPossible}>
-          m<StyledAnimatedDiv style={springPossible}>possible.</StyledAnimatedDiv>
-        </StyledAnimatedDiv>
+        I<S.AnimatedDiv style={springApostrophe}>'</S.AnimatedDiv>
+        <S.AnimatedDiv style={springMPossible}>
+          m<S.AnimatedDiv style={springPossible}>possible.</S.AnimatedDiv>
+        </S.AnimatedDiv>
       </em>
-    </Wrap>
+    </S.Wrap>
   );
 };
 

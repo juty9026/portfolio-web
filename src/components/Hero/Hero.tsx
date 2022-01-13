@@ -1,35 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
-import styled from '@emotion/styled';
 import { a, config, useTrail } from 'react-spring';
-
-const Wrap = styled.header`
-  height: 100vh;
-`;
-
-const FixedContainer = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  padding: 10%;
-  background-color: #262626;
-  color: white;
-`;
-
-const BannerTextWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 5rem;
-  gap: 0.2em;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-
-  @media (max-width: 767px) {
-    font-size: 4rem;
-    flex-direction: column;
-  }
-`;
+import { Wrap, FixedContainer, BannerTextWrap, ColorText } from './styles';
 
 const BannerText: React.FC = ({ children }) => {
   return (
@@ -38,10 +9,6 @@ const BannerText: React.FC = ({ children }) => {
     </span>
   );
 };
-
-const ColorText = styled.span`
-  color: #03b58d;
-`;
 
 const Trail: React.FC = ({ children }) => {
   const childrenArray = useMemo(() => {
