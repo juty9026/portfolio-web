@@ -1,16 +1,6 @@
-import styled from '@emotion/styled';
 import { Parallax, ParallaxProps } from 'react-scroll-parallax';
 import React, { CSSProperties, ImgHTMLAttributes } from 'react';
-
-const IconImage = styled.img`
-  width: 80px;
-  height: 80px;
-
-  @media (max-width: 1023px) {
-    max-width: 48px;
-    max-height: 48px;
-  }
-`;
+import { IconImage } from './styles';
 
 interface ParallaxIconProps extends ParallaxProps, ImgHTMLAttributes<HTMLImageElement> {
   style?: CSSProperties;
