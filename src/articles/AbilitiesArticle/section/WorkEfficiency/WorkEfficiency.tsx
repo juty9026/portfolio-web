@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section } from '../../../templates/Section';
+import { Section } from '@templates/Section';
 import { FadeSimple } from '@components/Animated';
 import { ParallaxIcon } from '@components/ParallaxIcon';
 import DataGrip from '@images/DataGrip.png';
@@ -8,25 +8,10 @@ import Slack from '@images/Slack.png';
 import SublimeText from '@images/SublimeText.png';
 import VisualStudioCode from '@images/VisualStudioCode.png';
 import WebStorm from '@images/WebStorm.png';
-import styled from '@emotion/styled';
 import Spacer from '@components/Spacer';
+import * as S from './styles';
 
-const Headline = styled.p`
-  padding: 2vh 0;
-`;
-
-const ParallaxContainer = styled.div`
-  position: absolute;
-  top: 110vh;
-  left: 0;
-  width: 100vw;
-
-  @media (max-width: 767px) {
-    display: none;
-  }
-`;
-
-const SectionWorkEfficiency: React.FC = () => {
+const WorkEfficiency: React.FC = () => {
   return (
     <Section theme="dark">
       <Spacer height="20vh" />
@@ -37,7 +22,7 @@ const SectionWorkEfficiency: React.FC = () => {
 
       <Spacer height="20vh" />
 
-      <ParallaxContainer>
+      <S.ParallaxContainer>
         <ParallaxIcon
           src={IntelliJ}
           alt={'IntelliJ'}
@@ -79,16 +64,16 @@ const SectionWorkEfficiency: React.FC = () => {
           styleOuter={{ position: 'absolute', right: '18%' }}
           y={['100px', '400px']}
         />
-      </ParallaxContainer>
+      </S.ParallaxContainer>
 
       <Spacer height="30vh" />
 
       <div style={{ maxWidth: '1280px', margin: 'auto' }}>
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
-            <Headline>
+            <S.Headline>
               텍스트 편집 능력 : <em>최상</em>
-            </Headline>
+            </S.Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>타이핑 속도가 빠르고, 툴을 잘 다룹니다.</p>
@@ -99,9 +84,9 @@ const SectionWorkEfficiency: React.FC = () => {
 
         <div>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
-            <Headline>
+            <S.Headline>
               적응 능력 : <em>최상</em>
-            </Headline>
+            </S.Headline>
           </FadeSimple>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
             <p>
@@ -124,9 +109,9 @@ const SectionWorkEfficiency: React.FC = () => {
 
         <div>
           <FadeSimple direction="left" style={{ display: 'block' }} bottomOffset="10%">
-            <Headline>
+            <S.Headline>
               반복을 줄이고 <em>개선</em>하는 <em>습관</em>
-            </Headline>
+            </S.Headline>
           </FadeSimple>
           <FadeSimple direction="right" style={{ display: 'block' }} bottomOffset="10%">
             <p>
@@ -154,4 +139,4 @@ const SectionWorkEfficiency: React.FC = () => {
   );
 };
 
-export default SectionWorkEfficiency;
+export default WorkEfficiency;

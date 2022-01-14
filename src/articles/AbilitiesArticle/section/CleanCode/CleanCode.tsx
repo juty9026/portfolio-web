@@ -5,7 +5,7 @@ import { Waypoint } from 'react-waypoint';
 import { Section } from '@templates/Section';
 import Spacer from '@components/Spacer';
 
-const SectionCleanCode: React.FC = () => {
+const CleanCode: React.FC = () => {
   const [codeVisible, setCodeVisible] = useState(false);
   const { transform } = useSpring({ transform: `perspective(6000px) rotateY(${codeVisible ? 0 : 90}deg)` });
 
@@ -42,4 +42,4 @@ const SectionCleanCode: React.FC = () => {
   );
 };
 
-export default SectionCleanCode;
+export default CleanCode;
