@@ -46,7 +46,7 @@ module.exports = {
           ['@section', './src/section'],
           ['@constants', './src/constants'],
           ['@articles', './src/articles'],
-          ['@layouts', './src/layouts'],
+          ['@templates', './src/templates'],
         ],
         extensions: ['.ts', '.tsx'],
       },

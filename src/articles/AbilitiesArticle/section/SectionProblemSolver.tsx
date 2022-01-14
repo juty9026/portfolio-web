@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { FadeSimple, IAmPossible, NoProblem } from '@components/Animated';
 import { Waypoint } from 'react-waypoint';
-import { Section, Spacer } from '../styled';
+import { Section } from '@templates/Section';
+import Spacer from '@components/Spacer';
 import checkMark from '@images/check-mark-240.png';
 import externalLink from '@images/external-link-128.png';
 

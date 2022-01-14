@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, Spacer } from '../styled';
+import { Section } from '../../../templates/Section';
 import { FadeSimple } from '@components/Animated';
 import { ParallaxIcon } from '@components/ParallaxIcon';
 import DataGrip from '@images/DataGrip.png';
@@ -9,6 +9,7 @@ import SublimeText from '@images/SublimeText.png';
 import VisualStudioCode from '@images/VisualStudioCode.png';
 import WebStorm from '@images/WebStorm.png';
 import styled from '@emotion/styled';
+import Spacer from '@components/Spacer';
 
 const Headline = styled.p`
   padding: 2vh 0;

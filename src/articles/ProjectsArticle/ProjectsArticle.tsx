@@ -15,7 +15,7 @@ import P09_WDP from './P09_WDP';
 import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from './P12_JUVIS';
-import Article from '@layouts/Article';
+import Article from '../../templates/Article';
 import Partner from '@customTypes/Partner';
 import { DevIconName } from '@components/DevIcon';
 import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';

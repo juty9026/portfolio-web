@@ -5,7 +5,7 @@ import Nosick from '@images/nosick-1-640w.jpeg';
 import Nolza from '@images/nolza-3-640w.jpeg';
 import { Waypoint } from 'react-waypoint';
 import { a, config, useTrail } from 'react-spring';
-import Article from '@layouts/Article';
+import Article from '@templates/Article';
 import { DevIcon } from '@components/DevIcon';
 import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';
 import { CopyToClipboard } from 'react-copy-to-clipboard';

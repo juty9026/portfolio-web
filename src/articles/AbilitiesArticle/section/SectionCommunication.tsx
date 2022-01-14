@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Section, Spacer } from '../styled';
+import { Section } from '../../../templates/Section';
 import { FadeSimple } from '@components/Animated';
 import styled from '@emotion/styled';
 import { Waypoint } from 'react-waypoint';
 import { a, useSpring } from 'react-spring';
 import conversationImage from '@images/conversation.png';
+import Spacer from '@components/Spacer';
 
 const GridContainer = styled(a.div)`
   display: grid;
