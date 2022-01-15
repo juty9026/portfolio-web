@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { a, config, useTrail } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
-import PopupOverlay from '@components/PopupOverlay';
+import PopupOverlay from '@/components/PopupOverlay';
 import ProjectCard from './ProjectCard';
 import P01_TANGO from './P01_TANGO';
 import P02_LCAP from './P02_LCAP';
@@ -15,10 +15,10 @@ import P09_WDP from './P09_WDP';
 import P10_5GX_CLOUD from './P10_5GX_CLOUD';
 import P11_OPENMALL from './P11_OPENMALL';
 import P12_JUVIS from './P12_JUVIS';
-import Article from '../../templates/Article';
-import Partner from '@customTypes/Partner';
-import { DevIconName } from '@components/DevIcon';
-import MessageHub, { AddFunction } from '@components/MessageHub/MessageHub';
+import Article from '@/templates/Article';
+import Partner from '@/types/Partner';
+import { DevIconName } from '@/components/DevIcon';
+import MessageHub, { AddFunction } from '@/components/MessageHub/MessageHub';
 import { Container, HoverWrap } from './styles';
 
 interface Work {

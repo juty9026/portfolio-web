@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import SphericalWordCloud from '@components/SphericalWordCloud';
+import SphericalWordCloud from '@/components/SphericalWordCloud';
 
 export const Wrap = styled.div`
   padding: 5%;

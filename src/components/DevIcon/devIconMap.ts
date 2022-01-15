@@ -1,4 +1,4 @@
-import DevIconName from '@components/DevIcon/types/DevIconName';
+import DevIconName from '@/components/DevIcon/types/DevIconName';
 
 const devIconMap: Record<DevIconName, string> = {
   Angular: 'angularjs',

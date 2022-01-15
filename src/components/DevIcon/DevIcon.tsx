@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import 'devicon/devicon.min.css';
-import DevIconName from '@components/DevIcon/types/DevIconName';
-import devIconMap from '@components/DevIcon/devIconMap';
+import DevIconName from '@/components/DevIcon/types/DevIconName';
+import devIconMap from '@/components/DevIcon/devIconMap';
 
 interface DevIconProps {
   name: DevIconName;

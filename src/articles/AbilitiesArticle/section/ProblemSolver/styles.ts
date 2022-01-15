@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import checkMark from '@images/check-mark-240.png';
-import externalLink from '@images/external-link-128.png';
+import checkMark from '@/assets/images/check-mark-240.png';
+import externalLink from '@/assets/images/external-link-128.png';
 
 export const GridContainer = styled.div`
   display: grid;

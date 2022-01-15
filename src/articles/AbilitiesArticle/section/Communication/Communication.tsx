@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Section } from '@templates/Section';
-import { FadeSimple } from '@components/Animated';
+import { Section } from '@/templates/Section';
+import { FadeSimple } from '@/components/Animated';
 import { Waypoint } from 'react-waypoint';
 import { useSpring } from 'react-spring';
-import conversationImage from '@images/conversation.png';
-import Spacer from '@components/Spacer';
+import conversationImage from '@/assets/images/conversation.png';
+import Spacer from '@/components/Spacer';
 import * as S from './styles';
 
 const Communication: React.FC = () => {

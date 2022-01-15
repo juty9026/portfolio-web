@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { a } from 'react-spring';
-import Spacer from '@components/Spacer';
+import Spacer from '@/components/Spacer';
 
 export const GridContainer = styled(a.div)`
   display: grid;

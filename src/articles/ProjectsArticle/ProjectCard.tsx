@@ -1,9 +1,9 @@
 import React, { CSSProperties, useMemo } from 'react';
 import styled from '@emotion/styled';
 import moment from 'moment';
-import Card from '@components/Card';
-import PartnerType from '@customTypes/Partner';
-import { DevIcon, DevIconName } from '@components/DevIcon';
+import Card from '@/components/Card';
+import PartnerType from '@/types/Partner';
+import { DevIcon, DevIconName } from '@/components/DevIcon';
 
 const colors: Record<PartnerType, CSSProperties> = {
   Openit: { background: 'linear-gradient(45deg, dodgerblue, seagreen)' },

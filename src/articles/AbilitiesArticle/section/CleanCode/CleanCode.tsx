@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { FadeSimple } from '@components/Animated';
+import { FadeSimple } from '@/components/Animated';
 import { a, useSpring } from 'react-spring';
 import { Waypoint } from 'react-waypoint';
-import { Section } from '@templates/Section';
-import Spacer from '@components/Spacer';
+import { Section } from '@/templates/Section';
+import Spacer from '@/components/Spacer';
 
 const CleanCode: React.FC = () => {
   const [codeVisible, setCodeVisible] = useState(false);

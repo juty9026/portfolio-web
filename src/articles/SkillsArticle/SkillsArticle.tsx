@@ -1,9 +1,9 @@
 import React from 'react';
-import TechExpBar from '@components/TechExpBar';
-import Article from '../../templates/Article';
+import TechExpBar from '@/components/TechExpBar';
+import Article from '@/templates/Article';
 import { a, config, useTransition } from 'react-spring';
 import { SectionFlex, StyledSphericalWordCloud, Wrap } from './styles';
-import Spacer from '@components/Spacer';
+import Spacer from '@/components/Spacer';
 
 const SkillsArticle: React.FC = () => {
   const data = React.useMemo(

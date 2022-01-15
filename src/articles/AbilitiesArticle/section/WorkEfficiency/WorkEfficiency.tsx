@@ -1,14 +1,14 @@
 import React from 'react';
-import { Section } from '@templates/Section';
-import { FadeSimple } from '@components/Animated';
-import { ParallaxIcon } from '@components/ParallaxIcon';
-import DataGrip from '@images/DataGrip.png';
-import IntelliJ from '@images/IntelliJ.png';
-import Slack from '@images/Slack.png';
-import SublimeText from '@images/SublimeText.png';
-import VisualStudioCode from '@images/VisualStudioCode.png';
-import WebStorm from '@images/WebStorm.png';
-import Spacer from '@components/Spacer';
+import { Section } from '@/templates/Section';
+import { FadeSimple } from '@/components/Animated';
+import { ParallaxIcon } from '@/components/ParallaxIcon';
+import DataGrip from '@/assets/images/DataGrip.png';
+import IntelliJ from '@/assets/images/IntelliJ.png';
+import Slack from '@/assets/images/Slack.png';
+import SublimeText from '@/assets/images/SublimeText.png';
+import VisualStudioCode from '@/assets/images/VisualStudioCode.png';
+import WebStorm from '@/assets/images/WebStorm.png';
+import Spacer from '@/components/Spacer';
 import * as S from './styles';
 
 const WorkEfficiency: React.FC = () => {

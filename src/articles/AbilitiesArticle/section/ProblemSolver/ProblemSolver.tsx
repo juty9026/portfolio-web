@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FadeSimple, IAmPossible, NoProblem } from '@components/Animated';
+import { FadeSimple, IAmPossible, NoProblem } from '@/components/Animated';
 import { Waypoint } from 'react-waypoint';
-import { Section } from '@templates/Section';
-import Spacer from '@components/Spacer';
+import { Section } from '@/templates/Section';
+import Spacer from '@/components/Spacer';
 import * as S from './styles';
 
 const ProblemSolver: React.FC = () => {
